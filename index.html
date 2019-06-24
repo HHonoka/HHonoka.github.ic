@@ -441,24 +441,22 @@
       
         
           
-            <p>#LeetCode 79 Word Search<br><a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">原题链接</a></p>
-<pre><code>题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。
+            <p>
+              #LeetCode 79 Word Search原题链接
+题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。
 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。
-</code></pre><p><strong>例子</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">board =</span><br><span class="line">[</span><br><span class="line">  [&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;E&apos;],</span><br><span class="line">  [&apos;S&apos;,&apos;F&apos;,&apos;C&apos;,&apos;S&apos;],</span><br><span class="line">  [&apos;A&apos;,&apos;D&apos;,&apos;E&apos;,&apos;E&apos;]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Given word = &quot;ABCCED&quot;, return true.</span><br><span class="line">Given word = &quot;SEE&quot;, return true.</span><br><span class="line">Given word = &quot;ABCB&quot;, return false.</span><br></pre></td></tr></table></figure></p>
-<pre><code>这道题目，只需要查找一个单词，所以直接暴力求解(bracktrack)就可以。遍历二维网格，找到一个符合要求的开头（单词的首字母），然后以这个
-点为起点，进行回溯。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def exist(self, board: List[List[str]], word: str) -&gt; bool:</span><br><span class="line">        for i in range(len(board)):</span><br><span class="line">            for j in range(len(board[0])):</span><br><span class="line">                if board[i][j] == word[0]:</span><br><span class="line">                    if self.dfs(board, i, j, 0, word):</span><br><span class="line">                        return True</span><br><span class="line">        return False</span><br><span class="line">    </span><br><span class="line">    def dfs(self, board, i, j, index, word):</span><br><span class="line">        if index == len(word):</span><br><span class="line">            return True</span><br><span class="line">        if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] != word[index]:</span><br><span class="line">            return False</span><br><span class="line">        board[i][j] = &apos;#&apos;</span><br><span class="line">        if self.dfs(board, i - 1, j, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i + 1, j, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i, j - 1, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i , j + 1, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        board[i][j] = word[index]</span><br></pre></td></tr></table></figure>
-<p>#LeetCode 212 Word Search II</p>
-<p><a href="https://leetcode.com/problems/word-search-ii/" target="_blank" rel="noopener">原题链接</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: </span><br><span class="line">board = [</span><br><span class="line">  [&apos;o&apos;,&apos;a&apos;,&apos;a&apos;,&apos;n&apos;],</span><br><span class="line">  [&apos;e&apos;,&apos;t&apos;,&apos;a&apos;,&apos;e&apos;],</span><br><span class="line">  [&apos;i&apos;,&apos;h&apos;,&apos;k&apos;,&apos;r&apos;],</span><br><span class="line">  [&apos;i&apos;,&apos;f&apos;,&apos;l&apos;,&apos;v&apos;]</span><br><span class="line">]</span><br><span class="line">words = [&quot;oath&quot;,&quot;pea&quot;,&quot;eat&quot;,&quot;rain&quot;]</span><br><span class="line"></span><br><span class="line">Output: [&quot;eat&quot;,&quot;oath&quot;]</span><br></pre></td></tr></table></figure></p>
-<pre><code>这道题其实是Word Search 的升级版，区别在于，前者只要求查找一个单词，后者需要从一个数组中查找每一个单词。我们不可以再像第一题这样直
-接进行暴力求解。需要先对整个数组进行预处理。需要使用一个特殊的数据结构叫做字典树（Trie）。在Python中，如果想从一个字典中搜索一个元
-素，时间复杂度为O(1),这样可以大大减少我们在搜索中所用的时间。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;o&apos;: &#123;&apos;a&apos;: &#123;&apos;t&apos;: &#123;&apos;h&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;&#125;, &apos;p&apos;: &#123;&apos;e&apos;: &#123;&apos;a&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;, &apos;e&apos;: &#123;&apos;a&apos;: &#123;&apos;t&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;, &apos;r&apos;: &#123;&apos;a&apos;: &#123;&apos;i&apos;: &#123;&apos;n&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>对于整个数组预处理过后，字典树如上图，一定要注意用一个标志（&quot;end&quot;)来表明一个完整单词的结束。否则我们无法确定这是一个完整的单词，还是
-一个单词的一部分。
-backtrack的过程和上一题的过程累似，只不过需要不断更新root（当前字母作为根节点），然后进行搜索，直到结束。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:</span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        self.res = set()</span><br><span class="line">        for word in words:</span><br><span class="line">            node = dic</span><br><span class="line">            for char in word:</span><br><span class="line">                if char not in node:</span><br><span class="line">                    node[char] = &#123;&#125;</span><br><span class="line">                node = node[char]</span><br><span class="line">            node[&apos;end&apos;] = &apos;#&apos;</span><br><span class="line">        for i in range(len(board)):</span><br><span class="line">            for j in range(len(board[0])):</span><br><span class="line">                self.dfs(dic, board, i, j, &quot;&quot;)</span><br><span class="line">        return list(self.res)</span><br><span class="line">        </span><br><span class="line">    def dfs(self, node, board, i, j, path):</span><br><span class="line">        if &apos;end&apos; in node:</span><br><span class="line">            self.res.add(path)</span><br><span class="line">        if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] not in node:</span><br><span class="line">            return</span><br><span class="line">        temp = board[i][j]</span><br><span class="line">        board[i][j] = &apos;#&apos;</span><br><span class="line">        self.dfs(node[temp], board, i - 1, j, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i + 1, j, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i, j - 1, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i, j + 1, path + temp)</span><br><span class="line">        board[i][j] = temp</span><br></pre></td></tr></table></figure>
+例子board =[  [&apos;A&apos
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/24/WordSearch/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -617,16 +615,21 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
       
         
           
-            <h1 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h1><h2 id="关于刷题"><a href="#关于刷题" class="headerlink" title="关于刷题"></a>关于刷题</h2><pre><code>   在现在的大环境下，刷题似乎成为了大部分人的必经之路，越来越多的公司在面试中通过相关题目，来考察求职者。就算已经找到工作的人，也
+            <p>
+              LeetCode关于刷题   在现在的大环境下，刷题似乎成为了大部分人的必经之路，越来越多的公司在面试中通过相关题目，来考察求职者。就算已经找到工作的人，也
 有很多人每天保持着练习，为了防止自己手生。其实无论到底出于什么目的，刷题真的很重要，当然，刷题不一定能确保你找到一份好的工作，但是
-不刷题感觉基本没有设么机会。作为一个转专业的选手（从硬件到软件），这段经历真的是挺痛苦的，刚开始刷题的时候什么都不会，到坚持了6个
-月， 刷了900道题，将近4500个submission。这段路真的非常艰辛，但是一定要咬着牙走下去。
-</code></pre><p>   <img src="/images/submission.png" alt="aaa"></p>
-<pre><code>   看着上面的图，稍微有一点点成就感，但是更多的感觉到一点点忧伤，因为真的感觉好辛苦好累。做这个博客，一个想记录一下自己刷题的生
-活，顺便把一些重点的题目的思路重新理一下，并分享给需要的人。我用的是Python（别问， 人生苦短，我用？？？？），以后有机会会试着用
-Java写一写。
-</code></pre>
+不刷题感觉
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/23/LeetCode/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -763,17 +766,19 @@ Java写一写。
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <p>
+              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/28/hello-world/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -1017,6 +1022,12 @@ Java写一写。
 
 
 
+
+  
+    
+    
+  
+  <script color="0,0,0" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
 
