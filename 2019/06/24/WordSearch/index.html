@@ -96,13 +96,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Honoka">
-<meta property="og:url" content="https://HHonoka.github.io/index.html">
+  <meta name="description" content="#LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;a">
+<meta name="keywords" content="BackTrack,Trie,高频">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 79, 212 Word Search">
+<meta property="og:url" content="https://HHonoka.github.io/2019/06/24/WordSearch/index.html">
 <meta property="og:site_name" content="Honoka">
+<meta property="og:description" content="#LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;a">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-24T09:04:06.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Honoka">
+<meta name="twitter:title" content="LeetCode 79, 212 Word Search">
+<meta name="twitter:description" content="#LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;a">
 
 
 
@@ -110,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/06/24/WordSearch/">
 
 
 
@@ -120,7 +125,7 @@
   };
 </script>
 
-  <title>Honoka</title>
+  <title>LeetCode 79, 212 Word Search | Honoka</title>
   
 
 
@@ -168,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -207,7 +211,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -320,9 +324,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -354,10 +358,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/24/WordSearch/" class="post-title-link" itemprop="url">LeetCode 79, 212 Word Search</a>
+          <h1 class="post-title" itemprop="name headline">LeetCode 79, 212 Word Search
+
               
             
           </h1>
@@ -439,9 +441,7 @@
       
 
       
-        
-          
-            <p>#LeetCode 79 Word Search<br><a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">原题链接</a></p>
+        <p>#LeetCode 79 Word Search<br><a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">原题链接</a></p>
 <pre><code>题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。
 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。
 </code></pre><p><strong>例子</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">board =</span><br><span class="line">[</span><br><span class="line">  [&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;E&apos;],</span><br><span class="line">  [&apos;S&apos;,&apos;F&apos;,&apos;C&apos;,&apos;S&apos;],</span><br><span class="line">  [&apos;A&apos;,&apos;D&apos;,&apos;E&apos;,&apos;E&apos;]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Given word = &quot;ABCCED&quot;, return true.</span><br><span class="line">Given word = &quot;SEE&quot;, return true.</span><br><span class="line">Given word = &quot;ABCB&quot;, return false.</span><br></pre></td></tr></table></figure></p>
@@ -457,8 +457,6 @@
 一个单词的一部分。
 backtrack的过程和上一题的过程累似，只不过需要不断更新root（当前字母作为根节点），然后进行搜索，直到结束。
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:</span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        self.res = set()</span><br><span class="line">        for word in words:</span><br><span class="line">            node = dic</span><br><span class="line">            for char in word:</span><br><span class="line">                if char not in node:</span><br><span class="line">                    node[char] = &#123;&#125;</span><br><span class="line">                node = node[char]</span><br><span class="line">            node[&apos;end&apos;] = &apos;#&apos;</span><br><span class="line">        for i in range(len(board)):</span><br><span class="line">            for j in range(len(board[0])):</span><br><span class="line">                self.dfs(dic, board, i, j, &quot;&quot;)</span><br><span class="line">        return list(self.res)</span><br><span class="line">        </span><br><span class="line">    def dfs(self, node, board, i, j, path):</span><br><span class="line">        if &apos;end&apos; in node:</span><br><span class="line">            self.res.add(path)</span><br><span class="line">        if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] not in node:</span><br><span class="line">            return</span><br><span class="line">        temp = board[i][j]</span><br><span class="line">        board[i][j] = &apos;#&apos;</span><br><span class="line">        self.dfs(node[temp], board, i - 1, j, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i + 1, j, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i, j - 1, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i, j + 1, path + temp)</span><br><span class="line">        board[i][j] = temp</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
 
@@ -479,329 +477,40 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/06/23/LeetCode/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Honoka">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/image.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Honoka">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/23/LeetCode/" class="post-title-link" itemprop="url">关于刷题</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-23 22:40:44 / 修改时间：23:28:01" itemprop="dateCreated datePublished" datetime="2019-06-23T22:40:44-04:00">2019-06-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/刷题/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/BackTrack/" rel="tag"># BackTrack</a>
           
-
+            <a href="/tags/Trie/" rel="tag"># Trie</a>
           
-            
-            
+            <a href="/tags/高频/" rel="tag"># 高频</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h1><h2 id="关于刷题"><a href="#关于刷题" class="headerlink" title="关于刷题"></a>关于刷题</h2><pre><code>   在现在的大环境下，刷题似乎成为了大部分人的必经之路，越来越多的公司在面试中通过相关题目，来考察求职者。就算已经找到工作的人，也
-有很多人每天保持着练习，为了防止自己手生。其实无论到底出于什么目的，刷题真的很重要，当然，刷题不一定能确保你找到一份好的工作，但是
-不刷题感觉基本没有设么机会。作为一个转专业的选手（从硬件到软件），这段经历真的是挺痛苦的，刚开始刷题的时候什么都不会，到坚持了6个
-月， 刷了900道题，将近4500个submission。这段路真的非常艰辛，但是一定要咬着牙走下去。
-</code></pre><p>   <img src="/images/submission.png" alt="aaa"></p>
-<pre><code>   看着上面的图，稍微有一点点成就感，但是更多的感觉到一点点忧伤，因为真的感觉好辛苦好累。做这个博客，一个想记录一下自己刷题的生
-活，顺便把一些重点的题目的思路重新理一下，并分享给需要的人。我用的是Python（别问， 人生苦短，我用？？？？），以后有机会会试着用
-Java写一写。
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/04/28/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Honoka">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/image.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Honoka">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/28/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-              
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2019/06/23/LeetCode/" rel="next" title="关于刷题">
+                <i class="fa fa-chevron-left"></i> 关于刷题
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-28 03:43:15" itemprop="dateCreated datePublished" datetime="2019-04-28T03:43:15-04:00">2019-04-28</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -811,14 +520,15 @@ Java写一写。
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1060,6 +770,10 @@ Java写一写。
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -1075,6 +789,8 @@ Java写一写。
 
   
 
+
+  
 
 
   
