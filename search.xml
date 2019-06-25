@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[LeetCode 215 Kth Largest Element in an Array 排序算法总结]]></title>
+    <url>%2F2019%2F06%2F25%2F215%2F</url>
+    <content type="text"><![CDATA[LeetCode 215 Kth Largest Element in an Array原题链接 题目大意：从一个未排序的数组中找到第K大的元素。 其实想单纯的解决这个问题真的是非常容易，在Python中一行代码就可以解决。 One - line12def findKthLargest1(self, nums, k): return sorted(nums, reverse = True)[k - 1] 在Python中，sort()方法的时间复杂度是O(nlogn),其实看到第K个元素问题，第一时间想到方法应该是堆排序（Heap Sort), 每一次pop出一个 元素，循环K次即可找到答案。 Heap Sort在这里堆排序可以节省很多时间，但是这里存在着到底是用最大堆(Max heap)还是最小堆(Min Heap)的问题。在Python中，heap模块自动生成的是 最小堆，如果想生成一个最大堆，我们需要将数组中所有的数字取负数，然后重新堆化(Heapify)。那么两者的时间复杂度为 O(n + xlogn), 为什么我这里使用了x， 其实到底是最小堆快还是最大堆快，取决于k到底是靠近数组的开始，还是靠近数组的结尾。如果K在数组的 中间位置，那么两者的时间复杂度其实几乎是一样的。如果K靠近起始位置，那么肯定Min Heap会快，反之亦然。 Min Heap1234567class Solution: def findKthLargest(self, nums: List[int], k: int) -&gt; int: heapq.heapify(nums) res = 0 for _ in range(len(nums) - k + 1): res = heapq.heappop(nums) return res Max Heap12345678class Solution: def findKthLargest(self, nums: List[int], k: int) -&gt; int: heap = [-num for num in nums] heapq.heapify(heap) res = 0 for _ in range(k): res = -heapq.heappop(heap) return res 排序算法(Python 版本)其实这道题考察的是到底该使用那种排序算法，我简单的对几种常用的排序算法进行一下总结。 冒泡排序(Bubble Sort)冒牌排序的本质其实是针对相邻元素，如果第一个元素比第二个元素大，那么交换两者的位置，重复上述的步骤，直到没有可以交换的元素。 平均时间复杂度：O(n ** 2) 最坏时间复杂度：O(n ** 2) 最好时间复杂度：O(n) 空间复杂度： O(1) in-place 123456def BubbleSort(nums): for i in range(1, len(nums)): for j in range(len(nums) - i): if nums[j] &gt; nums[j + 1]: nums[j], nums[j + 1] = nums[j + 1], nums[j] return nums 选择排序(Selection Sort)在未排序数组中找到最大（小）的元素，放在每一轮起始的位置，每一轮结束后，接下来在剩余的数组中继续操作。 平均时间复杂度：O（n ** 2) 最好时间复杂度：O（n ** 2) 最坏时间复杂度：O（n ** 2) 空间复杂度： O（1） in - place 123456789def SelectionSort(nums): for i in range(len(nums) - 1): index = i for j in range(i + 1, len(nums)): if nums[j] &lt; nums[index]: index = j if index != i: nums[index], nums[i] = nums[i], nums[index] return nums 插入排序（Insertion Sort）扫描整个数组，然后针对这个位置上的数字进行操作，如果这个数字比前面的数字小，就一直往前移动，直到整个数组没有可以操作的元素。 平均时间复杂度：O（n ** 2) 最好时间复杂度：O（n) 最坏时间复杂度：O（n ** 2） 空间复杂度： O（1） in - place 123456789def InsertionSort(nums): for i in range(len(nums)): pre = i - 1 cur = nums[i] while pre &gt;= 0 and arr[pre] &gt; cur: arr[pre + 1] = arr[pre] pre -= 1 arr[pre + 1] = cur return nums 希尔排序(Shell Sort)希尔排序法(缩小增量法) 属于插入类排序，是将整个无序列分割成若干小的子序列分别进行插入排序的方法。 平均时间复杂度：O（nlogn) 最好时间复杂度：O（n） 最坏时间复杂度：O（n ** 2） 空间复杂度：O（1）in - place 1234567891011121314def ShellSort(nums): gap = 1 while gap &lt; len(nums) // 2: gap = gap * 3 + 1 while gap &gt; 0: for i in range(gap, len(nums)): temp = nums[i] j = i - gap while j &gt;= 0 and nums[j] &gt; temp: nums[j + gap] = nums[j] j -= gap nums[j + gap] = temp gap = gap // 3 return nums 归并排序(Merge Sort)将一个完整的数组拆分成一些子序列，然后分别针对子序列进行排序，最后在合并到一起，Divide and Conquer的思想。 时间复杂度：O(nlogn) 空间复杂度：O（n） 12345678910111213141516171819202122def MergeSort(nums): if len(nums) &lt; 2: return nums mid = len(nums) // 2 return merge(MergeSort(nums[:mid]), MergeSort(nums[mid:]))def merge(l, r): nums = [] a, b = 0, 0 while a &lt; len(l) and b &lt; len(r): if l[a] &lt; r[b]: nums.append(l[a]) a += 1 else: nums.append(r[b]) b += 1 if a &lt; len(l): nums += l[a:] if b &lt; len(r): nums += r[b:] return nums 快速排序(Quick Sort)找到一个轴，比这个轴大的数字放在一个数组，比轴小的数字放在另一个数组，然后用递归加分而治之对子数组进行相同的操作，最后合并所有子数组。 平均时间复杂度：O（nlogn） 最好时间复杂度：O（nlogn） 最坏时间复杂度：O（n ** 2) 空间复杂度： O（nlogn） 12345678910111213def QuickSort(nums): if len(nums) &lt; 2: return nums else: mid = nums[len(nums) // 2] left = [] right = [] for num in nums: if num &gt; mid: right.append(num) else: left.append(num) return QuickSort(left) + [mid] + QuickSort(right)]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
+      <tags>
+        <tag>高频</tag>
+        <tag>排序算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LeetCode 79, 212 Word Search]]></title>
+    <url>%2F2019%2F06%2F24%2FWordSearch%2F</url>
+    <content type="text"><![CDATA[LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[ [&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;E&apos;], [&apos;S&apos;,&apos;F&apos;,&apos;C&apos;,&apos;S&apos;], [&apos;A&apos;,&apos;D&apos;,&apos;E&apos;,&apos;E&apos;]]Given word = &quot;ABCCED&quot;, return true.Given word = &quot;SEE&quot;, return true.Given word = &quot;ABCB&quot;, return false. 这道题目，只需要查找一个单词，所以直接暴力求解(bracktrack)就可以。遍历二维网格，找到一个符合要求的开头（单词的首字母），然后以这个 点为起点，进行回溯。 123456789101112131415161718192021222324class Solution: def exist(self, board: List[List[str]], word: str) -&gt; bool: for i in range(len(board)): for j in range(len(board[0])): if board[i][j] == word[0]: if self.dfs(board, i, j, 0, word): return True return False def dfs(self, board, i, j, index, word): if index == len(word): return True if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] != word[index]: return False board[i][j] = &apos;#&apos; if self.dfs(board, i - 1, j, index + 1, word): return True if self.dfs(board, i + 1, j, index + 1, word): return True if self.dfs(board, i, j - 1, index + 1, word): return True if self.dfs(board, i , j + 1, index + 1, word): return True board[i][j] = word[index] #LeetCode 212 Word Search II 原题链接12345678910Input: board = [ [&apos;o&apos;,&apos;a&apos;,&apos;a&apos;,&apos;n&apos;], [&apos;e&apos;,&apos;t&apos;,&apos;a&apos;,&apos;e&apos;], [&apos;i&apos;,&apos;h&apos;,&apos;k&apos;,&apos;r&apos;], [&apos;i&apos;,&apos;f&apos;,&apos;l&apos;,&apos;v&apos;]]words = [&quot;oath&quot;,&quot;pea&quot;,&quot;eat&quot;,&quot;rain&quot;]Output: [&quot;eat&quot;,&quot;oath&quot;] 这道题其实是Word Search 的升级版，区别在于，前者只要求查找一个单词，后者需要从一个数组中查找每一个单词。我们不可以再像第一题这样直 接进行暴力求解。需要先对整个数组进行预处理。需要使用一个特殊的数据结构叫做字典树（Trie）。在Python中，如果想从一个字典中搜索一个元 素，时间复杂度为O(1),这样可以大大减少我们在搜索中所用的时间。 1&#123;&apos;o&apos;: &#123;&apos;a&apos;: &#123;&apos;t&apos;: &#123;&apos;h&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;&#125;, &apos;p&apos;: &#123;&apos;e&apos;: &#123;&apos;a&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;, &apos;e&apos;: &#123;&apos;a&apos;: &#123;&apos;t&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;, &apos;r&apos;: &#123;&apos;a&apos;: &#123;&apos;i&apos;: &#123;&apos;n&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;&#125;&#125; 对于整个数组预处理过后，字典树如上图，一定要注意用一个标志（&quot;end&quot;)来表明一个完整单词的结束。否则我们无法确定这是一个完整的单词，还是 一个单词的一部分。 backtrack的过程和上一题的过程累似，只不过需要不断更新root（当前字母作为根节点），然后进行搜索，直到结束。 12345678910111213141516171819202122232425262728class Solution: def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]: dic = &#123;&#125; self.res = set() for word in words: node = dic for char in word: if char not in node: node[char] = &#123;&#125; node = node[char] node[&apos;end&apos;] = &apos;#&apos; for i in range(len(board)): for j in range(len(board[0])): self.dfs(dic, board, i, j, &quot;&quot;) return list(self.res) def dfs(self, node, board, i, j, path): if &apos;end&apos; in node: self.res.add(path) if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] not in node: return temp = board[i][j] board[i][j] = &apos;#&apos; self.dfs(node[temp], board, i - 1, j, path + temp) self.dfs(node[temp], board, i + 1, j, path + temp) self.dfs(node[temp], board, i, j - 1, path + temp) self.dfs(node[temp], board, i, j + 1, path + temp) board[i][j] = temp]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
+      <tags>
+        <tag>高频</tag>
+        <tag>BackTrack</tag>
+        <tag>Trie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于刷题]]></title>
+    <url>%2F2019%2F06%2F23%2FLeetCode%2F</url>
+    <content type="text"><![CDATA[LeetCode关于刷题 在现在的大环境下，刷题似乎成为了大部分人的必经之路，越来越多的公司在面试中通过相关题目，来考察求职者。就算已经找到工作的人，也 有很多人每天保持着练习，为了防止自己手生。其实无论到底出于什么目的，刷题真的很重要，当然，刷题不一定能确保你找到一份好的工作，但是 不刷题感觉基本没有设么机会。作为一个转专业的选手（从硬件到软件），这段经历真的是挺痛苦的，刚开始刷题的时候什么都不会，到坚持了6个 月， 刷了900道题，将近4500个submission。这段路真的非常艰辛，但是一定要咬着牙走下去。 看着上面的图，稍微有一点点成就感，但是更多的感觉到一点点忧伤，因为真的感觉好辛苦好累。做这个博客，一个想记录一下自己刷题的生 活，顺便把一些重点的题目的思路重新理一下，并分享给需要的人。我用的是Python（别问， 人生苦短，我用？？？？），以后有机会会试着用 Java写一写。]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
+      <tags>
+        <tag>分享</tag>
+        <tag>导航</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F04%2F28%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
