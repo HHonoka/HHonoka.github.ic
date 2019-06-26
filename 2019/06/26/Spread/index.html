@@ -96,13 +96,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Honoka">
-<meta property="og:url" content="https://HHonoka.github.io/archives/index.html">
+  <meta name="description" content="LeetCode 924 Minimize Malware Spread原题链接 这道题是LeetCode中属于hard难度的题目，也是一道高频题，个人认为这道题是一道非常典型的题目。题目很长，大概意思就是，有一些节点，其中 一些节点被病毒感染了，某一些节点之间是相互连接的（形成一个图），如果这个图中有一个节点是被病毒感染的，那么整个图都会被感染。要求我们 找到其中一个被感染的节点，并删除他，使所">
+<meta name="keywords" content="高频,Union Find,DFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播">
+<meta property="og:url" content="https://HHonoka.github.io/2019/06/26/Spread/index.html">
 <meta property="og:site_name" content="Honoka">
+<meta property="og:description" content="LeetCode 924 Minimize Malware Spread原题链接 这道题是LeetCode中属于hard难度的题目，也是一道高频题，个人认为这道题是一道非常典型的题目。题目很长，大概意思就是，有一些节点，其中 一些节点被病毒感染了，某一些节点之间是相互连接的（形成一个图），如果这个图中有一个节点是被病毒感染的，那么整个图都会被感染。要求我们 找到其中一个被感染的节点，并删除他，使所">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-26T09:12:42.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Honoka">
+<meta name="twitter:title" content="LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播">
+<meta name="twitter:description" content="LeetCode 924 Minimize Malware Spread原题链接 这道题是LeetCode中属于hard难度的题目，也是一道高频题，个人认为这道题是一道非常典型的题目。题目很长，大概意思就是，有一些节点，其中 一些节点被病毒感染了，某一些节点之间是相互连接的（形成一个图），如果这个图中有一个节点是被病毒感染的，那么整个图都会被感染。要求我们 找到其中一个被感染的节点，并删除他，使所">
 
 
 
@@ -110,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/archives/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/06/26/Spread/">
 
 
 
@@ -120,7 +125,7 @@
   };
 </script>
 
-  <title>归档 | Honoka</title>
+  <title>LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播 | Honoka</title>
   
 
 
@@ -168,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -274,7 +279,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -345,244 +350,213 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/06/26/Spread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Honoka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/image.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Honoka">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播
+
+              
+            
+          </h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-26 04:05:36 / 修改时间：05:12:42" itemprop="dateCreated datePublished" datetime="2019-06-26T04:05:36-04:00">2019-06-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 5 篇日志。 继续努力。
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/刷题/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a></span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/26/Spread/" itemprop="url">
+          
             
-              <span itemprop="name">LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播</span>
             
-          </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-26T04:05:36-04:00" content="2019-06-26">
-          06-26
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
 
+          
 
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/25/215/" itemprop="url">
-            
-              <span itemprop="name">LeetCode 215 Kth Largest Element in an Array 排序算法总结</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-25T03:05:11-04:00" content="2019-06-25">
-          06-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <h1 id="LeetCode-924-Minimize-Malware-Spread"><a href="#LeetCode-924-Minimize-Malware-Spread" class="headerlink" title="LeetCode 924 Minimize Malware Spread"></a>LeetCode 924 Minimize Malware Spread</h1><p><a href="https://leetcode.com/problems/minimize-malware-spread/" target="_blank" rel="noopener">原题链接</a></p>
+<pre><code>这道题是LeetCode中属于hard难度的题目，也是一道高频题，个人认为这道题是一道非常典型的题目。题目很长，大概意思就是，有一些节点，其中
+一些节点被病毒感染了，某一些节点之间是相互连接的（形成一个图），如果这个图中有一个节点是被病毒感染的，那么整个图都会被感染。要求我们
+找到其中一个被感染的节点，并删除他，使所有节点受感染的数目最少。
+</code></pre><p><strong>例子</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]</span><br><span class="line">Output: 0</span><br><span class="line">0---1</span><br><span class="line">2</span><br><span class="line">0和1构成一个图， 2不和任何节点连接，由于0和1同时都被病毒感染，所以按照题目要求我们需要返回一个较小数字的节点。</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: graph = [[1,0,0],[0,1,0],[0,0,1]], initial = [0,2]</span><br><span class="line">Output: 0</span><br><span class="line">例子2和例子1其实是类似的。</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line"></span><br><span class="line">Input: graph = [[1,1,1],[1,1,1],[1,1,1]], initial = [1,2]</span><br><span class="line">Output: 1</span><br><span class="line"></span><br><span class="line">       0 -- 1</span><br><span class="line">        \  /</span><br><span class="line">         2</span><br><span class="line">这三个节点彼此相互连接， 所以仍然是返回哪个比较小的被感染节点。</span><br></pre></td></tr></table></figure>
+<pre><code>其实通过上述三个例子，不是很容易弄明白这个问题。如果在一个图中，有至少有两个以上的节点是被病毒感染的，那么其实无论删除哪个，都不能避
+免整个图被感染。所以在扫描整个图时，如果存在这么一个图，图中只有一个节点是被感染的，那么我们如果删除这个节点就可以使这一部分的图，全
+变成正常情况。依照这个原则去搜索，即可找出答案。
 
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/24/WordSearch/" itemprop="url">
-            
-              <span itemprop="name">LeetCode 79, 212 Word Search</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-24T04:33:41-04:00" content="2019-06-24">
-          06-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+首先我们需要构造这个图，构图这部分我喜欢写在Union Find的类里面，然后在主函数中进行搜索就可以了。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">class UnionFind:</span><br><span class="line">    def __init__(self, graph):</span><br><span class="line">        self.parent = [i for i in range(len(graph))]</span><br><span class="line">        self.rank = [1 for _ in range(len(graph))]</span><br><span class="line">        for i in range(len(graph)):</span><br><span class="line">            for j in range(i + 1, len(graph[0])):</span><br><span class="line">                if graph[i][j] == 1 and i != j:</span><br><span class="line">                    self.union(i, j)</span><br><span class="line">    def find(self, x):</span><br><span class="line">        if self.parent[x] != x:</span><br><span class="line">            self.parent[x] = self.find(self.parent[x])</span><br><span class="line">        return self.parent[x]</span><br><span class="line">    </span><br><span class="line">    def union(self, x, y):</span><br><span class="line">        px, py = self.find(x), self.find(y)</span><br><span class="line">        if px == py:</span><br><span class="line">            return</span><br><span class="line">        if self.rank[px] == self.rank[py]:</span><br><span class="line">            self.parent[py] = px</span><br><span class="line">            self.rank[px] += self.rank[py]</span><br><span class="line">        else:</span><br><span class="line">            if self.rank[px] &gt; self.rank[py]:</span><br><span class="line">                self.parent[py] = px</span><br><span class="line">                self.rank[px] += self.rank[py]</span><br><span class="line">            else:</span><br><span class="line">                self.parent[px] = py</span><br><span class="line">                self.rank[py] += self.rank[px]</span><br><span class="line">#上面这个class是UnionFind和图的构造过程，UnionFind在寻找每个节点的父亲节点的平均用时是O（1），所以这个结构对于构造一个图来说是非常高</span><br><span class="line">效的。</span><br><span class="line">class Solution:</span><br><span class="line">    def minMalwareSpread(self, graph: List[List[int]], initial: List[int]) -&gt; int:</span><br><span class="line">        uf = UnionFind(graph)</span><br><span class="line">        dic = collections.defaultdict(list)</span><br><span class="line">        for i, e in enumerate(uf.parent):</span><br><span class="line">            dic[e].append(i)    #用字典来保存每一个图    </span><br><span class="line">        res = min(initial)      #如果找不到更优的结果，我们需要返回最小值</span><br><span class="line">        initial = set(initial)  #将病毒节点数组转换成集合，方便搜索（集合中搜索元素的时间复杂度是O（1）</span><br><span class="line">        mincount = 0</span><br><span class="line">        for node in dic:</span><br><span class="line">            seen = set()</span><br><span class="line">            for n in dic[node]:</span><br><span class="line">                if n in initial:</span><br><span class="line">                    seen.add(n)     #找出图中所有被感染的节点</span><br><span class="line">            if len(seen) == 1:      #判断该删除哪个节点</span><br><span class="line">                if len(dic[node]) &gt; mincount or (len(dic[node]) == mincount and list(seen)[0] &lt; res):</span><br><span class="line">                    res = list(seen)[0]</span><br><span class="line">                    mincount = len(dic[node])</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<pre><code>如果想避免构图这个过程，这道题可以直接用深度优先搜索来求解，深度优先搜索(DFS)的代码更加简洁，但是Union Find的代码看上去更加直观。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#DFS</span><br><span class="line">class Solution:</span><br><span class="line">    def minMalwareSpread(self, graph: List[List[int]], initial: List[int]) -&gt; int:</span><br><span class="line">        def dfs(node,vis):</span><br><span class="line">            for v in  range(len(graph[node])):</span><br><span class="line">                if graph[node][v] == 1 and v not in vis:</span><br><span class="line">                    vis.add(v)</span><br><span class="line">                    dfs(v,vis)</span><br><span class="line">        seen = set()</span><br><span class="line">        res = min(initial)</span><br><span class="line">        initial = set(initial)</span><br><span class="line">        mincount = 0</span><br><span class="line">        for node in range(len(graph)):</span><br><span class="line">            if node not in seen:</span><br><span class="line">                vis = set([node])</span><br><span class="line">                dfs(node,vis)</span><br><span class="line">                infect = vis &amp; initial</span><br><span class="line">                if len(infect) == 1:</span><br><span class="line">                    if len(vis) &gt; mincount or (len(vis) == mincount and list(infect)[0] &lt; res):</span><br><span class="line">                        res = list(infect)[0]</span><br><span class="line">                        mincount = len(vis)</span><br><span class="line">                seen |= vis</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/06/23/LeetCode/" itemprop="url">
-            
-              <span itemprop="name">关于刷题</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-06-23T22:40:44-04:00" content="2019-06-23">
-          06-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/28/hello-world/" itemprop="url">
-            
-              <span itemprop="name">Hello World</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-28T03:43:15-04:00" content="2019-04-28">
-          04-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/高频/" rel="tag"># 高频</a>
+          
+            <a href="/tags/Union-Find/" rel="tag"># Union Find</a>
+          
+            <a href="/tags/DFS/" rel="tag"># DFS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/25/215/" rel="next" title="LeetCode 215 Kth Largest Element in an Array 排序算法总结">
+                <i class="fa fa-chevron-left"></i> LeetCode 215 Kth Largest Element in an Array 排序算法总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -602,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -701,6 +684,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-924-Minimize-Malware-Spread"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 924 Minimize Malware Spread</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -838,6 +838,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -853,6 +857,8 @@
 
   
 
+
+  
 
 
   
