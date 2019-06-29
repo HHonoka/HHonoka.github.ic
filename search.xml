@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LeetCode 239 Sliding Window Maximum 滑动窗口最大值]]></title>
+    <url>%2F2019%2F06%2F29%2Fwindow%2F</url>
+    <content type="text"><![CDATA[LeetCode 239 Sliding Window Maximum 滑动窗口最大值原题链接 1234567891011121314151617181920Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the veryright. You can only see the k numbers in the window. Each time the sliding window moves right by one position.Return the max sliding window.Example:Input: nums = [1,3,-1,-3,5,3,6,7], and k = 3Output: [3,3,5,5,6,7] Explanation: Window position Max--------------- -----[1 3 -1] -3 5 3 6 7 3 1 [3 -1 -3] 5 3 6 7 3 1 3 [-1 -3 5] 3 6 7 5 1 3 -1 [-3 5 3] 6 7 5 1 3 -1 -3 [5 3 6] 7 6 1 3 -1 -3 5 [3 6 7] 7Note: You may assume k is always valid, 1 ≤ k ≤ input array&apos;s size for non-empty array. 题目大意：给定一个固定size(k)的滑动窗口，当窗口滑动到不同位置时，存储当前窗口内的最大值。 这道题我第一眼看到的时候感觉这道题真的容易，完全不像一个hard的问题，直接上来就建立一个滑动窗口然后开始扫描整个数组，然后记录最大值， 当然了这个做法是没有任何问题的，但是这个问题在LeetCode里的测试案例的数据规模非常小，所以也能AC。 123456789#Brute forceclass Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: if not nums: return [] res = [] for i in range(len(nums) - k + 1): res.append(max(nums[i: i + k])) return res 上述的做法，时间复杂度是O（n * k),因为每次扫描，我们都需对当前窗口来计算最大值是多少，每一次调用max()方法，时间复杂度都是O（k)(窗 口的大小）。假设整个数组的长度非常大，窗口的尺寸也非常大，那么这个时间复杂度其实是O（n ** 2),效率就非常低了，所以我们需要对整个窗口 进行优化。 找最大值或者最小值，其实比较常规的方法就是堆排（Heap Sort），每次找最大值的时候时间复杂度为O(logn),避免每次都要重新扫描窗口。 1234567891011121314151617181920class Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: res = [] if not nums: return res window = [] for i in range(k): heapq.heappush(window, -nums[i]) res.append(-window[0]) pop = collections.Counter() for i in range(k, len(nums)): out = nums[i - k] inn = nums[i] pop[out] += 1 heapq.heappush(window, -inn) while pop[-window[0]] &gt; 0: pop[-window[0]] -= 1 heapq.heappop(window) res.append(-window[0]) return res 还有一种更快捷的方法，用队列来解决这个问题，其实这个问题可以简化成维护一个队列，我们只需要知道当前的最大值是多少，还有当前最大值是不 是在这个窗口里，其他的事情其实都不需要考虑，这样一来时间复杂度可以简化到O（n）。 12345678910111213class Solution: def maxSlidingWindow(self, nums: List[int], k: int) -&gt; List[int]: window = collections.deque() res = [] for i, num in enumerate(nums): while window and num &gt; nums[window[-1]]: window.pop() window.append(i) if i &gt;= k - 1: res.append(nums[window[0]]) if i - k + 1 == window[0]: window.popleft() return res]]></content>
+      <categories>
+        <category>刷题</category>
+      </categories>
+      <tags>
+        <tag>高频</tag>
+        <tag>滑动窗口（Sliding Window）</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LeetCode 72 Edit Distance 编辑距离]]></title>
     <url>%2F2019%2F06%2F27%2Fdistance%2F</url>
     <content type="text"><![CDATA[LeetCode 72 Edit Distance原题链接 123456789101112131415161718192021222324252627Given two words word1 and word2, find the minimum number of operations required to convert word1 to word2.You have the following 3 operations permitted on a word:Insert a characterDelete a characterReplace a characterExample 1:Input: word1 = &quot;horse&quot;, word2 = &quot;ros&quot;Output: 3Explanation: horse -&gt; rorse (replace &apos;h&apos; with &apos;r&apos;)rorse -&gt; rose (remove &apos;r&apos;)rose -&gt; ros (remove &apos;e&apos;)Example 2:Input: word1 = &quot;intention&quot;, word2 = &quot;execution&quot;Output: 5Explanation: intention -&gt; inention (remove &apos;t&apos;)inention -&gt; enention (replace &apos;i&apos; with &apos;e&apos;)enention -&gt; exention (replace &apos;n&apos; with &apos;x&apos;)exention -&gt; exection (replace &apos;n&apos; with &apos;c&apos;)exection -&gt; execution (insert &apos;u&apos;) 题目大意，将word1变成word2，最少需要多少步骤。一般碰到这种问题，尽量不要想着用Brute Force的方法去解决，因为如果想通过找出所有可能 的单词，来计算最少步骤数目，时间复杂度是非常高的，因为一个位置可以替换26个字母或者添加或删除一个字母，时间复杂度是指数增长的。所以这 种时候需要通过动态规划来解决这个问题。动态规划的本质是通过一个小的问题来解决较大规模的问题。但是如何找到转移方程，是DP类问题的关键， 也是解决DP问题最难的地方。有的时候知道这个问题需要用DP来解决，但是却无从下手，这种情况非常正常，其实个人认为在LeetCode中最难的一部 分问题就是DP了，只能通过更多的练习来强化。 这个问题是一道Hard的题目，但是代码非常短，像一个easy的题目，但是这其中需要思考的问题很多，以及如何去理解这个题目中DP的意义。先上 代码！ 1234567891011121314class Solution: def minDistance(self, word1: str, word2: str) -&gt; int: dp = [[0 for _ in range(len(word1) + 1)] for _ in range(len(word2) + 1)] for i in range(1, len(dp)): dp[i][0] = i for i in range(1, len(dp[0])): dp[0][i] = i for i in range(1, len(dp)): for j in range(1, len(dp[0])): if word1[j - 1] == word2[i - 1]: dp[i][j] = dp[i - 1][j - 1] else: dp[i][j] = min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]) + 1 return dp[-1][-1] 首先构建一个DP的二维矩阵，如果练习的够多可以总结出，要解决对比两个字符串的问题，基本都是可以基于一个二维的DP数组来解决。首先来解释一 下dp[i][j]的含义。dp[i][j]代表的是word1[:j]变成word2[:i]需要多少步，而且dp[i][j]只和dp[i - 1][j], dp[i - 1][j - 1], dp[i][j - 1]有关，也就是说，和最近的三个子问题有关。现在的问题是这三个子问题都代表什么，如何实现通过dp来实现，insert, remove, replace的操作。我简单的通过几个简单的例子来解释。 123456789101112131415remove:word1 = &quot;ab&quot;, word2 = &quot;a&quot;这个可以比较容易的看出，如果想把word1变成word2最快的方法就是将word1末尾的&quot;b&quot;删除掉。dp[i][j] = dp[i][j - 1] + 1dp[i][j - 1]是word1 = &quot;a&quot; word2 = &quot;a&quot;的时候，因为要移除&quot;b&quot;,所以要多一次操作。insert:word1 = &quot;a&quot;, word2 = &quot;ab&quot;这个例子中，需要在word1中添加一个&quot;b&quot;才能和word2一样。dp[i][j] = dp[i - 1][j] + 1replace:word1 = &quot;ab&quot;, word2 = &quot;ac&quot;将word1中的&quot;b&quot;替换成&quot;c&quot;，也就是说需要从两个字符串都是&quot;a&quot;的状态来替换(dp[i - 1][j - 1])dp[i][j] = dp[i - 1][j - 1] + 1 这样如何完成这三种操作的方法已经介绍完了，这道题还有一个要点，就是要初始化dp，因为不初始化dp的话，所有位置的起始状态都是0，这是不对 的，因为我们的最初状态是从两个空的字符串开始的，然后逐渐往后延伸，所以每一个字符串要想变成空字符串的话，也就是当前位置的数字等于当前 字符串的长度。 123456Initialize:dp = [[0 for _ in range(len(word1) + 1)] for _ in range(len(word2) + 1)] for i in range(1, len(dp)): dp[i][0] = i for i in range(1, len(dp[0])): dp[0][i] = i 最后返回dp[-1][-1]就是最小的步数。]]></content>
@@ -20,8 +32,8 @@
         <category>刷题</category>
       </categories>
       <tags>
-        <tag>Union Find</tag>
         <tag>高频</tag>
+        <tag>Union Find</tag>
         <tag>DFS</tag>
       </tags>
   </entry>
@@ -45,9 +57,9 @@
         <category>刷题</category>
       </categories>
       <tags>
-        <tag>高频</tag>
         <tag>BackTrack</tag>
         <tag>Trie</tag>
+        <tag>高频</tag>
       </tags>
   </entry>
   <entry>
