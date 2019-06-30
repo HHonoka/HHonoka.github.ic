@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Honoka">
 <meta property="og:description" content="LeetCode Weekly Contest 143LeetCode 1103 Distribute Candies to People题目链接1234567891011121314151617181920212223242526272829303132333435We distribute some number of candies, to a row of n = num_people p">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-30T09:56:22.400Z">
+<meta property="og:updated_time" content="2019-06-30T09:59:33.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode Weekly Contest 143">
 <meta name="twitter:description" content="LeetCode Weekly Contest 143LeetCode 1103 Distribute Candies to People题目链接1234567891011121314151617181920212223242526272829303132333435We distribute some number of candies, to a row of n = num_people p">
@@ -413,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2019-06-30 04:20:25 / 修改时间：05:56:22" itemprop="dateCreated datePublished" datetime="2019-06-30T04:20:25-04:00">2019-06-30</time>
+              <time title="创建时间：2019-06-30 04:20:25 / 修改时间：05:59:33" itemprop="dateCreated datePublished" datetime="2019-06-30T04:20:25-04:00">2019-06-30</time>
             
 
             
@@ -512,7 +512,7 @@ OR操作是有True出True，其他情况出False。（如果记不清楚的可�
 简单的说一下思路，维护一个dp数组，dp中的每个位置代表到这个位置时最大的高度，通过扫描books，我们需要判断到底是把这本书继续排放在这一
 行，还是说把这本书，连带前面几本书，在宽度限制的范围内一起放到下一行，我们需要得到这一个过程中的找到最小值，其实这就是dp中的转移方程。
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minHeightShelves(self, books: List[List[int]], shelf_width: int) -&gt; int:</span><br><span class="line">        dp = [0]</span><br><span class="line">        for i, b in enumerate(books):</span><br><span class="line">            j = i</span><br><span class="line">            w = shelf_width</span><br><span class="line">            while j &gt;= 0 and w - books[j][0] &gt;= 0: #这个过程就是找出可以移动多少本书到下一行中。</span><br><span class="line">                w -= books[j][0]</span><br><span class="line">                j -= 1</span><br><span class="line">            temp = float(&apos;inf&apos;)</span><br><span class="line">            for k in range(j + 1, i + 1): #这个双循环就是找出这个过程中的最小值，到底连带几本书到下一行的情况是最佳的。</span><br><span class="line">                h = 0</span><br><span class="line">                for x in range(k, i + 1):</span><br><span class="line">                    h = max(h, books[x][1])</span><br><span class="line">                temp = min(temp, dp[k] + h)</span><br><span class="line">            dp.append(temp)</span><br><span class="line">        return dp[-1]</span><br></pre></td></tr></table></figure>
-<pre><code>这周周赛总结就到这里，感觉在DP方面急需加强，不够DP也是一个比较难学的部分，里面涉及到模型非常多，急需加油！。
+<pre><code>这周周赛总结就到这里，感觉在DP方面急需加强，不够DP也是一个比较难学的部分，里面涉及到模型非常多，继续加油！
 </code></pre>
       
     </div>
