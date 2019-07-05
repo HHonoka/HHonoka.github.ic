@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Honoka">
 <meta property="og:description" content="今天来做一下两道DP的题目，这两道题目都是用记忆化递归来解决，所以就放在一起了。强化DP思想！ LeetCode 329 Longest Increasing Path in a Matrix原题链接 1234567891011121314151617181920212223242526Given an integer matrix, find the length of the longest">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-05T06:06:15.717Z">
+<meta property="og:updated_time" content="2019-07-05T06:06:39.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 329,741">
 <meta name="twitter:description" content="今天来做一下两道DP的题目，这两道题目都是用记忆化递归来解决，所以就放在一起了。强化DP思想！ LeetCode 329 Longest Increasing Path in a Matrix原题链接 1234567891011121314151617181920212223242526Given an integer matrix, find the length of the longest">
@@ -413,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2019-07-05 01:17:51 / 修改时间：02:06:15" itemprop="dateCreated datePublished" datetime="2019-07-05T01:17:51-04:00">2019-07-05</time>
+              <time title="创建时间：2019-07-05 01:17:51 / 修改时间：02:06:39" itemprop="dateCreated datePublished" datetime="2019-07-05T01:17:51-04:00">2019-07-05</time>
             
 
             
@@ -500,8 +500,7 @@ Brute Force的方法没什么区别了，所以这里需要使用记忆化（mem
 一些，实际上没有任何区别，我们用一个状态同时存储两个点就是了。每一个状态都是跟之前的状态有关系，所以一样使用记忆化存储状态，然后碰见
 处理过的状态直接调用就可以。直接看代码。
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def cherryPickup(self, grid: List[List[int]]) -&gt; int:</span><br><span class="line">        dic = collections.defaultdict(int)  #状态存储</span><br><span class="line">        if grid[-1][-1] == -1: #如果走不到终点，直接返回-1</span><br><span class="line">            return -1</span><br><span class="line">        def dp(i1, j1, i2, j2):</span><br><span class="line">            if (i1, j1, i2, j2) in dic: #如果处理过这个状态，直接从字典中调取即可</span><br><span class="line">                return dic[(i1, j1, i2, j2)]</span><br><span class="line">            if i1 == len(grid) or i2 == len(grid) or j1 == len(grid) or j2 == len(grid):</span><br><span class="line">                return -1   #如果有一个点不在矩阵中，说明这个状态不合法</span><br><span class="line">            if i1 == len(grid) - 1 and i2 == len(grid) -1 and j1 == len(grid) - 1 and j2 == len(grid) - 1:</span><br><span class="line">                return grid[-1][-1] # 递归的最深位置，我们需要获得这个位置的值</span><br><span class="line">            if grid[i1][j1] == -1 or grid[i2][j2] == -1: #碰到障碍，说明这条路不通，也返回-1</span><br><span class="line">                return -1</span><br><span class="line">            </span><br><span class="line">            dd = dp(i1 + 1, j1, i2 + 1, j2)</span><br><span class="line">            rr = dp(i1, j1 + 1, i2, j2 + 1)</span><br><span class="line">            dr = dp(i1 + 1, j1, i2, j2 + 1)</span><br><span class="line">            rd = dp(i1, j1 + 1, i2 + 1, j2)</span><br><span class="line">            #上面的4个值，带表2条路径的前进模式</span><br><span class="line">            maxoutput = max(dd, rr, dr, rd) # 需要从不同的前进模式中找到最大收益</span><br><span class="line">            if maxoutput == -1:</span><br><span class="line">                output = -1</span><br><span class="line">            else: #如果两条路径路过同一个点，我们只能摘1次樱桃！******</span><br><span class="line">                if i1 == i2 and j1 == j2:</span><br><span class="line">                    output = maxoutput + grid[i1][j1]</span><br><span class="line">                else:</span><br><span class="line">                    output = maxoutput + grid[i1][j1] + grid[i2][j2]</span><br><span class="line">            dic[(i1, j1, i2, j2)] = output #存储状态</span><br><span class="line">            return output</span><br><span class="line">        return dp(0, 0, 0, 0) if dp(0, 0, 0, 0) &gt; 0 else 0</span><br></pre></td></tr></table></figure>
-<pre><code>时间复杂度是 O（n ** 4)
-</code></pre>
+
       
     </div>
 
