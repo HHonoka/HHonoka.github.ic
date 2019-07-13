@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Python 语言特性该环节涉及到一些比较细小琐碎的东西，看上去不是很起眼，但是被问到还是很容易出问题。 Python 函数参数传递1234567891011121314example 1:a = 1def fun(a):    a = 2fun(a)print(a)example 2:a = []def fun(a):    a.append(1)print(a) 首先看第一个例子，我们首先我们">
-<meta name="keywords" content="Python">
+  <meta name="description" content="这篇主要想记录一下BIT系列的问题（Binary Indexed Tree),这个是一个比较巧妙的数据结构，虽然不是很常见，但是针对一些特殊问题，有着非 常好的效果，如果单纯的凭借文字叙述可能不太好描述这个数据结构，推荐下列一个视频。 视频链接 如果想更清楚的了解整个BIT的运算过程，可以去尝试下面这个网站，可以自己亲手操作。 网页链接 LeetCode 315 Count of Smaller">
+<meta name="keywords" content="Binary Indexed Tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习">
-<meta property="og:url" content="https://HHonoka.github.io/2019/07/05/python学习/index.html">
+<meta property="og:title" content="LeetCode 315, 493 Binary Indexed Tree">
+<meta property="og:url" content="https://HHonoka.github.io/2019/07/12/bit/index.html">
 <meta property="og:site_name" content="Honoka">
-<meta property="og:description" content="Python 语言特性该环节涉及到一些比较细小琐碎的东西，看上去不是很起眼，但是被问到还是很容易出问题。 Python 函数参数传递1234567891011121314example 1:a = 1def fun(a):    a = 2fun(a)print(a)example 2:a = []def fun(a):    a.append(1)print(a) 首先看第一个例子，我们首先我们">
+<meta property="og:description" content="这篇主要想记录一下BIT系列的问题（Binary Indexed Tree),这个是一个比较巧妙的数据结构，虽然不是很常见，但是针对一些特殊问题，有着非 常好的效果，如果单纯的凭借文字叙述可能不太好描述这个数据结构，推荐下列一个视频。 视频链接 如果想更清楚的了解整个BIT的运算过程，可以去尝试下面这个网站，可以自己亲手操作。 网页链接 LeetCode 315 Count of Smaller">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-05T20:44:12.193Z">
+<meta property="og:updated_time" content="2019-07-13T03:21:58.675Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python学习">
-<meta name="twitter:description" content="Python 语言特性该环节涉及到一些比较细小琐碎的东西，看上去不是很起眼，但是被问到还是很容易出问题。 Python 函数参数传递1234567891011121314example 1:a = 1def fun(a):    a = 2fun(a)print(a)example 2:a = []def fun(a):    a.append(1)print(a) 首先看第一个例子，我们首先我们">
+<meta name="twitter:title" content="LeetCode 315, 493 Binary Indexed Tree">
+<meta name="twitter:description" content="这篇主要想记录一下BIT系列的问题（Binary Indexed Tree),这个是一个比较巧妙的数据结构，虽然不是很常见，但是针对一些特殊问题，有着非 常好的效果，如果单纯的凭借文字叙述可能不太好描述这个数据结构，推荐下列一个视频。 视频链接 如果想更清楚的了解整个BIT的运算过程，可以去尝试下面这个网站，可以自己亲手操作。 网页链接 LeetCode 315 Count of Smaller">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/2019/07/05/python学习/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/07/12/bit/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>python学习 | Honoka</title>
+  <title>LeetCode 315, 493 Binary Indexed Tree | Honoka</title>
   
 
 
@@ -370,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/05/python学习/">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/12/bit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Honoka">
@@ -387,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python学习
+          <h1 class="post-title" itemprop="name headline">LeetCode 315, 493 Binary Indexed Tree
 
               
             
@@ -413,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2019-07-05 16:17:37 / 修改时间：16:44:12" itemprop="dateCreated datePublished" datetime="2019-07-05T16:17:37-04:00">2019-07-05</time>
+              <time title="创建时间：2019-07-12 22:50:18 / 修改时间：23:21:58" itemprop="dateCreated datePublished" datetime="2019-07-12T22:50:18-04:00">2019-07-12</time>
             
 
             
@@ -435,7 +435,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/" itemprop="url" rel="index"><span itemprop="name">学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/刷题/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a></span>
 
                 
                 
@@ -477,15 +477,31 @@
       
 
       
-        <h1 id="Python-语言特性"><a href="#Python-语言特性" class="headerlink" title="Python 语言特性"></a>Python 语言特性</h1><pre><code>该环节涉及到一些比较细小琐碎的东西，看上去不是很起眼，但是被问到还是很容易出问题。
-</code></pre><h2 id="Python-函数参数传递"><a href="#Python-函数参数传递" class="headerlink" title="Python 函数参数传递"></a>Python 函数参数传递</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">example 1:</span><br><span class="line"></span><br><span class="line">a = 1</span><br><span class="line">def fun(a):</span><br><span class="line">    a = 2</span><br><span class="line">fun(a)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">example 2:</span><br><span class="line"></span><br><span class="line">a = []</span><br><span class="line">def fun(a):</span><br><span class="line">    a.append(1)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-<pre><code>首先看第一个例子，我们首先我们给a赋值1，然后通过fun函数来改变a的值，那么运行这个函数之后，a是应该等于1还是等于2？
-第二个例子中，a是一个空的list，通过运行函数，往a中添加1，那么a最后应该变成什么样子？
-在Python中通过传递函数来更改对象a（这个a不是变量，如果是变量那么是可以随意改变的），对象有两种类型，一种是可变对象（mutable）一种
-是不可变的对象（immuable）。在Python中不可变对象有：strings，tuple，numbers，可变对象有：list，dict，set。所以第一个例子中a不
-会发生任何变化，例子2中的啊变成[1]。
-</code></pre><h2 id="Python-methods"><a href="#Python-methods" class="headerlink" title="Python methods"></a>Python methods</h2><pre><code>Python中有3个方法，静态方法（staticmethon），类方法（classmethod）和实例方法。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def fun(x):</span><br><span class="line">    print(&quot;Hello World&quot; * x)</span><br><span class="line">    </span><br><span class="line">class A:</span><br><span class="line">    def fun(self, x):</span><br><span class="line">        print(&quot;Hello World&quot; * x)</span><br><span class="line">        </span><br><span class="line">    def class_fum(cls, x):</span><br><span class="line">        print(&quot;Hello World&quot; * x)</span><br></pre></td></tr></table></figure>
+        <pre><code>这篇主要想记录一下BIT系列的问题（Binary Indexed Tree),这个是一个比较巧妙的数据结构，虽然不是很常见，但是针对一些特殊问题，有着非
+常好的效果，如果单纯的凭借文字叙述可能不太好描述这个数据结构，推荐下列一个视频。
+</code></pre><p><a href="https://www.youtube.com/watch?v=WbafSgetDDk&amp;t=680s" target="_blank" rel="noopener">视频链接</a></p>
+<pre><code>如果想更清楚的了解整个BIT的运算过程，可以去尝试下面这个网站，可以自己亲手操作。
+</code></pre><p><a href="https://visualgo.net/bn/fenwicktree?slide=1" target="_blank" rel="noopener">网页链接</a></p>
+<h1 id="LeetCode-315-Count-of-Smaller-Numbers-After-Self"><a href="#LeetCode-315-Count-of-Smaller-Numbers-After-Self" class="headerlink" title="LeetCode 315 Count of Smaller Numbers After Self"></a>LeetCode 315 Count of Smaller Numbers After Self</h1><p><a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">You are given an integer array nums and you have to return a new counts array. The counts array has the property where </span><br><span class="line">counts[i] is the number of smaller elements to the right of nums[i].</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line"></span><br><span class="line">Input: [5,2,6,1]</span><br><span class="line">Output: [2,1,1,0] </span><br><span class="line">Explanation:</span><br><span class="line">To the right of 5 there are 2 smaller elements (2 and 1).</span><br><span class="line">To the right of 2 there is only 1 smaller element (1).</span><br><span class="line">To the right of 6 there is 1 smaller element (1).</span><br><span class="line">To the right of 1 there is 0 smaller element.</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：给出一个数组，里面的元素全是数字，要求返回一个数组。需要求出每一个元素右边有多少个元素比当前的元素小。
+
+Brute Force的方法可能比较直接，分别针对每一个元素扫描其右边的所有元素，得出结果。但是这样的做法是非常不效率的，因为每一次扫描的过程
+中，都包含着非常多重复的过程，时间复杂度大约是N的阶乘，显然如果数据规模非常大，这样的做法是不可取的。如果用BIT来解决这个问题，时间
+复杂度为nlogn。简单说一下过程，首先将数组排序，用一个rank字典来存储数组中每一个元素，每个元素对应的是这个元素在数组中的大小位置，方
+便后面BIT的操作。然后逆序扫描整个数组，用扫描到当前元素的rank来查找BIT，求出当前BIT中有多少比这个元素的rank大的元素。然后把当前扫
+描的元素更新到BIT中。具体BIT的运作原理，建议认真去看一下上述的链接，我认为是讲解BIT最好的视频！
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def countSmaller(self, nums: List[int]) -&gt; List[int]:</span><br><span class="line">        rank = &#123;&#125;</span><br><span class="line">        for i, num in enumerate(sorted(nums)):</span><br><span class="line">            rank[num] = i + 1</span><br><span class="line">        bit = [0] * (len(nums) + 1)</span><br><span class="line">        def update(i):</span><br><span class="line">            while i &lt; len(bit):</span><br><span class="line">                bit[i] += 1</span><br><span class="line">                i += (i &amp; -i)</span><br><span class="line">        def query(i):</span><br><span class="line">            res = 0</span><br><span class="line">            while i:</span><br><span class="line">                res += bit[i]</span><br><span class="line">                i -= (i &amp; -i)</span><br><span class="line">            return res</span><br><span class="line">        res = []</span><br><span class="line">        for num in reversed(nums):</span><br><span class="line">            res.append(query(rank[num] - 1))</span><br><span class="line">            update(rank[num])</span><br><span class="line">        return res[::-1]</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-493-Reverse-Pairs"><a href="#LeetCode-493-Reverse-Pairs" class="headerlink" title="LeetCode 493 Reverse Pairs"></a>LeetCode 493 Reverse Pairs</h1><p><a href="https://leetcode.com/problems/reverse-pairs/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Given an array nums, we call (i, j) an important reverse pair if i &lt; j and nums[i] &gt; 2*nums[j].</span><br><span class="line"></span><br><span class="line">You need to return the number of important reverse pairs in the given array.</span><br><span class="line"></span><br><span class="line">Example1:</span><br><span class="line"></span><br><span class="line">Input: [1,3,2,3,1]</span><br><span class="line">Output: 2</span><br><span class="line">Example2:</span><br><span class="line"></span><br><span class="line">Input: [2,4,3,5,1]</span><br><span class="line">Output: 3</span><br><span class="line">Note:</span><br><span class="line">The length of the given array will not exceed 50,000.</span><br><span class="line">All the numbers in the input array are in the range of 32-bit integer.</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：虽然这个题目叫reverse pairs，但是本质上和上面的题类似，唯一的变化就是在小的基础上，左边的数字要比右边的数字的2倍要大，
+而且如果是负数，操作起来会有点复杂。但是大致上的操作过程和上一题是一样的。
+
+首先需要对数组进行预处理，将原数组中所有元素的值乘以2加入到数组中，然后针对现在所有的元素进行分级，和上题一样存入rank中，方便后续
+BIT的操作，针对bit查询的时候，我们根据当前扫描的元素的rank - 1的位置来查询，更新的时候我们在这个数字乘以2的rank位置进行更新，这样
+做的目的主要是为了处理负数。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def reversePairs(self, nums: List[int]) -&gt; int:</span><br><span class="line">        if not nums:</span><br><span class="line">            return 0</span><br><span class="line">        def update(i):</span><br><span class="line">            while i &lt; len(bit):</span><br><span class="line">                bit[i] += 1</span><br><span class="line">                i += (i &amp; -i)</span><br><span class="line">        def query(i):</span><br><span class="line">            res = 0</span><br><span class="line">            while i:</span><br><span class="line">                res += bit[i]</span><br><span class="line">                i -= (i &amp; -i)</span><br><span class="line">            return res</span><br><span class="line">        rank = &#123;&#125;</span><br><span class="line">        newnum = nums + [x * 2 for x in nums]</span><br><span class="line">        for i, n in enumerate(sorted(list(set(newnum)))):</span><br><span class="line">            rank[n] = i + 1</span><br><span class="line">        bit = [0] * (len(set(newnum)) + 1)</span><br><span class="line">        res = 0</span><br><span class="line">        for n in nums[::-1]:</span><br><span class="line">            res += query(rank[n] - 1)</span><br><span class="line">            update(rank[n * 2])</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -508,7 +524,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="far fa-feather"></i> Python</a>
+            <a href="/tags/Binary-Indexed-Tree/" rel="tag"><i class="far fa-feather"></i> Binary Indexed Tree</a>
           
         </div>
       
@@ -521,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/05/cherrypick/" rel="next" title="LeetCode 329,741">
-                <i class="fa fa-chevron-left"></i> LeetCode 329,741
+              <a href="/2019/07/09/407-417/" rel="next" title="LeetCode 407,417 BFS(广度优先搜索)类问题">
+                <i class="fa fa-chevron-left"></i> LeetCode 407,417 BFS(广度优先搜索)类问题
               </a>
             
           </div>
@@ -531,8 +547,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/07/753crackingthesafe/" rel="prev" title="LeetCode 753 Cracking the Safe">
-                LeetCode 753 Cracking the Safe <i class="fa fa-chevron-right"></i>
+              <a href="/2019/07/13/biweekly4/" rel="prev" title="LeetCode Biweekly Contest 4 总结">
+                LeetCode Biweekly Contest 4 总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -716,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-语言特性"><span class="nav-number">1.</span> <span class="nav-text">Python 语言特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-函数参数传递"><span class="nav-number">1.1.</span> <span class="nav-text">Python 函数参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-methods"><span class="nav-number">1.2.</span> <span class="nav-text">Python methods</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-315-Count-of-Smaller-Numbers-After-Self"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 315 Count of Smaller Numbers After Self</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-493-Reverse-Pairs"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 493 Reverse Pairs</span></a></li></ol></div>
             
 
           </div>

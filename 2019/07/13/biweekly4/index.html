@@ -96,18 +96,20 @@
 
 
 
-  <meta name="description" content="Python 语言特性该环节涉及到一些比较细小琐碎的东西，看上去不是很起眼，但是被问到还是很容易出问题。 Python 函数参数传递1234567891011121314example 1:a = 1def fun(a):    a = 2fun(a)print(a)example 2:a = []def fun(a):    a.append(1)print(a) 首先看第一个例子，我们首先我们">
-<meta name="keywords" content="Python">
+  <meta name="description" content="LeetCode 1118 Number of Days in a Month123456789101112131415161718192021222324Given a year Y and a month M, return how many days there are in that month. Example 1:Input: Y = 1992, M = 7Output: 31Exam">
+<meta name="keywords" content="LeetCode Contest">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python学习">
-<meta property="og:url" content="https://HHonoka.github.io/2019/07/05/python学习/index.html">
+<meta property="og:title" content="LeetCode Biweekly Contest 4 总结">
+<meta property="og:url" content="https://HHonoka.github.io/2019/07/13/biweekly4/index.html">
 <meta property="og:site_name" content="Honoka">
-<meta property="og:description" content="Python 语言特性该环节涉及到一些比较细小琐碎的东西，看上去不是很起眼，但是被问到还是很容易出问题。 Python 函数参数传递1234567891011121314example 1:a = 1def fun(a):    a = 2fun(a)print(a)example 2:a = []def fun(a):    a.append(1)print(a) 首先看第一个例子，我们首先我们">
+<meta property="og:description" content="LeetCode 1118 Number of Days in a Month123456789101112131415161718192021222324Given a year Y and a month M, return how many days there are in that month. Example 1:Input: Y = 1992, M = 7Output: 31Exam">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-05T20:44:12.193Z">
+<meta property="og:image" content="https://hhonoka.github.io/images/1120.png">
+<meta property="og:updated_time" content="2019-07-13T15:43:25.418Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python学习">
-<meta name="twitter:description" content="Python 语言特性该环节涉及到一些比较细小琐碎的东西，看上去不是很起眼，但是被问到还是很容易出问题。 Python 函数参数传递1234567891011121314example 1:a = 1def fun(a):    a = 2fun(a)print(a)example 2:a = []def fun(a):    a.append(1)print(a) 首先看第一个例子，我们首先我们">
+<meta name="twitter:title" content="LeetCode Biweekly Contest 4 总结">
+<meta name="twitter:description" content="LeetCode 1118 Number of Days in a Month123456789101112131415161718192021222324Given a year Y and a month M, return how many days there are in that month. Example 1:Input: Y = 1992, M = 7Output: 31Exam">
+<meta name="twitter:image" content="https://hhonoka.github.io/images/1120.png">
 
 
 
@@ -115,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/2019/07/05/python学习/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/07/13/biweekly4/">
 
 
 
@@ -125,7 +127,7 @@
   };
 </script>
 
-  <title>python学习 | Honoka</title>
+  <title>LeetCode Biweekly Contest 4 总结 | Honoka</title>
   
 
 
@@ -370,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/05/python学习/">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/13/biweekly4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Honoka">
@@ -387,7 +389,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python学习
+          <h1 class="post-title" itemprop="name headline">LeetCode Biweekly Contest 4 总结
 
               
             
@@ -413,7 +415,7 @@
                 
               
 
-              <time title="创建时间：2019-07-05 16:17:37 / 修改时间：16:44:12" itemprop="dateCreated datePublished" datetime="2019-07-05T16:17:37-04:00">2019-07-05</time>
+              <time title="创建时间：2019-07-13 11:20:24 / 修改时间：11:43:25" itemprop="dateCreated datePublished" datetime="2019-07-13T11:20:24-04:00">2019-07-13</time>
             
 
             
@@ -435,7 +437,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/学习/" itemprop="url" rel="index"><span itemprop="name">学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/刷题/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a></span>
 
                 
                 
@@ -477,15 +479,22 @@
       
 
       
-        <h1 id="Python-语言特性"><a href="#Python-语言特性" class="headerlink" title="Python 语言特性"></a>Python 语言特性</h1><pre><code>该环节涉及到一些比较细小琐碎的东西，看上去不是很起眼，但是被问到还是很容易出问题。
-</code></pre><h2 id="Python-函数参数传递"><a href="#Python-函数参数传递" class="headerlink" title="Python 函数参数传递"></a>Python 函数参数传递</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">example 1:</span><br><span class="line"></span><br><span class="line">a = 1</span><br><span class="line">def fun(a):</span><br><span class="line">    a = 2</span><br><span class="line">fun(a)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">example 2:</span><br><span class="line"></span><br><span class="line">a = []</span><br><span class="line">def fun(a):</span><br><span class="line">    a.append(1)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
-<pre><code>首先看第一个例子，我们首先我们给a赋值1，然后通过fun函数来改变a的值，那么运行这个函数之后，a是应该等于1还是等于2？
-第二个例子中，a是一个空的list，通过运行函数，往a中添加1，那么a最后应该变成什么样子？
-在Python中通过传递函数来更改对象a（这个a不是变量，如果是变量那么是可以随意改变的），对象有两种类型，一种是可变对象（mutable）一种
-是不可变的对象（immuable）。在Python中不可变对象有：strings，tuple，numbers，可变对象有：list，dict，set。所以第一个例子中a不
-会发生任何变化，例子2中的啊变成[1]。
-</code></pre><h2 id="Python-methods"><a href="#Python-methods" class="headerlink" title="Python methods"></a>Python methods</h2><pre><code>Python中有3个方法，静态方法（staticmethon），类方法（classmethod）和实例方法。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def fun(x):</span><br><span class="line">    print(&quot;Hello World&quot; * x)</span><br><span class="line">    </span><br><span class="line">class A:</span><br><span class="line">    def fun(self, x):</span><br><span class="line">        print(&quot;Hello World&quot; * x)</span><br><span class="line">        </span><br><span class="line">    def class_fum(cls, x):</span><br><span class="line">        print(&quot;Hello World&quot; * x)</span><br></pre></td></tr></table></figure>
+        <h1 id="LeetCode-1118-Number-of-Days-in-a-Month"><a href="#LeetCode-1118-Number-of-Days-in-a-Month" class="headerlink" title="LeetCode 1118 Number of Days in a Month"></a>LeetCode 1118 Number of Days in a Month</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Given a year Y and a month M, return how many days there are in that month.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: Y = 1992, M = 7</span><br><span class="line">Output: 31</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: Y = 2000, M = 2</span><br><span class="line">Output: 29</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line"></span><br><span class="line">Input: Y = 1900, M = 2</span><br><span class="line">Output: 28</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">1583 &lt;= Y &lt;= 2100</span><br><span class="line">1 &lt;= M &lt;= 12</span><br></pre></td></tr></table></figure>
+<pre><code>日常签到题，分别判断是不是闰年，然后判断月份，返回当前月中有多少天。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def numberOfDays(self, Y: int, M: int) -&gt; int:</span><br><span class="line">        if M in [1, 3, 5, 7, 8, 10, 12]:</span><br><span class="line">            return 31</span><br><span class="line">        elif M in [4, 6, 9, 11]:</span><br><span class="line">            return 30</span><br><span class="line">        elif M == 2:</span><br><span class="line">            if Y % 400 == 0:</span><br><span class="line">                return 29</span><br><span class="line">            elif Y % 4 == 0 and Y % 100 != 0:</span><br><span class="line">                return 29</span><br><span class="line">            else:</span><br><span class="line">                return 28</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1119-Remove-Vowels-from-a-String"><a href="#LeetCode-1119-Remove-Vowels-from-a-String" class="headerlink" title="LeetCode 1119 Remove Vowels from a String"></a>LeetCode 1119 Remove Vowels from a String</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Given a string S, remove the vowels &apos;a&apos;, &apos;e&apos;, &apos;i&apos;, &apos;o&apos;, and &apos;u&apos; from it, and return the new string.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: &quot;leetcodeisacommunityforcoders&quot;</span><br><span class="line">Output: &quot;ltcdscmmntyfrcdrs&quot;</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: &quot;aeiou&quot;</span><br><span class="line">Output: &quot;&quot;</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">S consists of lowercase English letters only.</span><br><span class="line">1 &lt;= S.length &lt;= 1000</span><br></pre></td></tr></table></figure>
+<pre><code>也是个签到题，扫描字符串，如果是元音字符就忽略，不是的保存下来，返回新的字符串。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def removeVowels(self, S: str) -&gt; str:</span><br><span class="line">        res = &quot;&quot;</span><br><span class="line">        for char in S:</span><br><span class="line">            if char not in [&apos;a&apos;, &apos;e&apos;, &apos;i&apos;, &apos;o&apos;, &apos;u&apos;]:</span><br><span class="line">                res += char</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1120-Maximum-Average-Subtree"><a href="#LeetCode-1120-Maximum-Average-Subtree" class="headerlink" title="LeetCode 1120 Maximum Average Subtree"></a>LeetCode 1120 Maximum Average Subtree</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Given the root of a binary tree, find the maximum average value of any subtree of that tree.</span><br><span class="line"></span><br><span class="line">(A subtree of a tree is any node of that tree plus all its descendants. The average value of a tree is the sum of its values, divided by the number of nodes.)</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input: [5,6,1]</span><br><span class="line">Output: 6.00000</span><br><span class="line">Explanation: </span><br><span class="line">For the node with value = 5 we have and average of (5 + 6 + 1) / 3 = 4.</span><br><span class="line">For the node with value = 6 we have and average of 6 / 1 = 6.</span><br><span class="line">For the node with value = 1 we have and average of 1 / 1 = 1.</span><br><span class="line">So the answer is 6 which is the maximum.</span><br></pre></td></tr></table></figure>
+<p><img src="/images/1120.png" alt="aaa"></p>
+<pre><code>题目大意：求一个二叉树中，最大平均值的子树。递归扫描二叉树，每到一个节点判断一次数值大小即可。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># Definition for a binary tree node.</span><br><span class="line"># class TreeNode:</span><br><span class="line">#     def __init__(self, x):</span><br><span class="line">#         self.val = x</span><br><span class="line">#         self.left = None</span><br><span class="line">#         self.right = None</span><br><span class="line"></span><br><span class="line">class Solution:</span><br><span class="line">    def maximumAverageSubtree(self, root: TreeNode) -&gt; float:</span><br><span class="line">        self.res = 0</span><br><span class="line">        def helper(node, count):</span><br><span class="line">            if not node:</span><br><span class="line">                return 0, 0</span><br><span class="line">            else:</span><br><span class="line">                l = helper(node.left, count)</span><br><span class="line">                r = helper(node.right, count)</span><br><span class="line">                self.res = max(self.res, (l[0] + r[0] + node.val) / (1 + l[1] + r[1]))</span><br><span class="line">                return l[0] + r[0] + node.val, 1 + l[1] + r[1]</span><br><span class="line">        helper(root, 0)</span><br><span class="line">        return float(&apos;%.5f&apos;%self.res)</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1121-Divide-Array-Into-Increasing-Sequences"><a href="#LeetCode-1121-Divide-Array-Into-Increasing-Sequences" class="headerlink" title="LeetCode 1121 Divide Array Into Increasing Sequences"></a>LeetCode 1121 Divide Array Into Increasing Sequences</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Given a non-decreasing array of positive integers nums and an integer K, find out if this array can be divided into one or more disjoint increasing subsequences of length at least K.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: nums = [1,2,2,3,3,4,4], K = 3</span><br><span class="line">Output: true</span><br><span class="line">Explanation: </span><br><span class="line">The array can be divided into the two subsequences [1,2,3,4] and [2,3,4] with lengths at least 3 each.</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: nums = [5,6,6,7,8], K = 3</span><br><span class="line">Output: false</span><br><span class="line">Explanation: </span><br><span class="line">There is no way to divide the array using the conditions required.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">1 &lt;= nums.length &lt;= 10^5</span><br><span class="line">1 &lt;= K &lt;= nums.length</span><br><span class="line">1 &lt;= nums[i] &lt;= 10^5</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：一个有序递增的数组，判断这个数组是否可以分组，要求每一组至少有K个元素，而且每一组都要求有序递增的。我一看是个hard题目，还
+想着用DP来做- -但是感觉有点复杂。考虑了一会儿发现其实这个问题，我们只需要得出最多可以分多少个组，然后原数组中的元素出现最多的次数是否
+小于等于分组的数目即可。有点脑筋急转弯的意思。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def canDivideIntoSubsequences(self, nums: List[int], K: int) -&gt; bool:</span><br><span class="line">        return max(collections.Counter(nums).values()) &lt;= len(nums) // K</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -508,7 +517,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="far fa-feather"></i> Python</a>
+            <a href="/tags/LeetCode-Contest/" rel="tag"><i class="far fa-feather"></i> LeetCode Contest</a>
           
         </div>
       
@@ -521,8 +530,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/05/cherrypick/" rel="next" title="LeetCode 329,741">
-                <i class="fa fa-chevron-left"></i> LeetCode 329,741
+              <a href="/2019/07/12/bit/" rel="next" title="LeetCode 315, 493 Binary Indexed Tree">
+                <i class="fa fa-chevron-left"></i> LeetCode 315, 493 Binary Indexed Tree
               </a>
             
           </div>
@@ -530,10 +539,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/07/753crackingthesafe/" rel="prev" title="LeetCode 753 Cracking the Safe">
-                LeetCode 753 Cracking the Safe <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -716,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-语言特性"><span class="nav-number">1.</span> <span class="nav-text">Python 语言特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-函数参数传递"><span class="nav-number">1.1.</span> <span class="nav-text">Python 函数参数传递</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-methods"><span class="nav-number">1.2.</span> <span class="nav-text">Python methods</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1118-Number-of-Days-in-a-Month"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1118 Number of Days in a Month</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1119-Remove-Vowels-from-a-String"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 1119 Remove Vowels from a String</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1120-Maximum-Average-Subtree"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 1120 Maximum Average Subtree</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1121-Divide-Array-Into-Increasing-Sequences"><span class="nav-number">4.</span> <span class="nav-text">LeetCode 1121 Divide Array Into Increasing Sequences</span></a></li></ol></div>
             
 
           </div>
