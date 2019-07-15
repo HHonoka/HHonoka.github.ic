@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;ap">
-<meta name="keywords" content="高频,BackTrack,Trie">
+  <meta name="description" content="LeetCode 140 Word Break II原题链接 12345678910111213141516171819202122232425262728293031Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to constr">
+<meta name="keywords" content="高频,String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 79, 212 Word Search">
-<meta property="og:url" content="https://HHonoka.github.io/2019/06/24/WordSearch/index.html">
+<meta property="og:title" content="LeetCode 140, 472 字符串分割问题">
+<meta property="og:url" content="https://HHonoka.github.io/2019/07/14/wordbreak/index.html">
 <meta property="og:site_name" content="Honoka">
-<meta property="og:description" content="LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;ap">
+<meta property="og:description" content="LeetCode 140 Word Break II原题链接 12345678910111213141516171819202122232425262728293031Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to constr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-25T07:10:45.541Z">
+<meta property="og:updated_time" content="2019-07-15T02:56:22.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 79, 212 Word Search">
-<meta name="twitter:description" content="LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;ap">
+<meta name="twitter:title" content="LeetCode 140, 472 字符串分割问题">
+<meta name="twitter:description" content="LeetCode 140 Word Break II原题链接 12345678910111213141516171819202122232425262728293031Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to constr">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/2019/06/24/WordSearch/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/07/14/wordbreak/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>LeetCode 79, 212 Word Search | Honoka</title>
+  <title>LeetCode 140, 472 字符串分割问题 | Honoka</title>
   
 
 
@@ -370,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/06/24/WordSearch/">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/14/wordbreak/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Honoka">
@@ -387,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 79, 212 Word Search
+          <h1 class="post-title" itemprop="name headline">LeetCode 140, 472 字符串分割问题
 
               
             
@@ -413,24 +413,12 @@
                 
               
 
-              <time title="创建时间：2019-06-24 04:33:41" itemprop="dateCreated datePublished" datetime="2019-06-24T04:33:41-04:00">2019-06-24</time>
+              <time title="创建时间：2019-07-14 21:20:47 / 修改时间：22:56:22" itemprop="dateCreated datePublished" datetime="2019-07-14T21:20:47-04:00">2019-07-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-25 03:10:45" itemprop="dateModified" datetime="2019-06-25T03:10:45-04:00">2019-06-25</time>
               
             
           </span>
@@ -489,23 +477,23 @@
       
 
       
-        <h1 id="LeetCode-79-Word-Search"><a href="#LeetCode-79-Word-Search" class="headerlink" title="LeetCode 79 Word Search"></a>LeetCode 79 Word Search</h1><p><a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">原题链接</a></p>
-<pre><code>题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。
-单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。
-</code></pre><p><strong>例子</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">board =</span><br><span class="line">[</span><br><span class="line">  [&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;E&apos;],</span><br><span class="line">  [&apos;S&apos;,&apos;F&apos;,&apos;C&apos;,&apos;S&apos;],</span><br><span class="line">  [&apos;A&apos;,&apos;D&apos;,&apos;E&apos;,&apos;E&apos;]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Given word = &quot;ABCCED&quot;, return true.</span><br><span class="line">Given word = &quot;SEE&quot;, return true.</span><br><span class="line">Given word = &quot;ABCB&quot;, return false.</span><br></pre></td></tr></table></figure></p>
-<pre><code>这道题目，只需要查找一个单词，所以直接暴力求解(bracktrack)就可以。遍历二维网格，找到一个符合要求的开头（单词的首字母），然后以这个
-点为起点，进行回溯。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def exist(self, board: List[List[str]], word: str) -&gt; bool:</span><br><span class="line">        for i in range(len(board)):</span><br><span class="line">            for j in range(len(board[0])):</span><br><span class="line">                if board[i][j] == word[0]:</span><br><span class="line">                    if self.dfs(board, i, j, 0, word):</span><br><span class="line">                        return True</span><br><span class="line">        return False</span><br><span class="line">    </span><br><span class="line">    def dfs(self, board, i, j, index, word):</span><br><span class="line">        if index == len(word):</span><br><span class="line">            return True</span><br><span class="line">        if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] != word[index]:</span><br><span class="line">            return False</span><br><span class="line">        board[i][j] = &apos;#&apos;</span><br><span class="line">        if self.dfs(board, i - 1, j, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i + 1, j, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i, j - 1, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i , j + 1, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        board[i][j] = word[index]</span><br></pre></td></tr></table></figure>
-<p>#LeetCode 212 Word Search II</p>
-<p><a href="https://leetcode.com/problems/word-search-ii/" target="_blank" rel="noopener">原题链接</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: </span><br><span class="line">board = [</span><br><span class="line">  [&apos;o&apos;,&apos;a&apos;,&apos;a&apos;,&apos;n&apos;],</span><br><span class="line">  [&apos;e&apos;,&apos;t&apos;,&apos;a&apos;,&apos;e&apos;],</span><br><span class="line">  [&apos;i&apos;,&apos;h&apos;,&apos;k&apos;,&apos;r&apos;],</span><br><span class="line">  [&apos;i&apos;,&apos;f&apos;,&apos;l&apos;,&apos;v&apos;]</span><br><span class="line">]</span><br><span class="line">words = [&quot;oath&quot;,&quot;pea&quot;,&quot;eat&quot;,&quot;rain&quot;]</span><br><span class="line"></span><br><span class="line">Output: [&quot;eat&quot;,&quot;oath&quot;]</span><br></pre></td></tr></table></figure></p>
-<pre><code>这道题其实是Word Search 的升级版，区别在于，前者只要求查找一个单词，后者需要从一个数组中查找每一个单词。我们不可以再像第一题这样直
-接进行暴力求解。需要先对整个数组进行预处理。需要使用一个特殊的数据结构叫做字典树（Trie）。在Python中，如果想从一个字典中搜索一个元
-素，时间复杂度为O(1),这样可以大大减少我们在搜索中所用的时间。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;o&apos;: &#123;&apos;a&apos;: &#123;&apos;t&apos;: &#123;&apos;h&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;&#125;, &apos;p&apos;: &#123;&apos;e&apos;: &#123;&apos;a&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;, &apos;e&apos;: &#123;&apos;a&apos;: &#123;&apos;t&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;, &apos;r&apos;: &#123;&apos;a&apos;: &#123;&apos;i&apos;: &#123;&apos;n&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>对于整个数组预处理过后，字典树如上图，一定要注意用一个标志（&quot;end&quot;)来表明一个完整单词的结束。否则我们无法确定这是一个完整的单词，还是
-一个单词的一部分。
-backtrack的过程和上一题的过程累似，只不过需要不断更新root（当前字母作为根节点），然后进行搜索，直到结束。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:</span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        self.res = set()</span><br><span class="line">        for word in words:</span><br><span class="line">            node = dic</span><br><span class="line">            for char in word:</span><br><span class="line">                if char not in node:</span><br><span class="line">                    node[char] = &#123;&#125;</span><br><span class="line">                node = node[char]</span><br><span class="line">            node[&apos;end&apos;] = &apos;#&apos;</span><br><span class="line">        for i in range(len(board)):</span><br><span class="line">            for j in range(len(board[0])):</span><br><span class="line">                self.dfs(dic, board, i, j, &quot;&quot;)</span><br><span class="line">        return list(self.res)</span><br><span class="line">        </span><br><span class="line">    def dfs(self, node, board, i, j, path):</span><br><span class="line">        if &apos;end&apos; in node:</span><br><span class="line">            self.res.add(path)</span><br><span class="line">        if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] not in node:</span><br><span class="line">            return</span><br><span class="line">        temp = board[i][j]</span><br><span class="line">        board[i][j] = &apos;#&apos;</span><br><span class="line">        self.dfs(node[temp], board, i - 1, j, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i + 1, j, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i, j - 1, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i, j + 1, path + temp)</span><br><span class="line">        board[i][j] = temp</span><br></pre></td></tr></table></figure>
+        <h1 id="LeetCode-140-Word-Break-II"><a href="#LeetCode-140-Word-Break-II" class="headerlink" title="LeetCode 140 Word Break II"></a>LeetCode 140 Word Break II</h1><p><a href="https://leetcode.com/problems/word-break-ii/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, add spaces in s to construct </span><br><span class="line">a sentence where each word is a valid dictionary word. Return all such possible sentences.</span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">The same word in the dictionary may be reused multiple times in the segmentation.</span><br><span class="line">You may assume the dictionary does not contain duplicate words.</span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">s = &quot;catsanddog&quot;</span><br><span class="line">wordDict = [&quot;cat&quot;, &quot;cats&quot;, &quot;and&quot;, &quot;sand&quot;, &quot;dog&quot;]</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  &quot;cats and dog&quot;,</span><br><span class="line">  &quot;cat sand dog&quot;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">s = &quot;pineapplepenapple&quot;</span><br><span class="line">wordDict = [&quot;apple&quot;, &quot;pen&quot;, &quot;applepen&quot;, &quot;pine&quot;, &quot;pineapple&quot;]</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  &quot;pine apple pen apple&quot;,</span><br><span class="line">  &quot;pineapple pen apple&quot;,</span><br><span class="line">  &quot;pine applepen apple&quot;</span><br><span class="line">]</span><br><span class="line">Explanation: Note that you are allowed to reuse a dictionary word.</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：给定一个字符串，用数组中存在的字符串来分割原有字符串。
+这种问题其实是一个比较典型的DFS（深度优先搜索）问题，通过扫描字符串，然后看扫描的前缀位置的字符串是否存在在wordDict中，然后通过递归
+继续搜索，到最深位置，退栈，找到一个子结果，存入到结果中，然后继续进行其他递归的子问题。
+为了提高效率，防止重复的递归过程，使用记忆化的方法来存储已经搜索过的字符串，如果在接下来的递归过程中出现相同的字符串，可以直接从字典
+中提取出结果。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def wordBreak(self, s: str, wordDict: List[str]) -&gt; List[str]:</span><br><span class="line">        self.dic = &#123;&#125;</span><br><span class="line">        wordDict = set(wordDict)</span><br><span class="line">        return self.dfs(s, wordDict)</span><br><span class="line">    def dfs(self, s, wordDict):</span><br><span class="line">        if not s:</span><br><span class="line">            return [&apos;&apos;]</span><br><span class="line">        res = []</span><br><span class="line">        for word in wordDict:</span><br><span class="line">            if s in self.dic:</span><br><span class="line">                return self.dic[s]</span><br><span class="line">            if s[:len(word)] != word:</span><br><span class="line">                continue</span><br><span class="line">            for sub in self.dfs(s[len(word):], wordDict):</span><br><span class="line">                res.append(word if not sub else word + &quot; &quot; + sub)</span><br><span class="line">        self.dic[s] = res</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<pre><code>刚开始做这道题的时候，没有用memoization，然后发现有个案例一直通不过去，一直在无限递归。中间有一个字符b，然后字典中根本不存在b这个字
+符，导致一直卡在这里,因为在递归过程中，系统在无限处理已经处理过的子问题，所以我们需要将处理过的子问题保存下来。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br><span class="line">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;</span><br><span class="line">[&quot;a&quot;,&quot;aa&quot;,&quot;aaa&quot;,&quot;aaaa&quot;,&quot;aaaaa&quot;,&quot;aaaaaa&quot;,&quot;aaaaaaa&quot;,&quot;aaaaaaaa&quot;,&quot;aaaaaaaaa&quot;,&quot;aaaaaaaaaa&quot;]</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-472-Concatenated-Words"><a href="#LeetCode-472-Concatenated-Words" class="headerlink" title="LeetCode 472 Concatenated Words"></a>LeetCode 472 Concatenated Words</h1><p><a href="https://leetcode.com/problems/concatenated-words/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Given a list of words (without duplicates), please write a program that returns all concatenated words in the given list of words.</span><br><span class="line">A concatenated word is defined as a string that is comprised entirely of at least two shorter words in the given array.</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">Input: [&quot;cat&quot;,&quot;cats&quot;,&quot;catsdogcats&quot;,&quot;dog&quot;,&quot;dogcatsdog&quot;,&quot;hippopotamuses&quot;,&quot;rat&quot;,&quot;ratcatdogcat&quot;]</span><br><span class="line"></span><br><span class="line">Output: [&quot;catsdogcats&quot;,&quot;dogcatsdog&quot;,&quot;ratcatdogcat&quot;]</span><br><span class="line"></span><br><span class="line">Explanation: &quot;catsdogcats&quot; can be concatenated by &quot;cats&quot;, &quot;dog&quot; and &quot;cats&quot;; </span><br><span class="line"> &quot;dogcatsdog&quot; can be concatenated by &quot;dog&quot;, &quot;cats&quot; and &quot;dog&quot;; </span><br><span class="line">&quot;ratcatdogcat&quot; can be concatenated by &quot;rat&quot;, &quot;cat&quot;, &quot;dog&quot; and &quot;cat&quot;.</span><br><span class="line">Note:</span><br><span class="line">The number of elements of the given array will not exceed 10,000</span><br><span class="line">The length sum of elements in the given array will not exceed 600,000.</span><br><span class="line">All the input string will only include lower case letters.</span><br><span class="line">The returned elements order does not matter.</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：找出所有数组中的字符串，要求字符串必须至少分成2份，并且每一份子字符串都在数组中。其实这道题目和上一道题差不多，也是对字符
+串进行分割的问题，我们只需要进行递归搜索，并判断分割的每一部分是否在数组中，如果存在其中一种分割方法满足要求，说明这个字符串满足要求，
+同时用字典保存已经处理过的字符串，防止后面的递归中有重复的操作。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findAllConcatenatedWordsInADict(self, words: List[str]) -&gt; List[str]:</span><br><span class="line">        words = set(words)</span><br><span class="line">        memo = &#123;&#125;</span><br><span class="line">        def dfs(word):</span><br><span class="line">            if word in memo:</span><br><span class="line">                return memo[word]</span><br><span class="line">            memo[word] = False</span><br><span class="line">            for i in range(1, len(word)):</span><br><span class="line">                pre = word[:i]</span><br><span class="line">                suf = word[i:]</span><br><span class="line">                if pre in words and suf in words:</span><br><span class="line">                    memo[word] = True</span><br><span class="line">                    break</span><br><span class="line">                if pre in words and dfs(suf):</span><br><span class="line">                    memo[word] = True</span><br><span class="line">                    break</span><br><span class="line">                if suf in words and dfs(pre):</span><br><span class="line">                    memo[word] = True</span><br><span class="line">                    break</span><br><span class="line">            return memo[word]</span><br><span class="line">        res = []</span><br><span class="line">        for word in words:</span><br><span class="line">            if dfs(word):</span><br><span class="line">                res.append(word)</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -530,9 +518,7 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
           
             <a href="/tags/高频/" rel="tag"><i class="far fa-feather"></i> 高频</a>
           
-            <a href="/tags/BackTrack/" rel="tag"><i class="far fa-feather"></i> BackTrack</a>
-          
-            <a href="/tags/Trie/" rel="tag"><i class="far fa-feather"></i> Trie</a>
+            <a href="/tags/String/" rel="tag"><i class="far fa-feather"></i> String</a>
           
         </div>
       
@@ -545,8 +531,8 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/23/LeetCode/" rel="next" title="关于刷题">
-                <i class="fa fa-chevron-left"></i> 关于刷题
+              <a href="/2019/07/13/biweekly4/" rel="next" title="LeetCode Biweekly Contest 4 总结">
+                <i class="fa fa-chevron-left"></i> LeetCode Biweekly Contest 4 总结
               </a>
             
           </div>
@@ -554,10 +540,6 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/25/215/" rel="prev" title="LeetCode 215 Kth Largest Element in an Array 排序算法总结">
-                LeetCode 215 Kth Largest Element in an Array 排序算法总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -742,7 +724,7 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-79-Word-Search"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 79 Word Search</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-140-Word-Break-II"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 140 Word Break II</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-472-Concatenated-Words"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 472 Concatenated Words</span></a></li></ol></div>
             
 
           </div>
