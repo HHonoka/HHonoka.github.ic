@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;ap">
-<meta name="keywords" content="高频,BackTrack,Trie">
+  <meta name="description" content="状态压缩在处理字符串问题的时候是一个非常好用的方法，因为在程序中处理字符串的过程是相对来说比较麻烦的，如果将字符串用二进制整型数字来 表示，处理起来就会方便很多，接下来两道题就是比较典型的状态压缩问题。 LeetCode 691 Stickers to Spell Word原题链接 12345678910111213141516171819202122We are given N differen">
+<meta name="keywords" content="Dynamic Programming,状态压缩">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 79, 212 Word Search">
-<meta property="og:url" content="https://HHonoka.github.io/2019/06/24/WordSearch/index.html">
+<meta property="og:title" content="LeetCode 691, 1125 状态压缩问题">
+<meta property="og:url" content="https://HHonoka.github.io/2019/07/16/状态压缩/index.html">
 <meta property="og:site_name" content="Honoka">
-<meta property="og:description" content="LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;ap">
+<meta property="og:description" content="状态压缩在处理字符串问题的时候是一个非常好用的方法，因为在程序中处理字符串的过程是相对来说比较麻烦的，如果将字符串用二进制整型数字来 表示，处理起来就会方便很多，接下来两道题就是比较典型的状态压缩问题。 LeetCode 691 Stickers to Spell Word原题链接 12345678910111213141516171819202122We are given N differen">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-25T07:10:45.541Z">
+<meta property="og:updated_time" content="2019-07-17T01:37:12.653Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 79, 212 Word Search">
-<meta name="twitter:description" content="LeetCode 79 Word Search原题链接 题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。 单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。 例子12345678910board =[  [&amp;apos;A&amp;apos;,&amp;apos;B&amp;apos;,&amp;apos;C&amp;apos;,&amp;apos;E&amp;ap">
+<meta name="twitter:title" content="LeetCode 691, 1125 状态压缩问题">
+<meta name="twitter:description" content="状态压缩在处理字符串问题的时候是一个非常好用的方法，因为在程序中处理字符串的过程是相对来说比较麻烦的，如果将字符串用二进制整型数字来 表示，处理起来就会方便很多，接下来两道题就是比较典型的状态压缩问题。 LeetCode 691 Stickers to Spell Word原题链接 12345678910111213141516171819202122We are given N differen">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/2019/06/24/WordSearch/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/07/16/状态压缩/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>LeetCode 79, 212 Word Search | Honoka</title>
+  <title>LeetCode 691, 1125 状态压缩问题 | Honoka</title>
   
 
 
@@ -370,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/06/24/WordSearch/">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/16/状态压缩/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Honoka">
@@ -387,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 79, 212 Word Search
+          <h1 class="post-title" itemprop="name headline">LeetCode 691, 1125 状态压缩问题
 
               
             
@@ -413,24 +413,12 @@
                 
               
 
-              <time title="创建时间：2019-06-24 04:33:41" itemprop="dateCreated datePublished" datetime="2019-06-24T04:33:41-04:00">2019-06-24</time>
+              <time title="创建时间：2019-07-16 20:40:18 / 修改时间：21:37:12" itemprop="dateCreated datePublished" datetime="2019-07-16T20:40:18-04:00">2019-07-16</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-06-25 03:10:45" itemprop="dateModified" datetime="2019-06-25T03:10:45-04:00">2019-06-25</time>
               
             
           </span>
@@ -489,23 +477,39 @@
       
 
       
-        <h1 id="LeetCode-79-Word-Search"><a href="#LeetCode-79-Word-Search" class="headerlink" title="LeetCode 79 Word Search"></a>LeetCode 79 Word Search</h1><p><a href="https://leetcode.com/problems/word-search/" target="_blank" rel="noopener">原题链接</a></p>
-<pre><code>题目大意：给定一个二维的网格和一个单词，判断单词是否在网格中。
-单词必须按照字母顺序，通过相邻的单元格的字母组成，其中相邻指的是4个方向（上，下，左，右），同一个单元格中的单词不能重复使用。
-</code></pre><p><strong>例子</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">board =</span><br><span class="line">[</span><br><span class="line">  [&apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;E&apos;],</span><br><span class="line">  [&apos;S&apos;,&apos;F&apos;,&apos;C&apos;,&apos;S&apos;],</span><br><span class="line">  [&apos;A&apos;,&apos;D&apos;,&apos;E&apos;,&apos;E&apos;]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">Given word = &quot;ABCCED&quot;, return true.</span><br><span class="line">Given word = &quot;SEE&quot;, return true.</span><br><span class="line">Given word = &quot;ABCB&quot;, return false.</span><br></pre></td></tr></table></figure></p>
-<pre><code>这道题目，只需要查找一个单词，所以直接暴力求解(bracktrack)就可以。遍历二维网格，找到一个符合要求的开头（单词的首字母），然后以这个
-点为起点，进行回溯。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def exist(self, board: List[List[str]], word: str) -&gt; bool:</span><br><span class="line">        for i in range(len(board)):</span><br><span class="line">            for j in range(len(board[0])):</span><br><span class="line">                if board[i][j] == word[0]:</span><br><span class="line">                    if self.dfs(board, i, j, 0, word):</span><br><span class="line">                        return True</span><br><span class="line">        return False</span><br><span class="line">    </span><br><span class="line">    def dfs(self, board, i, j, index, word):</span><br><span class="line">        if index == len(word):</span><br><span class="line">            return True</span><br><span class="line">        if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] != word[index]:</span><br><span class="line">            return False</span><br><span class="line">        board[i][j] = &apos;#&apos;</span><br><span class="line">        if self.dfs(board, i - 1, j, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i + 1, j, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i, j - 1, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        if self.dfs(board, i , j + 1, index + 1, word):</span><br><span class="line">            return True</span><br><span class="line">        board[i][j] = word[index]</span><br></pre></td></tr></table></figure>
-<p>#LeetCode 212 Word Search II</p>
-<p><a href="https://leetcode.com/problems/word-search-ii/" target="_blank" rel="noopener">原题链接</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: </span><br><span class="line">board = [</span><br><span class="line">  [&apos;o&apos;,&apos;a&apos;,&apos;a&apos;,&apos;n&apos;],</span><br><span class="line">  [&apos;e&apos;,&apos;t&apos;,&apos;a&apos;,&apos;e&apos;],</span><br><span class="line">  [&apos;i&apos;,&apos;h&apos;,&apos;k&apos;,&apos;r&apos;],</span><br><span class="line">  [&apos;i&apos;,&apos;f&apos;,&apos;l&apos;,&apos;v&apos;]</span><br><span class="line">]</span><br><span class="line">words = [&quot;oath&quot;,&quot;pea&quot;,&quot;eat&quot;,&quot;rain&quot;]</span><br><span class="line"></span><br><span class="line">Output: [&quot;eat&quot;,&quot;oath&quot;]</span><br></pre></td></tr></table></figure></p>
-<pre><code>这道题其实是Word Search 的升级版，区别在于，前者只要求查找一个单词，后者需要从一个数组中查找每一个单词。我们不可以再像第一题这样直
-接进行暴力求解。需要先对整个数组进行预处理。需要使用一个特殊的数据结构叫做字典树（Trie）。在Python中，如果想从一个字典中搜索一个元
-素，时间复杂度为O(1),这样可以大大减少我们在搜索中所用的时间。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;o&apos;: &#123;&apos;a&apos;: &#123;&apos;t&apos;: &#123;&apos;h&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;&#125;, &apos;p&apos;: &#123;&apos;e&apos;: &#123;&apos;a&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;, &apos;e&apos;: &#123;&apos;a&apos;: &#123;&apos;t&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;, &apos;r&apos;: &#123;&apos;a&apos;: &#123;&apos;i&apos;: &#123;&apos;n&apos;: &#123;&apos;end&apos;: &apos;#&apos;&#125;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>对于整个数组预处理过后，字典树如上图，一定要注意用一个标志（&quot;end&quot;)来表明一个完整单词的结束。否则我们无法确定这是一个完整的单词，还是
-一个单词的一部分。
-backtrack的过程和上一题的过程累似，只不过需要不断更新root（当前字母作为根节点），然后进行搜索，直到结束。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findWords(self, board: List[List[str]], words: List[str]) -&gt; List[str]:</span><br><span class="line">        dic = &#123;&#125;</span><br><span class="line">        self.res = set()</span><br><span class="line">        for word in words:</span><br><span class="line">            node = dic</span><br><span class="line">            for char in word:</span><br><span class="line">                if char not in node:</span><br><span class="line">                    node[char] = &#123;&#125;</span><br><span class="line">                node = node[char]</span><br><span class="line">            node[&apos;end&apos;] = &apos;#&apos;</span><br><span class="line">        for i in range(len(board)):</span><br><span class="line">            for j in range(len(board[0])):</span><br><span class="line">                self.dfs(dic, board, i, j, &quot;&quot;)</span><br><span class="line">        return list(self.res)</span><br><span class="line">        </span><br><span class="line">    def dfs(self, node, board, i, j, path):</span><br><span class="line">        if &apos;end&apos; in node:</span><br><span class="line">            self.res.add(path)</span><br><span class="line">        if i &lt; 0 or i &gt;= len(board) or j &lt; 0 or j &gt;= len(board[0]) or board[i][j] not in node:</span><br><span class="line">            return</span><br><span class="line">        temp = board[i][j]</span><br><span class="line">        board[i][j] = &apos;#&apos;</span><br><span class="line">        self.dfs(node[temp], board, i - 1, j, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i + 1, j, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i, j - 1, path + temp)</span><br><span class="line">        self.dfs(node[temp], board, i, j + 1, path + temp)</span><br><span class="line">        board[i][j] = temp</span><br></pre></td></tr></table></figure>
+        <pre><code>状态压缩在处理字符串问题的时候是一个非常好用的方法，因为在程序中处理字符串的过程是相对来说比较麻烦的，如果将字符串用二进制整型数字来
+表示，处理起来就会方便很多，接下来两道题就是比较典型的状态压缩问题。
+</code></pre><h1 id="LeetCode-691-Stickers-to-Spell-Word"><a href="#LeetCode-691-Stickers-to-Spell-Word" class="headerlink" title="LeetCode 691 Stickers to Spell Word"></a>LeetCode 691 Stickers to Spell Word</h1><p><a href="https://leetcode.com/problems/stickers-to-spell-word/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">We are given N different types of stickers. Each sticker has a lowercase English word on it.</span><br><span class="line"></span><br><span class="line">You would like to spell out the given target string by cutting individual letters from your collection of stickers and </span><br><span class="line">rearranging them.</span><br><span class="line"></span><br><span class="line">You can use each sticker more than once if you want, and you have infinite quantities of each sticker.</span><br><span class="line"></span><br><span class="line">What is the minimum number of stickers that you need to spell out the target? If the task is impossible, return -1.</span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line"></span><br><span class="line">[&quot;with&quot;, &quot;example&quot;, &quot;science&quot;], &quot;thehat&quot;</span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">3</span><br><span class="line">Explanation:</span><br><span class="line"></span><br><span class="line">We can use 2 &quot;with&quot; stickers, and 1 &quot;example&quot; sticker.</span><br><span class="line">After cutting and rearrange the letters of those stickers, we can form the target &quot;thehat&quot;.</span><br><span class="line">Also, this is the minimum number of stickers necessary to form the target string.</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：用数组中的字符串中的一部分字符来组成目标字符串，要求使用的数组中的字符串的次数最少。
+
+这道题一定是用DP来解决，因为不同的状态有可能是由多个子问题来构成的，我们需要从中选取一个状态一步一步的往target上去搜索。那么在这个
+过程中，需要对字符串进行处理，因为英文字母只有26个，我们用一个长度为26的空数组来存储对应的字符个数。例如&apos;a&apos;，这个字符的位置就是
+ord(&apos;a&apos;) - ord(&apos;a&apos;),将字符串转换成数组就好处理多了。并用记忆化来保存递归中的子状态，防止重复递归过程。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minStickers(self, stickers: List[str], target: str) -&gt; int:</span><br><span class="line">        mp = [[0 for _ in range(26)] for _ in range(len(stickers))]</span><br><span class="line">        for i in range(len(stickers)):</span><br><span class="line">            for char in stickers[i]:</span><br><span class="line">                mp[i][ord(char) - ord(&apos;a&apos;)] += 1</span><br><span class="line">        dp = &#123;&#125;</span><br><span class="line">        dp[&quot;&quot;] = 0</span><br><span class="line">        def helper(target):</span><br><span class="line">            if target in dp:</span><br><span class="line">                 return dp[target]</span><br><span class="line">            if not target:</span><br><span class="line">                return 0</span><br><span class="line">            t = [0] * 26</span><br><span class="line">            for char in target:</span><br><span class="line">                t[ord(char) - ord(&apos;a&apos;)] += 1</span><br><span class="line">            res = float(&apos;inf&apos;)</span><br><span class="line">            for i in range(len(mp)):</span><br><span class="line">                if mp[i][ord(target[0]) - ord(&apos;a&apos;)] == 0:</span><br><span class="line">                    continue</span><br><span class="line">                nextt = &quot;&quot;</span><br><span class="line">                for j in range(26):</span><br><span class="line">                    if t[j] &gt; mp[i][j]:</span><br><span class="line">                        nextt += chr(ord(&apos;a&apos;) + j) * (t[j] - mp[i][j])</span><br><span class="line">                temp = helper(nextt)</span><br><span class="line">                if temp != -1:</span><br><span class="line">                    res = min(res, temp + 1)</span><br><span class="line">            dp[target] = -1 if res == float(&apos;inf&apos;) else res</span><br><span class="line">            return dp[target]</span><br><span class="line">        return helper(target)</span><br></pre></td></tr></table></figure>
+<pre><code>其实这道题还不算是非常典型的状态压缩，只不过转换过了一种形式来保存字符串，我曾经尝试过另一种方法，不过这种方法在Python3中有个别case
+没有通过，不过肯定是一套正确的代码。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minStickers(self, stickers: List[str], target: str) -&gt; int:</span><br><span class="line">        _len = 1 &lt;&lt; len(target)</span><br><span class="line">        dp = [float(&apos;inf&apos;) for _ in range(_len)]</span><br><span class="line">        dp[0] = 0</span><br><span class="line">        for i in range(len(dp)):</span><br><span class="line">            if dp[i] == float(&apos;inf&apos;):</span><br><span class="line">                continue</span><br><span class="line">            for s in stickers:</span><br><span class="line">                index = self.findnextstatus(i, target, s)</span><br><span class="line">                dp[index] = min(dp[index], dp[i] + 1)</span><br><span class="line">        return dp[-1] if dp[-1] != float(&apos;inf&apos;) else -1</span><br><span class="line">    </span><br><span class="line">    def findnextstatus(self, status, target, s):</span><br><span class="line">        for char in s:</span><br><span class="line">            for i in range(len(target)):</span><br><span class="line">                if (status &gt;&gt; i) &amp; 1 == 0 and target[i] == char:</span><br><span class="line">                    status += 1 &lt;&lt; i</span><br><span class="line">                    break</span><br><span class="line">        return status</span><br></pre></td></tr></table></figure>
+<pre><code>上面这种方法有点接近暴力搜索，比如target是&apos;thehat&apos;，我们可以将其转换成111111，每一位1代表当前位置的字符是否扫描过，可以用整型数字
+来表示，搜索的时候我们直接用与运算就可以找出两个字符串重叠的部分，用dp数组来保存每一个位置的状态，每一个位置的index值都是整型的，转
+换成2进制，每一个位置的1代表当前位置的字符还没被搜索过。
+</code></pre><h1 id="LeetCode-1125-Smallest-Sufficient-Team"><a href="#LeetCode-1125-Smallest-Sufficient-Team" class="headerlink" title="LeetCode 1125 Smallest Sufficient Team"></a>LeetCode 1125 Smallest Sufficient Team</h1><p><a href="https://leetcode.com/problems/smallest-sufficient-team/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">In a project, you have a list of required skills req_skills, and a list of people.  The i-th person people[i] contains </span><br><span class="line">a list of skills that person has.</span><br><span class="line"></span><br><span class="line">Consider a sufficient team: a set of people such that for every required skill in req_skills, there is at least one </span><br><span class="line">person in the team who has that skill.  We can represent these teams by the index of each person: for example, </span><br><span class="line">team = [0, 1, 3] represents the people with skills people[0], people[1], and people[3].</span><br><span class="line"></span><br><span class="line">Return any sufficient team of the smallest possible size, represented by the index of each person.</span><br><span class="line"></span><br><span class="line">You may return the answer in any order.  It is guaranteed an answer exists.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: req_skills = [&quot;java&quot;,&quot;nodejs&quot;,&quot;reactjs&quot;], people = [[&quot;java&quot;],[&quot;nodejs&quot;],[&quot;nodejs&quot;,&quot;reactjs&quot;]]</span><br><span class="line">Output: [0,2]</span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: req_skills = [&quot;algorithms&quot;,&quot;math&quot;,&quot;java&quot;,&quot;reactjs&quot;,&quot;csharp&quot;,&quot;aws&quot;], people = [[&quot;algorithms&quot;,&quot;math&quot;,&quot;java&quot;],[&quot;algorithms&quot;,&quot;math&quot;,&quot;reactjs&quot;],[&quot;java&quot;,&quot;csharp&quot;,&quot;aws&quot;],[&quot;reactjs&quot;,&quot;csharp&quot;],[&quot;csharp&quot;,&quot;math&quot;],[&quot;aws&quot;,&quot;java&quot;]]</span><br><span class="line">Output: [1,2]</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：在招聘的过程中，我们需要组成一个team，这个team中必须要有req_skills中的所有技术。我们需要招最少的人，但是还要满足所有的
+需求。
+
+这是一道周赛题，我只记得那周周赛前面做的比较懵，做到这道题的时候看了看就到时间了。后来仔细看了下这道题，感觉这道题蕴含了很多很多的东
+西，首先这是一个背包类DP问题，还是一个搜索加上状态压缩的问题。因为这个问题的时间复杂度，最高可以达到O(2 ** n),这个n是指req_skills
+的长度，当然people中没有这么多组合。但是处理这么高复杂度的问题，在处理字符串会非常的麻烦，所以我们可以用二进制整型数字来表示其状态。
+例如例子中用二进制数字来表示为111，每一位置上的1代表一种技术，具体是第几位的，由req_skills中的顺序决定，并存入字典中，方便搜索的时候，
+排除不需要的技能。搜索的时候比如一个人的技能是&apos;nodejs&apos;,&apos;reactjs&apos;，那么当前状态就是101，那么比如另一个人会&apos;java&apos;那么这个人的状态就是
+010，那么这两个人能凑成什么样的状态呢，我们不用具体去搜索，直接将两个二进制整型数字进行或运算5 | 2，等于7，转换成2进制就是111，说明
+这个组合满足要求，具体是不是最优解，我们需要存入DP中，如果由不同子状态打成目标状态，如果人数更少，我们需要重新更新dp，用一个字典来表示，
+字典中对应的value是哪些人构成当前状态的数组，方便调取结果。
+</code></pre><p><a href="https://leetcode.com/problems/smallest-sufficient-team/discuss/334572/Python-DP-Solution" target="_blank" rel="noopener">参考链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def smallestSufficientTeam(self, req_skills: List[str], people: List[List[str]]) -&gt; List[int]:</span><br><span class="line">        dic = collections.defaultdict(int)</span><br><span class="line">        for i, r in enumerate(req_skills):</span><br><span class="line">            dic[r] = i</span><br><span class="line">        dp = &#123;0: []&#125;</span><br><span class="line">        for i, p in enumerate(people):</span><br><span class="line">            tempdp = dp</span><br><span class="line">            intskill = 0</span><br><span class="line">            for skill in p:</span><br><span class="line">                if skill in dic:</span><br><span class="line">                    intskill |= 1 &lt;&lt; dic[skill]</span><br><span class="line">            for ints, need in list(dp.items()):</span><br><span class="line">                total = ints | intskill</span><br><span class="line">                if total == ints:</span><br><span class="line">                    continue</span><br><span class="line">                if total not in dp or len(dp[total]) &gt; len(need) + 1:</span><br><span class="line">                    dp[total] = need + [i]</span><br><span class="line">        return dp[(1 &lt;&lt; len(req_skills)) - 1]</span><br></pre></td></tr></table></figure>
+<pre><code>虽然是一道很难的题，一开始做真的很头痛没啥思路，但是感觉这题比较有意义。
+</code></pre>
       
     </div>
 
@@ -528,11 +532,9 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
       
         <div class="post-tags">
           
-            <a href="/tags/高频/" rel="tag"><i class="far fa-feather"></i> 高频</a>
+            <a href="/tags/Dynamic-Programming/" rel="tag"><i class="far fa-feather"></i> Dynamic Programming</a>
           
-            <a href="/tags/BackTrack/" rel="tag"><i class="far fa-feather"></i> BackTrack</a>
-          
-            <a href="/tags/Trie/" rel="tag"><i class="far fa-feather"></i> Trie</a>
+            <a href="/tags/状态压缩/" rel="tag"><i class="far fa-feather"></i> 状态压缩</a>
           
         </div>
       
@@ -545,8 +547,8 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/23/LeetCode/" rel="next" title="关于刷题">
-                <i class="fa fa-chevron-left"></i> 关于刷题
+              <a href="/2019/07/14/wordbreak/" rel="next" title="LeetCode 140, 472 字符串分割问题">
+                <i class="fa fa-chevron-left"></i> LeetCode 140, 472 字符串分割问题
               </a>
             
           </div>
@@ -554,10 +556,6 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/25/215/" rel="prev" title="LeetCode 215 Kth Largest Element in an Array 排序算法总结">
-                LeetCode 215 Kth Largest Element in an Array 排序算法总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -744,7 +742,7 @@ backtrack的过程和上一题的过程累似，只不过需要不断更新root�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-79-Word-Search"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 79 Word Search</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-691-Stickers-to-Spell-Word"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 691 Stickers to Spell Word</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1125-Smallest-Sufficient-Team"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 1125 Smallest Sufficient Team</span></a></li></ol></div>
             
 
           </div>
