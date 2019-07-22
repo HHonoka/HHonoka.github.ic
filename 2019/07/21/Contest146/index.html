@@ -96,17 +96,18 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="LeetCode 1128 Number of Equivalent Domino Pairs原题链接 1234567891011Given a list of dominoes, dominoes[i] = [a, b] is equivalent to dominoes[j] = [c, d] if and only if either (a==c and b==d), or (a==d an">
+<meta name="keywords" content="LeetCode Contest">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://HHonoka.github.io/2019/04/28/hello-world/index.html">
+<meta property="og:title" content="LeetCode Weekly Contest 146">
+<meta property="og:url" content="https://HHonoka.github.io/2019/07/21/Contest146/index.html">
 <meta property="og:site_name" content="Honoka">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="LeetCode 1128 Number of Equivalent Domino Pairs原题链接 1234567891011Given a list of dominoes, dominoes[i] = [a, b] is equivalent to dominoes[j] = [c, d] if and only if either (a==c and b==d), or (a==d an">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-28T07:43:15.582Z">
+<meta property="og:updated_time" content="2019-07-22T01:52:15.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="LeetCode Weekly Contest 146">
+<meta name="twitter:description" content="LeetCode 1128 Number of Equivalent Domino Pairs原题链接 1234567891011Given a list of dominoes, dominoes[i] = [a, b] is equivalent to dominoes[j] = [c, d] if and only if either (a==c and b==d), or (a==d an">
 
 
 
@@ -114,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/2019/04/28/hello-world/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/07/21/Contest146/">
 
 
 
@@ -124,7 +125,7 @@
   };
 </script>
 
-  <title>Hello World | Honoka</title>
+  <title>LeetCode Weekly Contest 146 | Honoka</title>
   
 
 
@@ -369,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/04/28/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/21/Contest146/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Honoka">
@@ -386,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World
+          <h1 class="post-title" itemprop="name headline">LeetCode Weekly Contest 146
 
               
             
@@ -412,12 +413,34 @@
                 
               
 
-              <time title="创建时间：2019-04-28 03:43:15" itemprop="dateCreated datePublished" datetime="2019-04-28T03:43:15-04:00">2019-04-28</time>
+              <time title="创建时间：2019-07-21 18:27:38 / 修改时间：21:52:15" itemprop="dateCreated datePublished" datetime="2019-07-21T18:27:38-04:00">2019-07-21</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/刷题/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -454,16 +477,29 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="LeetCode-1128-Number-of-Equivalent-Domino-Pairs"><a href="#LeetCode-1128-Number-of-Equivalent-Domino-Pairs" class="headerlink" title="LeetCode 1128 Number of Equivalent Domino Pairs"></a>LeetCode 1128 Number of Equivalent Domino Pairs</h1><p><a href="https://leetcode.com/problems/number-of-equivalent-domino-pairs/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Given a list of dominoes, dominoes[i] = [a, b] is equivalent to dominoes[j] = [c, d] if and only if either </span><br><span class="line">(a==c and b==d), or (a==d and b==c) - that is, one domino can be rotated to be equal to another domino.</span><br><span class="line"></span><br><span class="line">Return the number of pairs (i, j) for which 0 &lt;= i &lt; j &lt; dominoes.length, and dominoes[i] is equivalent to dominoes[j].</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: dominoes = [[1,2],[2,1],[3,4],[5,6]]</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure>
+<pre><code>这道题没什么好说的，就是找相同的组合([1, 2] = [2, 1])，用字典存一下之前有多少个相同的组合，遍历数组即可。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def numEquivDominoPairs(self, dominoes: List[List[int]]) -&gt; int:</span><br><span class="line">        res = 0</span><br><span class="line">        dic = collections.defaultdict(int)</span><br><span class="line">        for d in dominoes:</span><br><span class="line">            d = sorted(d)</span><br><span class="line">            if tuple(d) in dic:</span><br><span class="line">                res += dic[tuple(d)]</span><br><span class="line">            dic[tuple(d)] += 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1129-Shortest-Path-with-Alternating-Colors"><a href="#LeetCode-1129-Shortest-Path-with-Alternating-Colors" class="headerlink" title="LeetCode 1129 Shortest Path with Alternating Colors"></a>LeetCode 1129 Shortest Path with Alternating Colors</h1><p><a href="https://leetcode.com/problems/shortest-path-with-alternating-colors/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">Consider a directed graph, with nodes labelled 0, 1, ..., n-1.  In this graph, each edge is either red or blue, and there could be self-edges or parallel edges.</span><br><span class="line"></span><br><span class="line">Each [i, j] in red_edges denotes a red directed edge from node i to node j.  Similarly, each [i, j] in blue_edges denotes a blue directed edge from node i to node j.</span><br><span class="line"></span><br><span class="line">Return an array answer of length n, where each answer[X] is the length of the shortest path from node 0 to node X such that the edge colors alternate along the path (or -1 if such a path doesn&apos;t exist).</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: n = 3, red_edges = [[0,1],[1,2]], blue_edges = []</span><br><span class="line">Output: [0,1,-1]</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: n = 3, red_edges = [[0,1]], blue_edges = [[2,1]]</span><br><span class="line">Output: [0,1,-1]</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line"></span><br><span class="line">Input: n = 3, red_edges = [[1,0]], blue_edges = [[2,1]]</span><br><span class="line">Output: [0,-1,-1]</span><br><span class="line"></span><br><span class="line">Example 4:</span><br><span class="line"></span><br><span class="line">Input: n = 3, red_edges = [[0,1]], blue_edges = [[1,2]]</span><br><span class="line">Output: [0,1,2]</span><br><span class="line"></span><br><span class="line">Example 5:</span><br><span class="line"></span><br><span class="line">Input: n = 3, red_edges = [[0,1],[0,2]], blue_edges = [[1,0]]</span><br><span class="line">Output: [0,1,1]</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Constraints:</span><br><span class="line"></span><br><span class="line">1 &lt;= n &lt;= 100</span><br><span class="line">red_edges.length &lt;= 400</span><br><span class="line">blue_edges.length &lt;= 400</span><br><span class="line">red_edges[i].length == blue_edges[i].length == 2</span><br><span class="line">0 &lt;= red_edges[i][j], blue_edges[i][j] &lt; n</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：这是一个有向图，每两个连接节点的边都是有特定的颜色，要求我们计算从节点0到每一个节点的最短距离，并且要求每一条路径必须是红色
+和蓝色相间才算是合法路径。
 
+对于图的问题无外乎几种方法，深度优先搜索(DFS), 广度优先搜索(BFS),并查集(Union Find),这是几种比较常用的方法，当然还有一些其他的。
+这道题要求我们求最短路径，感觉用BFS的方法可能会比较好。首先我们需要用两个字典分别保存红蓝路径，方便后面查找。在搜索的过程中，我们需要
+3个状态，分别是距离，节点和颜色，初始的状态是从节点0开始的，每一次搜索，如果还存在新路径，将其添加到队列中。直到所有状态搜索完毕，我
+们还需要一个集合来保存状态，如果这个状态搜索过，我们直接忽略这个状态即可，防止程序进入死循环。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def shortestAlternatingPaths(self, n: int, red_edges: List[List[int]], blue_edges: List[List[int]]) -&gt; List[int]:</span><br><span class="line">        res = [float(&apos;inf&apos;)] * n</span><br><span class="line">        dicr = collections.defaultdict(list)</span><br><span class="line">        dicb = collections.defaultdict(list)</span><br><span class="line">        for r in red_edges:</span><br><span class="line">            dicr[r[0]].append(r[1])</span><br><span class="line">        for b in blue_edges:</span><br><span class="line">            dicb[b[0]].append(b[1])</span><br><span class="line">        stack = collections.deque()</span><br><span class="line">        stack.append((0, 0, 0))</span><br><span class="line">        seen = set()</span><br><span class="line">        while stack:</span><br><span class="line">            d, n, c = stack.popleft()</span><br><span class="line">            seen.add((n, c))</span><br><span class="line">            res[n] = min(res[n], d)</span><br><span class="line">            if c == 0 or c == 2:</span><br><span class="line">                for node in dicr[n]:</span><br><span class="line">                    if (node, 1) not in seen:</span><br><span class="line">                        stack.append((d + 1, node, 1))</span><br><span class="line">            if c == 0 or c == 1:</span><br><span class="line">                for node in dicb[n]:</span><br><span class="line">                    if (node, 2) not in seen:</span><br><span class="line">                        stack.append((d + 1, node, 2))</span><br><span class="line">        for i in range(len(res)):</span><br><span class="line">            if res[i] == float(&apos;inf&apos;):</span><br><span class="line">                res[i] = -1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1130-Minimum-Cost-Tree-From-Leaf-Values"><a href="#LeetCode-1130-Minimum-Cost-Tree-From-Leaf-Values" class="headerlink" title="LeetCode 1130 Minimum Cost Tree From Leaf Values"></a>LeetCode 1130 Minimum Cost Tree From Leaf Values</h1><pre><code>这道题目我会另起一个文章，和几个类似的题目一起解析。
+</code></pre><h1 id="LeetCode-1131-Maximum-of-Absolute-Value-Expression"><a href="#LeetCode-1131-Maximum-of-Absolute-Value-Expression" class="headerlink" title="LeetCode 1131 Maximum of Absolute Value Expression"></a>LeetCode 1131 Maximum of Absolute Value Expression</h1><p><a href="https://leetcode.com/contest/weekly-contest-146/problems/maximum-of-absolute-value-expression/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Given two arrays of integers with equal lengths, return the maximum value of:</span><br><span class="line"></span><br><span class="line">|arr1[i] - arr1[j]| + |arr2[i] - arr2[j]| + |i - j|</span><br><span class="line"></span><br><span class="line">where the maximum is taken over all 0 &lt;= i, j &lt; arr1.length.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: arr1 = [1,2,3,4], arr2 = [-1,4,5,6]</span><br><span class="line">Output: 13</span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: arr1 = [1,-2,-5,0,10], arr2 = [0,-2,-1,-7,-4]</span><br><span class="line">Output: 20</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Constraints:</span><br><span class="line"></span><br><span class="line">2 &lt;= arr1.length == arr2.length &lt;= 40000</span><br><span class="line">-10^6 &lt;= arr1[i], arr2[i] &lt;= 10^6</span><br><span class="line">Accepted</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：要求从两个数组中分别找出两组值，带入到上述的函数中，求出最大值。
+
+考试的时候在第三题花费的时间比较长，这道题目当时考试的时候没做出来，但是这道题目还是挺有意思的。两个数组的问题，看了下数据规模，最大
+规模可以达到40000的长度，那么Brute Force根本就不用去想。这道题的考点其实就是如何来拆掉这个函数中的绝对值。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function： |a1 - b1| + |a2 - b2| + |i - j|</span><br><span class="line">对于|a1 - b1| 可以转换成两种状态[[a1 - b1], [b1 - a1]]</span><br><span class="line">对于|a2 - b2| 同样可以转换成[[a2 - b2], [b2 - a2]]</span><br><span class="line">|i - j| 我们可以不用考虑绝对值，因为我们可以按照索引进行遍历就可以了。</span><br><span class="line">那么这么个函数相当于有4种状态：</span><br><span class="line">(a1 - b1) + (a2 - b2) =&gt; (a1 + a2) - (b1 + b2)</span><br><span class="line">(b1 - a1) + (a2 - b2) =&gt; (-a1 + a2) - (-b1 + b2)</span><br><span class="line">(a1 - b1) + (b2 - a2) =&gt; (a1 - a2) - (b1 - b2)</span><br><span class="line">(b1 - a1) + (b2 - a2) =&gt; (-a1 - a2) - (-b1 - b2)</span><br><span class="line"></span><br><span class="line">这4个例子的最大值，就是函数的值，实际上就是4种状态(+, +), (-, -), (+, -), (-, +)</span><br><span class="line">如果我们直接用abs()这个函数来求解这个问题，我们不可能在遍历过程中直接找到一个最小值，所以时间复杂度为O(n ** n)</span><br><span class="line">去掉绝对值，我们直接按照索引去遍历一次数组就够了，在遍历的过程中随时更新最小值，然后用当前状态减去最小值就可以得到答案。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxAbsValExpr(self, arr1: List[int], arr2: List[int]) -&gt; int:</span><br><span class="line">        res = 0</span><br><span class="line">        for p, q in [(1, 1), (-1, 1), (-1, -1), (1, -1)]:</span><br><span class="line">            minval = p * arr1[0] + q * arr2[0] + 0</span><br><span class="line">            for i in range(len(arr1)):</span><br><span class="line">                cur = p * arr1[i] + q * arr2[i] + i</span><br><span class="line">                res = max(res, cur - minval)</span><br><span class="line">                minval = min(minval, cur)</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -484,6 +520,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode-Contest/" rel="tag"><i class="far fa-feather"></i> LeetCode Contest</a>
+          
+        </div>
+      
 
       
       
@@ -493,15 +535,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/18/leetcode60/" rel="next" title="LeetCode 60 Permutation Sequence">
+                <i class="fa fa-chevron-left"></i> LeetCode 60 Permutation Sequence
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/23/LeetCode/" rel="prev" title="关于刷题">
-                关于刷题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -690,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1128-Number-of-Equivalent-Domino-Pairs"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1128 Number of Equivalent Domino Pairs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1129-Shortest-Path-with-Alternating-Colors"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 1129 Shortest Path with Alternating Colors</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1130-Minimum-Cost-Tree-From-Leaf-Values"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 1130 Minimum Cost Tree From Leaf Values</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1131-Maximum-of-Absolute-Value-Expression"><span class="nav-number">4.</span> <span class="nav-text">LeetCode 1131 Maximum of Absolute Value Expression</span></a></li></ol></div>
             
 
           </div>
