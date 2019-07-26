@@ -96,20 +96,25 @@
 
 
 
-  <meta name="description" content="LeetCode 312 Burst Balloons原题链接 123456789101112131415Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the ball">
-<meta name="keywords" content="Dynamic Programming">
+  <meta name="description" content="LeetCode 959 Regions Cut By Slashes原题链接 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859In a N x N grid composed of 1 x 1 squares, each 1 x">
+<meta name="keywords" content="Union Find">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 312, 1039, 1130">
-<meta property="og:url" content="https://HHonoka.github.io/2019/07/21/leetcode312-1039-1130/index.html">
+<meta property="og:title" content="LeetCode 959 Regions Cut By Slashes">
+<meta property="og:url" content="https://HHonoka.github.io/2019/07/26/959/index.html">
 <meta property="og:site_name" content="Honoka">
-<meta property="og:description" content="LeetCode 312 Burst Balloons原题链接 123456789101112131415Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the ball">
+<meta property="og:description" content="LeetCode 959 Regions Cut By Slashes原题链接 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859In a N x N grid composed of 1 x 1 squares, each 1 x">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://hhonoka.github.io/images/1039.png">
-<meta property="og:updated_time" content="2019-07-22T23:04:52.044Z">
+<meta property="og:image" content="https://hhonoka.github.io/images/9591.png">
+<meta property="og:image" content="https://hhonoka.github.io/images/9592.png">
+<meta property="og:image" content="https://hhonoka.github.io/images/9593.png">
+<meta property="og:image" content="https://hhonoka.github.io/images/9594.png">
+<meta property="og:image" content="https://hhonoka.github.io/images/9595.png">
+<meta property="og:image" content="https://hhonoka.github.io/images/959.png">
+<meta property="og:updated_time" content="2019-07-26T21:11:17.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 312, 1039, 1130">
-<meta name="twitter:description" content="LeetCode 312 Burst Balloons原题链接 123456789101112131415Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are asked to burst all the ball">
-<meta name="twitter:image" content="https://hhonoka.github.io/images/1039.png">
+<meta name="twitter:title" content="LeetCode 959 Regions Cut By Slashes">
+<meta name="twitter:description" content="LeetCode 959 Regions Cut By Slashes原题链接 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859In a N x N grid composed of 1 x 1 squares, each 1 x">
+<meta name="twitter:image" content="https://hhonoka.github.io/images/9591.png">
 
 
 
@@ -117,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/2019/07/21/leetcode312-1039-1130/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/07/26/959/">
 
 
 
@@ -127,7 +132,7 @@
   };
 </script>
 
-  <title>LeetCode 312, 1039, 1130 | Honoka</title>
+  <title>LeetCode 959 Regions Cut By Slashes | Honoka</title>
   
 
 
@@ -372,7 +377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/21/leetcode312-1039-1130/">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/26/959/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Honoka">
@@ -389,7 +394,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 312, 1039, 1130
+          <h1 class="post-title" itemprop="name headline">LeetCode 959 Regions Cut By Slashes
 
               
             
@@ -415,24 +420,12 @@
                 
               
 
-              <time title="创建时间：2019-07-21 21:54:49" itemprop="dateCreated datePublished" datetime="2019-07-21T21:54:49-04:00">2019-07-21</time>
+              <time title="创建时间：2019-07-26 09:18:10 / 修改时间：17:11:17" itemprop="dateCreated datePublished" datetime="2019-07-26T09:18:10-04:00">2019-07-26</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-22 19:04:52" itemprop="dateModified" datetime="2019-07-22T19:04:52-04:00">2019-07-22</time>
               
             
           </span>
@@ -491,43 +484,20 @@
       
 
       
-        <h1 id="LeetCode-312-Burst-Balloons"><a href="#LeetCode-312-Burst-Balloons" class="headerlink" title="LeetCode 312 Burst Balloons"></a>LeetCode 312 Burst Balloons</h1><p><a href="https://leetcode.com/problems/burst-balloons/" target="_blank" rel="noopener">原题链接</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Given n balloons, indexed from 0 to n-1. Each balloon is painted with a number on it represented by array nums. You are </span><br><span class="line">asked to burst all the balloons. If the you burst balloon i you will get nums[left] * nums[i] * nums[right] coins. Here left and right are adjacent indices of i. After the burst, the left and right then becomes adjacent.</span><br><span class="line"></span><br><span class="line">Find the maximum coins you can collect by bursting the balloons wisely.</span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">You may imagine nums[-1] = nums[n] = 1. They are not real therefore you can not burst them.</span><br><span class="line">0 ≤ n ≤ 500, 0 ≤ nums[i] ≤ 100</span><br><span class="line">Example:</span><br><span class="line"></span><br><span class="line">Input: [3,1,5,8]</span><br><span class="line">Output: 167 </span><br><span class="line">Explanation: nums = [3,1,5,8] --&gt; [3,5,8] --&gt;   [3,8]   --&gt;  [8]  --&gt; []</span><br><span class="line">             coins =  3*1*5      +  3*5*8    +  1*3*8      + 1*8*1   = 167</span><br></pre></td></tr></table></figure>
-<pre><code>题目大意：打气球的游戏，每打破一个气球，将会得到这个气球乘以他两边气球的分数，求出最多能得多少分。
+        <h1 id="LeetCode-959-Regions-Cut-By-Slashes"><a href="#LeetCode-959-Regions-Cut-By-Slashes" class="headerlink" title="LeetCode 959 Regions Cut By Slashes"></a>LeetCode 959 Regions Cut By Slashes</h1><p><a href="https://leetcode.com/problems/regions-cut-by-slashes/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">In a N x N grid composed of 1 x 1 squares, each 1 x 1 square consists of a /, \, or blank space.  These characters divide the square into contiguous regions.</span><br><span class="line"></span><br><span class="line">(Note that backslash characters are escaped, so a \ is represented as &quot;\\&quot;.)</span><br><span class="line"></span><br><span class="line">Return the number of regions.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  &quot; /&quot;,</span><br><span class="line">  &quot;/ &quot;</span><br><span class="line">]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The 2x2 grid is as follows:</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  &quot; /&quot;,</span><br><span class="line">  &quot;  &quot;</span><br><span class="line">]</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: The 2x2 grid is as follows:</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  &quot;\\/&quot;,</span><br><span class="line">  &quot;/\\&quot;</span><br><span class="line">]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: (Recall that because \ characters are escaped, &quot;\\/&quot; refers to \/, and &quot;/\\&quot; refers to /\.)</span><br><span class="line">The 2x2 grid is as follows:</span><br><span class="line"></span><br><span class="line">Example 4:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  &quot;/\\&quot;,</span><br><span class="line">  &quot;\\/&quot;</span><br><span class="line">]</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: (Recall that because \ characters are escaped, &quot;/\\&quot; refers to /\, and &quot;\\/&quot; refers to \/.)</span><br><span class="line">The 2x2 grid is as follows:</span><br><span class="line"></span><br><span class="line">Example 5:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">[</span><br><span class="line">  &quot;//&quot;,</span><br><span class="line">  &quot;/ &quot;</span><br><span class="line">]</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: The 2x2 grid is as follows:</span><br></pre></td></tr></table></figure>
+<p><img src="/images/9591.png" alt="example1"> <img src="/images/9592.png" alt="example2"><img src="/images/9593.png" alt="example3"><img src="/images/9594.png" alt="example4"><img src="/images/9595.png" alt="example4"></p>
+<pre><code>题目大意：在一个正方形中进行分割，求分割后有多少个区域。
 
-这种题目如果用暴力搜索来做，非常的不现实，时间复杂度太高，所以需要用dp来解决这个问题，将其转化成一些小的问题来解决大的问题。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">刚开始看这道题感觉没什么思路，不知道从何下手，但是按照leetcode的规矩，好像这种hard题做暴力解法肯定是不行的。换一个角度来思考这个问题，</span><br><span class="line">我们假设某一个气球是最后一个打破的，看下面的例子。</span><br><span class="line">example:</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">        0------------k-----------len(arr)</span><br><span class="line"></span><br><span class="line">从数组中寻找一个位置，例如位置k，假设这个最后一个打破的气球是k这个位置的气球能使得得分最高，那么这道题就变成了0到k位置这个区间的最大得分，</span><br><span class="line">加上k到末尾这个区间的最大得分，和最后打破k位置气球的得分。那么我们只要继续解决0-k和k到末尾这两个区间的子问题就可以得到最优解，那么状态转</span><br><span class="line">移方程就出来了。</span><br><span class="line">dp[l][r] = dp[l][k - 1] + dp[k + 1][r] + nums[k] * nums[l] * nums[r]</span><br><span class="line">那么这道题dp中最难解决的部分出来了，接下来就是代码。至于怎么找到这个k，其实我们可以看成是分割的问题，假设数组长度是n，我们可以用一个循环</span><br><span class="line">假设左半部分的长度是l，右半部分就是n - l，这样中间的位置就找出了，至于是不是最优解，我们需要继续进行循环去搜索。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxCoins(self, nums: List[int]) -&gt; int:</span><br><span class="line">        nums = [1] + nums + [1]   # 在数组头尾分别加上1，方便操作。</span><br><span class="line">        dp = [[0 for _ in range(len(nums))] for _ in range(len(nums))] #初始化DP数组</span><br><span class="line">        for d in range(2, len(nums)):   #设置一个gap， 根据gap来做循环。</span><br><span class="line">            for l in range(0, len(nums) - d):  # 设置左边的起点，来对数组的各个区间来搜索最大值。</span><br><span class="line">                r = l + d</span><br><span class="line">                for k in range(l + 1, r):  # 在区间中找一个位置，使得该区间的得分最大</span><br><span class="line">                    dp[l][r] = max(dp[l][r], dp[l][k] + dp[k][r] + nums[k] * nums[l] * nums[r])</span><br><span class="line">        print(dp)</span><br><span class="line">        return dp[0][-1]</span><br><span class="line"># dp[l][r]的意义就是区间从l到r的最大得分，那么解析完整个dp数组，返回dp[0][-1]即可</span><br></pre></td></tr></table></figure>
-<h1 id="LeetCode-1039-Minimum-Score-Triangulation-of-Polygon"><a href="#LeetCode-1039-Minimum-Score-Triangulation-of-Polygon" class="headerlink" title="LeetCode 1039 Minimum Score Triangulation of Polygon"></a>LeetCode 1039 Minimum Score Triangulation of Polygon</h1><p><a href="https://leetcode.com/problems/minimum-score-triangulation-of-polygon/" target="_blank" rel="noopener">原题链接</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">Given N, consider a convex N-sided polygon with vertices labelled A[0], A[i], ..., A[N-1] in clockwise order.</span><br><span class="line"></span><br><span class="line">Suppose you triangulate the polygon into N-2 triangles.  For each triangle, the value of that triangle is the product of</span><br><span class="line">the labels of the vertices, and the total score of the triangulation is the sum of these values over all N-2 triangles </span><br><span class="line">in the triangulation.</span><br><span class="line"></span><br><span class="line">Return the smallest possible total score that you can achieve with some triangulation of the polygon.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: [1,2,3]</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: The polygon is already triangulated, and the score of the only triangle is 6.</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: [3,7,4,5]</span><br><span class="line">Output: 144</span><br><span class="line">Explanation: There are two triangulations, with possible scores: 3*7*5 + 4*5*7 = 245, or 3*4*5 + 3*4*7 = 144.  </span><br><span class="line">The minimum score is 144.</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line"></span><br><span class="line">Input: [1,3,1,4,1,5]</span><br><span class="line">Output: 13</span><br><span class="line">Explanation: The minimum score triangulation has score 1*1*3 + 1*1*4 + 1*1*5 + 1*1*1 = 13.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">3 &lt;= A.length &lt;= 50</span><br><span class="line">1 &lt;= A[i] &lt;= 100</span><br></pre></td></tr></table></figure>
-<p><img src="/images/1039.png" alt="aaa"></p>
-<pre><code>题目大意：在一个多边形中，三点构成一个三角形（可以得到三个点乘积的分数），问如何分割多边形使得最后得分最大。
-
-其实这道题和LeetCode 312 是一样的，只是很容易被这个图误导。实际上就是找出其中一个三角形，使得这个三角形的得分加上他两边多边形的得分
-使得总分最大。还是一个分割的问题，所以依旧是上个题的模板，只不过题目描述不一样，代码几乎都是一样的。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minScoreTriangulation(self, A: List[int]) -&gt; int:</span><br><span class="line">        dp = [[0 for _ in range(len(A))] for _ in range(len(A))]</span><br><span class="line">        for d in range(2, len(A)):</span><br><span class="line">            for l in range(0, len(A) - d):</span><br><span class="line">                r = l + d</span><br><span class="line">                dp[l][r] = float(&apos;inf&apos;)</span><br><span class="line">                for k in range(l + 1, r):</span><br><span class="line">                    dp[l][r] = min(dp[l][r], dp[l][k] + dp[k][r] + A[l] * A[r] * A[k])</span><br><span class="line">        return dp[0][-1]</span><br></pre></td></tr></table></figure>
-<pre><code>这道题的做法还是区间分割，要对每个区间进行最大值解析，最后求出总区间（dp[0][-1]）的最大值，因为三点构成一个三角形，所以我们在区间内
-找到一个点，构成一个三角形，然后不断更新当前区间的最大值就可以了。
-</code></pre><h1 id="LeetCode-1130-Minimum-Cost-Tree-From-Leaf-Values"><a href="#LeetCode-1130-Minimum-Cost-Tree-From-Leaf-Values" class="headerlink" title="LeetCode 1130 Minimum Cost Tree From Leaf Values"></a>LeetCode 1130 Minimum Cost Tree From Leaf Values</h1><p><a href="https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/" target="_blank" rel="noopener">原题链接</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Given an array arr of positive integers, consider all binary trees such that:</span><br><span class="line"></span><br><span class="line">Each node has either 0 or 2 children;</span><br><span class="line">The values of arr correspond to the values of each leaf in an in-order traversal of the tree.  (Recall that a node is a </span><br><span class="line">leaf if and only if it has 0 children.)</span><br><span class="line">The value of each non-leaf node is equal to the product of the largest leaf value in its left and right subtree respectively.</span><br><span class="line">Among all possible binary trees considered, return the smallest possible sum of the values of each non-leaf node.  </span><br><span class="line">It is guaranteed this sum fits into a 32-bit integer.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: arr = [6,2,4]</span><br><span class="line">Output: 32</span><br><span class="line">Explanation:</span><br><span class="line">There are two possible trees.  The first has non-leaf node sum 36, and the second has non-leaf node sum 32.</span><br><span class="line"></span><br><span class="line">    24            24</span><br><span class="line">   /  \          /  \</span><br><span class="line">  12   4        6    8</span><br><span class="line"> /  \               / \</span><br><span class="line">6    2             2   4</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Constraints:</span><br><span class="line"></span><br><span class="line">2 &lt;= arr.length &lt;= 40</span><br><span class="line">1 &lt;= arr[i] &lt;= 15</span><br><span class="line">It is guaranteed that the answer fits into a 32-bit signed integer (ie. it is less than 2^31).</span><br></pre></td></tr></table></figure>
-<pre><code>题目大意：题目给出一个数组，数组是一个二叉树的叶子，并且是按照顺序排序的，每个父节点都是他的左右子树的最大叶子节点的值的乘积。要求我
-门求出二叉树中除了叶子以为所有节点和的最大值。
-
-这是LeetCode Weekley Contest 146期的第三题，这道题实际上也是一个分割的问题，起初想着构建一个二叉树，但是这种方法不太可行，我们只
-需要将数组分割成不同的区间，每个区间保存着最大叶子值，只要用两个区间中叶子最大值的乘积就是父节点的值了。最后可以得出最大的结果。本质
-意义上其实是和前面的问题是一样的，分割区间求最值。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def mctFromLeafValues(self, arr: List[int]) -&gt; int:</span><br><span class="line">        maxval = [[float(&apos;-inf&apos;) for _ in range(len(arr) + 1)] for _ in range(len(arr) + 1)]</span><br><span class="line">        for i in range(len(arr)):</span><br><span class="line">            for j in range(i, len(arr)):</span><br><span class="line">                maxval[i][j + 1] = max(maxval[i][j], arr[j])</span><br><span class="line">        dp = [[0 for _ in range(len(arr) + 1)] for _ in range(len(arr) + 1)]</span><br><span class="line">        for gap in range(2, len(arr) + 1):</span><br><span class="line">            for l in range(len(arr) - gap + 1):</span><br><span class="line">                r = l + gap</span><br><span class="line">                dp[l][r] = float(&apos;inf&apos;)</span><br><span class="line">                for k in range(l + 1, r):</span><br><span class="line">                    dp[l][r] = min(dp[l][r], dp[l][k] + dp[k][r] + maxval[l][k] * maxval[k][r])</span><br><span class="line">        return dp[0][len(arr)]</span><br></pre></td></tr></table></figure>
-<pre><code>这道题目唯一需要多处理的地方就是，在处理dp矩阵之前，我们需要先预处理一个矩阵，矩阵的row和col代表这个区间的最大值，方便后面的搜索。
-
-这是一个很直观的答案，但是看了Lee的做法，这道题还有一种更好的解法。
-</code></pre><p><a href="https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/discuss/339959/One-Pass-O(N" target="_blank" rel="noopener">Lee215</a>-Time-and-Space)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Find the cost for the interval [i,j].</span><br><span class="line">To build up the interval [i,j],</span><br><span class="line">we need to split it into left subtree and sub tree,</span><br><span class="line">dp[i, j] = dp[i, k] + dp[k + 1, j] + max(A[i, k]) * max(A[k + 1, j])</span><br><span class="line"></span><br><span class="line">This solution is O(N^3) time and O(N^2) space. You think it&apos;s fine.</span><br><span class="line">After several nested for loop, you get a green accepted and release a sigh.</span><br><span class="line"></span><br><span class="line">Great practice for DP!</span><br><span class="line">Then you think that&apos;s it for a medium problem, nothing can stop you.</span><br><span class="line"></span><br><span class="line">so you didn&apos;t read and up-vote my post.</span><br><span class="line">One day, you bring this solution to an interview and probably fail.</span><br></pre></td></tr></table></figure>
-<pre><code>这是他对这道题的评价，面试的时候碰到这种题我反正是认为这个dp的解法是足够了- -
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">When we build a node in the tree, we compared the two numbers a and b.</span><br><span class="line">In this process,</span><br><span class="line">the smaller one is removed and we won&apos;t use it anymore,</span><br><span class="line">and the bigger one actually stays.</span><br><span class="line"></span><br><span class="line">The problem can translated as following:</span><br><span class="line">Given an array A, choose two neighbors in the array a and b,</span><br><span class="line">we can remove the smaller one min(a,b) and the cost is a * b.</span><br><span class="line">What is the minimum cost to remove the whole array until only one left?</span><br><span class="line"></span><br><span class="line">To remove a number a, it needs a cost a * b, where b &gt;= a.</span><br><span class="line">So a has to be removed by a bigger number.</span><br><span class="line">We want minimize this cost, so we need to minimize b.</span><br><span class="line"></span><br><span class="line">b has two candidates, the first bigger number on the left,</span><br><span class="line">the first bigger number on the right.</span><br><span class="line"></span><br><span class="line">The cost to remove a is a * min(left, right).</span><br></pre></td></tr></table></figure>
-<pre><code>他认为这道题其实就是数组中两个相邻数字的乘积，我们需要用一个栈来保存每一个数字，新遍历出来的数字如果大于等于栈中最后一个数字，那么这
-时候需要把栈中最后一个元素pop出来，乘以当前栈中最后一个元素，这样可以保证这样的二叉树父节点的值最小。这种方法只需要遍历一遍数组就可以
-找出最优解，确实比DP好很多，但是确实不太好想，Lee这个人很厉害，很多题的解法都非常的优秀，但是确实不容易在第一时间想出来。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def mctFromLeafValues(self, arr: List[int]) -&gt; int:</span><br><span class="line">        res = 0</span><br><span class="line">        stack = [float(&apos;inf&apos;)]</span><br><span class="line">        for num in arr:</span><br><span class="line">            while stack[-1] &lt;= num:</span><br><span class="line">                mid = stack.pop()</span><br><span class="line">                res += mid * min(stack[-1], num)</span><br><span class="line">            stack.append(num)</span><br><span class="line">        while len(stack) &gt; 2:</span><br><span class="line">            res += stack.pop() * stack[-1]</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+这个题目其实不是很难，但是不太容易理解。在每一个1 * 1的正方形中存在一个正对角线或者反对角线。其实这个题目我们只需要考虑每一个1 * 1的
+正方形就可以。
+</code></pre><p><img src="/images/959.png" alt="case"></p>
+<pre><code>上面的图，展示了一个2 * 2的正方形，那么每一个1 * 1的小正方形中可以存在4个可能的区域，假如是&apos;/&apos;这样的对角线区域0和区域1是相互连接的，
+区域2和区域3是相互连接的；假如是&apos;\&apos;， 区域0， 2 相连接，区域1,3相连接。与此同时两个相邻的小正方形一定有两个相互连接的区域，例如水平
+方向，正方形1的区域2和正方形2的区域1，和竖直方向正方形1的区域3和正方形3的区域0。这么分析完这道题，其实可以发现这是一个非常明显的并查
+集的思想。可以用(i, j, x)来表示每一个小区域的状态，i表示横坐标，j表示纵坐标，x表示正方形内的区域。完成整个并查集之后，我们只需要统计
+有多少个根节点即可。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class UnionFind:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.parent = &#123;&#125;</span><br><span class="line">    def find(self, x):</span><br><span class="line">        if x not in self.parent:</span><br><span class="line">            self.parent[x] = x</span><br><span class="line">        if x != self.parent[x]:</span><br><span class="line">            self.parent[x] = self.find(self.parent[x])</span><br><span class="line">        return self.parent[x]</span><br><span class="line">    def union(self, x, y):</span><br><span class="line">        self.parent[self.find(x)] = self.find(y)</span><br><span class="line">class Solution:</span><br><span class="line">    def regionsBySlashes(self, grid: List[str]) -&gt; int:</span><br><span class="line">        uf = UnionFind()</span><br><span class="line">        for i in range(len(grid)):</span><br><span class="line">            for j in range(len(grid)):</span><br><span class="line">                if i:</span><br><span class="line">                    uf.union((i - 1, j, 2), (i, j, 0))</span><br><span class="line">                if j:</span><br><span class="line">                    uf.union((i, j - 1, 1), (i, j, 3))</span><br><span class="line">                if grid[i][j] != &apos;/&apos;:</span><br><span class="line">                    uf.union((i, j, 0), (i, j, 1))</span><br><span class="line">                    uf.union((i, j, 2), (i, j, 3))</span><br><span class="line">                if grid[i][j] != &apos;\\&apos;:</span><br><span class="line">                    uf.union((i, j, 3), (i, j, 0))</span><br><span class="line">                    uf.union((i, j, 1), (i, j, 2))</span><br><span class="line">        res = 0</span><br><span class="line">        for key in uf.parent:</span><br><span class="line">            if key == uf.find(key):</span><br><span class="line">                res += 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -550,7 +520,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Dynamic-Programming/" rel="tag"><i class="far fa-feather"></i> Dynamic Programming</a>
+            <a href="/tags/Union-Find/" rel="tag"><i class="far fa-feather"></i> Union Find</a>
           
         </div>
       
@@ -563,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/21/Contest146/" rel="next" title="LeetCode Weekly Contest 146">
-                <i class="fa fa-chevron-left"></i> LeetCode Weekly Contest 146
+              <a href="/2019/07/24/318/" rel="next" title="LeetCode 318 Maximum Product of Word Lengths">
+                <i class="fa fa-chevron-left"></i> LeetCode 318 Maximum Product of Word Lengths
               </a>
             
           </div>
@@ -572,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/24/318/" rel="prev" title="LeetCode 318 Maximum Product of Word Lengths">
-                LeetCode 318 Maximum Product of Word Lengths <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -764,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-312-Burst-Balloons"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 312 Burst Balloons</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1039-Minimum-Score-Triangulation-of-Polygon"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 1039 Minimum Score Triangulation of Polygon</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1130-Minimum-Cost-Tree-From-Leaf-Values"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 1130 Minimum Cost Tree From Leaf Values</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-959-Regions-Cut-By-Slashes"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 959 Regions Cut By Slashes</span></a></li></ol></div>
             
 
           </div>
