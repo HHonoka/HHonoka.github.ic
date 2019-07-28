@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="LeetCode 1133 Largest Unique Number原题链接 123456789101112131415161718192021222324Given an array of integers A, return the largest integer that only occurs once.If no integer occurs once, return -1. Exam">
+<meta name="keywords" content="LeetCode Contest">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode Biweekly Contest 5">
+<meta property="og:url" content="https://HHonoka.github.io/2019/07/27/biweekly5/index.html">
+<meta property="og:site_name" content="Honoka">
+<meta property="og:description" content="LeetCode 1133 Largest Unique Number原题链接 123456789101112131415161718192021222324Given an array of integers A, return the largest integer that only occurs once.If no integer occurs once, return -1. Exam">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://hhonoka.github.io/images/11351.png">
+<meta property="og:image" content="https://hhonoka.github.io/images/11352.png">
+<meta property="og:image" content="https://hhonoka.github.io/images/11361.png">
+<meta property="og:image" content="https://hhonoka.github.io/images/11362.png">
+<meta property="og:updated_time" content="2019-07-28T01:15:56.496Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode Biweekly Contest 5">
+<meta name="twitter:description" content="LeetCode 1133 Largest Unique Number原题链接 123456789101112131415161718192021222324Given an array of integers A, return the largest integer that only occurs once.If no integer occurs once, return -1. Exam">
+<meta name="twitter:image" content="https://hhonoka.github.io/images/11351.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://HHonoka.github.io/2019/07/27/biweekly5/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>LeetCode Biweekly Contest 5 | Honoka</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Honoka</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/27/biweekly5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Honoka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/image.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Honoka">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LeetCode Biweekly Contest 5
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-27 18:39:27 / 修改时间：21:15:56" itemprop="dateCreated datePublished" datetime="2019-07-27T18:39:27-04:00">2019-07-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/刷题/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="LeetCode-1133-Largest-Unique-Number"><a href="#LeetCode-1133-Largest-Unique-Number" class="headerlink" title="LeetCode 1133 Largest Unique Number"></a>LeetCode 1133 Largest Unique Number</h1><p><a href="https://leetcode.com/problems/largest-unique-number/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Given an array of integers A, return the largest integer that only occurs once.</span><br><span class="line"></span><br><span class="line">If no integer occurs once, return -1.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: [5,7,3,9,4,9,8,3,1]</span><br><span class="line">Output: 8</span><br><span class="line">Explanation: </span><br><span class="line">The maximum integer in the array is 9 but it is repeated. The number 8 occurs only once, so it&apos;s the answer.</span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: [9,9,8,8]</span><br><span class="line">Output: -1</span><br><span class="line">Explanation: </span><br><span class="line">There is no number that occurs only once.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">1 &lt;= A.length &lt;= 2000</span><br><span class="line">0 &lt;= A[i] &lt;= 1000</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：从数组中找出最大数字，并且这个数字在数组中是唯一的。没什么好说的，用字典存储数组中个元素出现的次数，然后从次数为1的元素中
+找出最大值。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def largestUniqueNumber(self, A: List[int]) -&gt; int:</span><br><span class="line">        count = collections.Counter(A)</span><br><span class="line">        num = []</span><br><span class="line">        for key in count:</span><br><span class="line">            if count[key] == 1:</span><br><span class="line">                num.append(key)</span><br><span class="line">        if not num:</span><br><span class="line">            return -1</span><br><span class="line">        return max(num)</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1134-Armstrong-Number"><a href="#LeetCode-1134-Armstrong-Number" class="headerlink" title="LeetCode 1134 Armstrong Number"></a>LeetCode 1134 Armstrong Number</h1><p><a href="https://leetcode.com/contest/biweekly-contest-5/problems/armstrong-number/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">The k-digit number N is an Armstrong number if and only if the k-th power of each digit sums to N.</span><br><span class="line"></span><br><span class="line">Given a positive integer N, return true if and only if it is an Armstrong number.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: 153</span><br><span class="line">Output: true</span><br><span class="line">Explanation: </span><br><span class="line">153 is a 3-digit number, and 153 = 1^3 + 5^3 + 3^3.</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: 123</span><br><span class="line">Output: false</span><br><span class="line">Explanation: </span><br><span class="line">123 is a 3-digit number, and 123 != 1^3 + 2^3 + 3^3 = 36.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">1 &lt;= N &lt;= 10^8</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：对一个数字中的每一位数字进行整个数字的长度的指数次处理，然后求和。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def isArmstrong(self, N: int) -&gt; bool:</span><br><span class="line">        d = len(str(N))</span><br><span class="line">        n = N</span><br><span class="line">        res = 0</span><br><span class="line">        while N:</span><br><span class="line">            res += (N % 10) ** d</span><br><span class="line">            N = N // 10</span><br><span class="line">        return res == n</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1135-Connecting-Cities-With-Minimum-Cost"><a href="#LeetCode-1135-Connecting-Cities-With-Minimum-Cost" class="headerlink" title="LeetCode 1135 Connecting Cities With Minimum Cost"></a>LeetCode 1135 Connecting Cities With Minimum Cost</h1><p><a href="https://leetcode.com/problems/connecting-cities-with-minimum-cost/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">There are N cities numbered from 1 to N.</span><br><span class="line"></span><br><span class="line">You are given connections, where each connections[i] = [city1, city2, cost] represents the cost to connect city1 and </span><br><span class="line">city2 together.  (A connection is bidirectional: connecting city1 and city2 is the same as connecting city2 and city1.)</span><br><span class="line"></span><br><span class="line">Return the minimum cost so that for every pair of cities, there exists a path of connections (possibly of length 1) that </span><br><span class="line">connects those two cities together.  The cost is the sum of the connection costs used. If the task is impossible, return -1.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input: N = 3, connections = [[1,2,5],[1,3,6],[2,3,1]]</span><br><span class="line">Output: 6</span><br><span class="line">Explanation: </span><br><span class="line">Choosing any 2 edges will connect all cities so we choose the minimum 2.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input: N = 4, connections = [[1,2,3],[3,4,4]]</span><br><span class="line">Output: -1</span><br><span class="line">Explanation: </span><br><span class="line">There is no way to connect all cities even if all edges are used.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">1 &lt;= N &lt;= 10000</span><br><span class="line">1 &lt;= connections.length &lt;= 10000</span><br><span class="line">1 &lt;= connections[i][0], connections[i][1] &lt;= N</span><br><span class="line">0 &lt;= connections[i][2] &lt;= 10^5</span><br><span class="line">connections[i][0] != connections[i][1]</span><br></pre></td></tr></table></figure>
+<p><img src="/images/11351.png" alt="aaa"><br><img src="/images/11352.png" alt="aaa"></p>
+<pre><code>题目大意：在一个无向图中，找出一个最短路径，要求这个路径要经过每一个节点。
+
+这道题在周赛出没做出来，因为有一部分实在无法证明。后来发现这题是一个典型的例题叫做MST(Minimum Spanning Tree),有两种算法都可以解决
+这个问题。只要知道其中一种算法，这道题其实是一道非常容易的题。在这篇blog中，就不做数学上的证明了，简单介绍一下算法的原理。
+
+Kruskal算法：
+这个算法其实本质是一个贪心性质的算法，首先将数组排序，根据路径长度进行排序。然后开始遍历数组。在遍历的过程中我们需要使用Union Find
+来处理已经遍历过的节点，因为如果出现两个节点的根节点是相同的，我们就没有必要在处理这两个节点，因为前面的图已经经过这两个节点，并且路径
+一定比当前的短，因为我们将数组预处理过（按照路径长度）。最后我们只需要判断这个图是否经过了所有的节点即可。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minimumCost(self, N: int, connections: List[List[int]]) -&gt; int:</span><br><span class="line">        def find(x):</span><br><span class="line">            parents.setdefault(x, x)</span><br><span class="line">            if x != parents[x]:</span><br><span class="line">                parents[x] = find(parents[x])</span><br><span class="line">            return parents[x]</span><br><span class="line">        </span><br><span class="line">        def union(x, y):</span><br><span class="line">            parents[find(x)] = find(y)</span><br><span class="line">            </span><br><span class="line">        res = 0</span><br><span class="line">        parents = &#123;&#125;</span><br><span class="line">        for x, y, cost in sorted(connections, key=lambda x: x[2]):</span><br><span class="line">            if find(x) != find(y):</span><br><span class="line">                res += cost</span><br><span class="line">                union(x, y)</span><br><span class="line">        </span><br><span class="line">        if len(&#123;find(x) for x in range(1, N+1)&#125;) != 1:</span><br><span class="line">            return -1</span><br><span class="line">        else:</span><br><span class="line">            return res</span><br></pre></td></tr></table></figure>
+<pre><code>Prim算法：
+这个算法的本质是，选取任意一个节点作为起始点，然后根据这个起点能连接到所有节点入堆，堆排序根据路径长度来排序，所以保证每一次处理的路径
+都是当前最短的路径，直到堆为空。在这个过程中不断叠加路径的总和，最后判断所有节点是否都扫描过即可。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minimumCost(self, N: int, connections: List[List[int]]) -&gt; int:</span><br><span class="line">        if len(connections) &lt; N - 1:</span><br><span class="line">            return -1</span><br><span class="line">        dic = collections.defaultdict(list)</span><br><span class="line">        for c in connections:</span><br><span class="line">            dic[c[0]].append([c[1], c[2]])</span><br><span class="line">            dic[c[1]].append([c[0], c[2]])</span><br><span class="line">        heap = [(0, 1)]</span><br><span class="line">        seen = [False] * (N + 1)</span><br><span class="line">        seen[0] = True</span><br><span class="line">        res = 0</span><br><span class="line">        while heap:</span><br><span class="line">            cost, node = heapq.heappop(heap)</span><br><span class="line">            if seen[node]:</span><br><span class="line">                continue</span><br><span class="line">            res += cost</span><br><span class="line">            seen[node] = True</span><br><span class="line">            for n, c in dic[node]:</span><br><span class="line">                heapq.heappush(heap,[c, n])</span><br><span class="line">        if False in seen:</span><br><span class="line">            return -1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1136-Parallel-Courses"><a href="#LeetCode-1136-Parallel-Courses" class="headerlink" title="LeetCode 1136 Parallel Courses"></a>LeetCode 1136 Parallel Courses</h1><p><a href="https://leetcode.com/problems/parallel-courses/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">There are N courses, labelled from 1 to N.</span><br><span class="line"></span><br><span class="line">We are given relations[i] = [X, Y], representing a prerequisite relationship between course X and course Y: course X has </span><br><span class="line">to be studied before course Y.</span><br><span class="line"></span><br><span class="line">In one semester you can study any number of courses as long as you have studied all the prerequisites for the course you </span><br><span class="line">are studying.</span><br><span class="line"></span><br><span class="line">Return the minimum number of semesters needed to study all courses.  If there is no way to study all the courses, </span><br><span class="line">return -1.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input: N = 3, relations = [[1,3],[2,3]]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: </span><br><span class="line">In the first semester, courses 1 and 2 are studied. In the second semester, course 3 is studied.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Input: N = 3, relations = [[1,2],[2,3],[3,1]]</span><br><span class="line">Output: -1</span><br><span class="line">Explanation: </span><br><span class="line">No course can be studied because they depend on each other.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">1 &lt;= N &lt;= 5000</span><br><span class="line">1 &lt;= relations.length &lt;= 5000</span><br><span class="line">relations[i][0] != relations[i][1]</span><br><span class="line">There are no repeated relations in the input.</span><br></pre></td></tr></table></figure>
+<p><img src="/images/11361.png" alt="aaa"><br><img src="/images/11362.png" alt="aaa"></p>
+<pre><code>题目大意：有一个课程表，里面包括每一个课程所需的前置课程，要求我们求出最少需要多少轮的学习才可以完成所有课程。
+这道题和LeetCode 210, 207差不多。主要涉及到一种特殊的算法叫做拓普排序（Topological Sort)。简单来说这个排序的实际作用就是找环。
+因为在搜索过程中发现所有课程中存在一个环，那么说明一定有一部分的课程是无法完成的（例如[(1, 2), (2, 3), (3, 1)],学习2必须先学1，
+学习3必须先学2，学习1必须先学习3，那么这其中就形成了一个死环，这三门课程都无法完成。所以这道题的基本思路就出来了，首先判断是否能完成
+所有课程，然后用DFS来搜索查找一个最大的周期就是答案。
+</code></pre><p><a href="https://leetcode.com/problems/course-schedule/" target="_blank" rel="noopener">LeetCode 207</a><br><a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank" rel="noopener">LeetCode 210</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def minimumSemesters(self, N: int, relations: List[List[int]]) -&gt; int:</span><br><span class="line">        seen = [0] * (N + 1)</span><br><span class="line">        dic = collections.defaultdict(list)</span><br><span class="line">        for r in relations:</span><br><span class="line">            dic[r[1]].append(r[0])</span><br><span class="line">        def dfs(node, count):</span><br><span class="line">            if seen[node] == 1:</span><br><span class="line">                return True</span><br><span class="line">            if seen[node] == -1:</span><br><span class="line">                return False</span><br><span class="line">            seen[node] = -1</span><br><span class="line">            for n in dic[node]:</span><br><span class="line">                if not dfs(n, count + 1):</span><br><span class="line">                    return False</span><br><span class="line">            seen[node] = 1</span><br><span class="line">            return True</span><br><span class="line">        dic1 = &#123;&#125;</span><br><span class="line">        def count(node):</span><br><span class="line">            if node in dic1:</span><br><span class="line">                return dic1[node]</span><br><span class="line">            temp = []</span><br><span class="line">            for n in dic[node]:</span><br><span class="line">                cnt = count(n)</span><br><span class="line">                temp.append(cnt)</span><br><span class="line">            res = 1 + max(temp) if temp else 1</span><br><span class="line">            dic1[node] = res</span><br><span class="line">            return res</span><br><span class="line">        for node in range(1, N + 1):</span><br><span class="line">            if not dfs(node, 1):</span><br><span class="line">                return -1</span><br><span class="line">        self.res = 0</span><br><span class="line">        for node in range(1, N + 1):</span><br><span class="line">            self.res = max(self.res, count(node))</span><br><span class="line">        return self.res</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode-Contest/" rel="tag"><i class="far fa-feather"></i> LeetCode Contest</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/26/959/" rel="next" title="LeetCode 959 Regions Cut By Slashes">
+                <i class="fa fa-chevron-left"></i> LeetCode 959 Regions Cut By Slashes
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/image.png" alt="Honoka">
+            
+              <p class="site-author-name" itemprop="name">Honoka</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1133-Largest-Unique-Number"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1133 Largest Unique Number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1134-Armstrong-Number"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 1134 Armstrong Number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1135-Connecting-Cities-With-Minimum-Cost"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 1135 Connecting Cities With Minimum Cost</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1136-Parallel-Courses"><span class="nav-number">4.</span> <span class="nav-text">LeetCode 1136 Parallel Courses</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Honoka</span>
+
+  
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+ -->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,0" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
