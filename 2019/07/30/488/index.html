@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="今天来做一下两道DP的题目，这两道题目都是用记忆化递归来解决，所以就放在一起了。强化DP思想！ LeetCode 329 Longest Increasing Path in a Matrix原题链接 1234567891011121314151617181920212223242526Given an integer matrix, find the length of the longest">
-<meta name="keywords" content="高频,Dynamic Programming">
+  <meta name="description" content="LeetCode 488 Zuma Game原题链接 12345678910111213141516171819202122232425262728293031Think about Zuma Game. You have a row of balls on the table, colored red(R), yellow(Y), blue(B), green(G), and white(W).">
+<meta name="keywords" content="DFS,Backtrack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 329,741">
-<meta property="og:url" content="https://HHonoka.github.io/2019/07/05/cherrypick/index.html">
+<meta property="og:title" content="LeetCode 488 Zuma Game">
+<meta property="og:url" content="https://HHonoka.github.io/2019/07/30/488/index.html">
 <meta property="og:site_name" content="Honoka">
-<meta property="og:description" content="今天来做一下两道DP的题目，这两道题目都是用记忆化递归来解决，所以就放在一起了。强化DP思想！ LeetCode 329 Longest Increasing Path in a Matrix原题链接 1234567891011121314151617181920212223242526Given an integer matrix, find the length of the longest">
+<meta property="og:description" content="LeetCode 488 Zuma Game原题链接 12345678910111213141516171819202122232425262728293031Think about Zuma Game. You have a row of balls on the table, colored red(R), yellow(Y), blue(B), green(G), and white(W).">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-05T06:06:39.890Z">
+<meta property="og:updated_time" content="2019-07-30T06:17:46.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 329,741">
-<meta name="twitter:description" content="今天来做一下两道DP的题目，这两道题目都是用记忆化递归来解决，所以就放在一起了。强化DP思想！ LeetCode 329 Longest Increasing Path in a Matrix原题链接 1234567891011121314151617181920212223242526Given an integer matrix, find the length of the longest">
+<meta name="twitter:title" content="LeetCode 488 Zuma Game">
+<meta name="twitter:description" content="LeetCode 488 Zuma Game原题链接 12345678910111213141516171819202122232425262728293031Think about Zuma Game. You have a row of balls on the table, colored red(R), yellow(Y), blue(B), green(G), and white(W).">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/2019/07/05/cherrypick/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/07/30/488/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>LeetCode 329,741 | Honoka</title>
+  <title>LeetCode 488 Zuma Game | Honoka</title>
   
 
 
@@ -370,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/05/cherrypick/">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/07/30/488/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Honoka">
@@ -387,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 329,741
+          <h1 class="post-title" itemprop="name headline">LeetCode 488 Zuma Game
 
               
             
@@ -413,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2019-07-05 01:17:51 / 修改时间：02:06:39" itemprop="dateCreated datePublished" datetime="2019-07-05T01:17:51-04:00">2019-07-05</time>
+              <time title="创建时间：2019-07-30 01:16:31 / 修改时间：02:17:46" itemprop="dateCreated datePublished" datetime="2019-07-30T01:16:31-04:00">2019-07-30</time>
             
 
             
@@ -477,30 +477,14 @@
       
 
       
-        <pre><code>今天来做一下两道DP的题目，这两道题目都是用记忆化递归来解决，所以就放在一起了。强化DP思想！
-</code></pre><h1 id="LeetCode-329-Longest-Increasing-Path-in-a-Matrix"><a href="#LeetCode-329-Longest-Increasing-Path-in-a-Matrix" class="headerlink" title="LeetCode 329 Longest Increasing Path in a Matrix"></a>LeetCode 329 Longest Increasing Path in a Matrix</h1><p><a href="https://leetcode.com/problems/longest-increasing-path-in-a-matrix/" target="_blank" rel="noopener">原题链接</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Given an integer matrix, find the length of the longest increasing path.</span><br><span class="line"></span><br><span class="line">From each cell, you can either move to four directions: left, right, up or down. You may NOT move diagonally or move </span><br><span class="line">outside of the boundary (i.e. wrap-around is not allowed).</span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: nums = </span><br><span class="line">[</span><br><span class="line">  [9,9,4],</span><br><span class="line">  [6,6,8],</span><br><span class="line">  [2,1,1]</span><br><span class="line">] </span><br><span class="line">Output: 4 </span><br><span class="line">Explanation: The longest increasing path is [1, 2, 6, 9].</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: nums = </span><br><span class="line">[</span><br><span class="line">  [3,4,5],</span><br><span class="line">  [3,2,6],</span><br><span class="line">  [2,2,1]</span><br><span class="line">] </span><br><span class="line">Output: 4 </span><br><span class="line">Explanation: The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.</span><br></pre></td></tr></table></figure>
-<pre><code>题目大意：在二维矩阵中找到最长递增路径，返回路径长度即可。
+        <h1 id="LeetCode-488-Zuma-Game"><a href="#LeetCode-488-Zuma-Game" class="headerlink" title="LeetCode 488 Zuma Game"></a>LeetCode 488 Zuma Game</h1><p><a href="https://leetcode.com/problems/zuma-game/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Think about Zuma Game. You have a row of balls on the table, colored red(R), yellow(Y), blue(B), green(G), and white(W). </span><br><span class="line">You also have several balls in your hand.</span><br><span class="line"></span><br><span class="line">Each time, you may choose a ball in your hand, and insert it into the row (including the leftmost place and rightmost place). </span><br><span class="line">Then, if there is a group of 3 or more balls in the same color touching, remove these balls. Keep doing this until no more balls can be removed.</span><br><span class="line"></span><br><span class="line">Find the minimal balls you have to insert to remove all the balls on the table. If you cannot remove all the balls, output -1.</span><br><span class="line"></span><br><span class="line">Examples:</span><br><span class="line"></span><br><span class="line">Input: &quot;WRRBBW&quot;, &quot;RB&quot;</span><br><span class="line">Output: -1</span><br><span class="line">Explanation: WRRBBW -&gt; WRR[R]BBW -&gt; WBBW -&gt; WBB[B]W -&gt; WW</span><br><span class="line"></span><br><span class="line">Input: &quot;WWRRBBWW&quot;, &quot;WRBRW&quot;</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: WWRRBBWW -&gt; WWRR[R]BBWW -&gt; WWBBWW -&gt; WWBB[B]WW -&gt; WWWW -&gt; empty</span><br><span class="line"></span><br><span class="line">Input:&quot;G&quot;, &quot;GGGGG&quot;</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: G -&gt; G[G] -&gt; GG[G] -&gt; empty </span><br><span class="line"></span><br><span class="line">Input: &quot;RBYYBBRRB&quot;, &quot;YRBGB&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: RBYYBBRRB -&gt; RBYY[Y]BBRRB -&gt; RBBBRRB -&gt; RRRB -&gt; B -&gt; B[B] -&gt; BB[B] -&gt; empty </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line">You may assume that the initial row of balls on the table won’t have any 3 or more consecutive balls with the same color.</span><br><span class="line">The number of balls on the table won&apos;t exceed 20, and the string represents these balls is called &quot;board&quot; in the input.</span><br><span class="line">The number of balls in your hand won&apos;t exceed 5, and the string represents these balls is called &quot;hand&quot; in the input.</span><br><span class="line">Both input strings will be non-empty and only contain characters &apos;R&apos;,&apos;Y&apos;,&apos;B&apos;,&apos;G&apos;,&apos;W&apos;.</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：祖玛游戏，求最少的次数将所有字符消掉。
 
-这道题明显是一道dp的题目，如果用Brute Force的方法，时间复杂度会非常高，大约是O(2 ** mn),所以说一定是用dp来解决了。
-简单说一下思想，比如我们想确定矩阵中某一个点可以构成的最长递增路径，我们需要知道他4个相邻位置的结果，然后判断到当前位置是不是递增的
-即可，那么这个过程其实就是一个递归的过程（bottom-up）。但是递归的过程中存在着很多重复的过程，如果不去避免重复的递归，那么其实就和
-Brute Force的方法没什么区别了，所以这里需要使用记忆化（memoization）来存储每一个状态的值，当递归时候，处理到已经处理过的部分，
-我们直接调用这个状态的值就可以了。可以使用字典来存储各个状态下的值，也方便搜索，因为从字典中找一个key的时间复杂度是线性的。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def longestIncreasingPath(self, matrix: List[List[int]]) -&gt; int:</span><br><span class="line">        self.dic = collections.defaultdict(int)</span><br><span class="line">        self.res = 0</span><br><span class="line">        def dfs(i, j, pre):</span><br><span class="line">            if i &lt; 0 or i &gt;= len(matrix) or j &lt; 0 or j &gt;= len(matrix[0]) or matrix[i][j] &lt;= pre:</span><br><span class="line">                return 0</span><br><span class="line">            if (i, j) in self.dic:</span><br><span class="line">                return self.dic[(i, j)]</span><br><span class="line">            </span><br><span class="line">            path = 1 + max(dfs(i + 1, j, matrix[i][j]), dfs(i - 1, j, matrix[i][j]), dfs(i, j - 1, matrix[i][j]), dfs(i, j + 1, matrix[i][j]))</span><br><span class="line">            # 当前位置的最长递增路径的值是根据他4个方向的值得到的。</span><br><span class="line">            </span><br><span class="line">            self.res = max(self.res, path) #维护最长路径的值</span><br><span class="line">            self.dic[(i, j)] = path #存储当前状态</span><br><span class="line">            return path </span><br><span class="line">        for i in range(len(matrix)):</span><br><span class="line">            for j in range(len(matrix[0])):</span><br><span class="line">                dfs(i, j, float(&apos;-inf&apos;))</span><br><span class="line">        return self.res</span><br></pre></td></tr></table></figure>
-<pre><code>时间复杂度O（mn * mn）
-递归的时候一定要注意递归的条件，比如当前位置是不是在矩阵中，已经当前位置的值和之前位置的值的关系（因为我们要找的是递增序列）。
-</code></pre><h1 id="LeetCode-741-Cherry-Pickup"><a href="#LeetCode-741-Cherry-Pickup" class="headerlink" title="LeetCode 741 Cherry Pickup"></a>LeetCode 741 Cherry Pickup</h1><p><a href="https://leetcode.com/problems/cherry-pickup/" target="_blank" rel="noopener">原题链接</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">In a N x N grid representing a field of cherries, each cell is one of three possible integers.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">0 means the cell is empty, so you can pass through;</span><br><span class="line">1 means the cell contains a cherry, that you can pick up and pass through;</span><br><span class="line">-1 means the cell contains a thorn that blocks your way.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Your task is to collect maximum number of cherries possible by following the rules below:</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Starting at the position (0, 0) and reaching (N-1, N-1) by moving right or down through valid path cells (cells with value 0 or 1);</span><br><span class="line">After reaching (N-1, N-1), returning to (0, 0) by moving left or up through valid path cells;</span><br><span class="line">When passing through a path cell containing a cherry, you pick it up and the cell becomes an empty cell (0);</span><br><span class="line">If there is no valid path between (0, 0) and (N-1, N-1), then no cherries can be collected.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: grid =</span><br><span class="line">[[0, 1, -1],</span><br><span class="line"> [1, 0, -1],</span><br><span class="line"> [1, 1,  1]]</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: </span><br><span class="line">The player started at (0, 0) and went down, down, right right to reach (2, 2).</span><br><span class="line">4 cherries were picked up during this single trip, and the matrix becomes [[0,1,-1],[0,0,-1],[0,0,0]].</span><br><span class="line">Then, the player went left, up, up, left to return home, picking up one more cherry.</span><br><span class="line">The total number of cherries picked up is 5, and this is the maximum possible.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Note:</span><br><span class="line"></span><br><span class="line">grid is an N by N 2D array, with 1 &lt;= N &lt;= 50.</span><br><span class="line">Each grid[i][j] is an integer in the set &#123;-1, 0, 1&#125;.</span><br><span class="line">It is guaranteed that grid[0][0] and grid[N-1][N-1] are not -1.</span><br></pre></td></tr></table></figure>
-<pre><code>题目大意：二维矩阵中有3个状态，0代表可以通过，1代表该位置有樱桃可以通过，-1代表是个障碍无法通过。两个人同时从起点走向终点，问最多
-总共得到多少樱桃。
-
-这个题其实和上面的题的思想是一样的，都是找最大值路径的问题，只不过这个问题有两个人同时在走，所以需要我们同时维护两条路径，并且每一条
-路径的前进方式可能不一样（下下，下右，右下，右右），不同的前进方式的收益是不一样的，我们需要找到最大的。两条路径和一条路径看上去复杂
-一些，实际上没有任何区别，我们用一个状态同时存储两个点就是了。每一个状态都是跟之前的状态有关系，所以一样使用记忆化存储状态，然后碰见
-处理过的状态直接调用就可以。直接看代码。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def cherryPickup(self, grid: List[List[int]]) -&gt; int:</span><br><span class="line">        dic = collections.defaultdict(int)  #状态存储</span><br><span class="line">        if grid[-1][-1] == -1: #如果走不到终点，直接返回-1</span><br><span class="line">            return -1</span><br><span class="line">        def dp(i1, j1, i2, j2):</span><br><span class="line">            if (i1, j1, i2, j2) in dic: #如果处理过这个状态，直接从字典中调取即可</span><br><span class="line">                return dic[(i1, j1, i2, j2)]</span><br><span class="line">            if i1 == len(grid) or i2 == len(grid) or j1 == len(grid) or j2 == len(grid):</span><br><span class="line">                return -1   #如果有一个点不在矩阵中，说明这个状态不合法</span><br><span class="line">            if i1 == len(grid) - 1 and i2 == len(grid) -1 and j1 == len(grid) - 1 and j2 == len(grid) - 1:</span><br><span class="line">                return grid[-1][-1] # 递归的最深位置，我们需要获得这个位置的值</span><br><span class="line">            if grid[i1][j1] == -1 or grid[i2][j2] == -1: #碰到障碍，说明这条路不通，也返回-1</span><br><span class="line">                return -1</span><br><span class="line">            </span><br><span class="line">            dd = dp(i1 + 1, j1, i2 + 1, j2)</span><br><span class="line">            rr = dp(i1, j1 + 1, i2, j2 + 1)</span><br><span class="line">            dr = dp(i1 + 1, j1, i2, j2 + 1)</span><br><span class="line">            rd = dp(i1, j1 + 1, i2 + 1, j2)</span><br><span class="line">            #上面的4个值，带表2条路径的前进模式</span><br><span class="line">            maxoutput = max(dd, rr, dr, rd) # 需要从不同的前进模式中找到最大收益</span><br><span class="line">            if maxoutput == -1:</span><br><span class="line">                output = -1</span><br><span class="line">            else: #如果两条路径路过同一个点，我们只能摘1次樱桃！******</span><br><span class="line">                if i1 == i2 and j1 == j2:</span><br><span class="line">                    output = maxoutput + grid[i1][j1]</span><br><span class="line">                else:</span><br><span class="line">                    output = maxoutput + grid[i1][j1] + grid[i2][j2]</span><br><span class="line">            dic[(i1, j1, i2, j2)] = output #存储状态</span><br><span class="line">            return output</span><br><span class="line">        return dp(0, 0, 0, 0) if dp(0, 0, 0, 0) &gt; 0 else 0</span><br></pre></td></tr></table></figure>
-
+这个题目其实不是很难，考的是搜索的基本功，通过一个例子来简单的分析一下这个题。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;WWRRBBWW&quot;, &quot;WRBRW&quot;</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: WWRRBBWW -&gt; WWRR[R]BBWW -&gt; WWBBWW -&gt; WWBB[B]WW -&gt; WWWW -&gt; empty</span><br><span class="line"></span><br><span class="line">首先需要扫描数组，碰到连续的字符串，如果在我们手中存在相同的字符，可以打出去或者不打出去，来消掉字符串。在上面的例子中，消掉R和B，最后4个</span><br><span class="line">W直接互相消掉，其实还有一种策略，先消除掉前两个W，在一次消除后面的字符串。但是这不是最优解，不过通过这个案例可以看出这是一个回溯的思想，</span><br><span class="line">遇到连续的字符，我们可以选择消或者不消来找最大值。</span><br></pre></td></tr></table></figure>
+<pre><code>用字典来存储手中的字符个数，然后递归搜索即可找到最优解。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findMinStep(self, board: str, hand: str) -&gt; int:</span><br><span class="line">        count = collections.Counter(hand)</span><br><span class="line">        def dfs(s, count):</span><br><span class="line">            if not s:</span><br><span class="line">                return 0</span><br><span class="line">            res, i = float(&apos;inf&apos;), 0</span><br><span class="line">            while i &lt; len(s):</span><br><span class="line">                j = i + 1</span><br><span class="line">                while j &lt; len(s) and s[j] == s[i]:</span><br><span class="line">                    j += 1</span><br><span class="line">                dif = 3 - (j - i)</span><br><span class="line">                if count[s[i]] &gt;= dif:</span><br><span class="line">                    if dif &lt; 0:</span><br><span class="line">                        dif = 0</span><br><span class="line">                    count[s[i]] -= dif</span><br><span class="line">                    temp = dfs(s[:i] + s[j:], count)</span><br><span class="line">                    if temp &gt;= 0:</span><br><span class="line">                        res = min(res, temp + dif)</span><br><span class="line">                    count[s[i]] += dif</span><br><span class="line">                i = j</span><br><span class="line">            return res if res != float(&apos;inf&apos;) else -1</span><br><span class="line">        return dfs(board, count)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -523,9 +507,9 @@ Brute Force的方法没什么区别了，所以这里需要使用记忆化（mem
       
         <div class="post-tags">
           
-            <a href="/tags/高频/" rel="tag"><i class="far fa-feather"></i> 高频</a>
+            <a href="/tags/DFS/" rel="tag"><i class="far fa-feather"></i> DFS</a>
           
-            <a href="/tags/Dynamic-Programming/" rel="tag"><i class="far fa-feather"></i> Dynamic Programming</a>
+            <a href="/tags/Backtrack/" rel="tag"><i class="far fa-feather"></i> Backtrack</a>
           
         </div>
       
@@ -538,8 +522,8 @@ Brute Force的方法没什么区别了，所以这里需要使用记忆化（mem
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/02/317/" rel="next" title="LeetCode 317,296 Shortest Distance from All Buildings">
-                <i class="fa fa-chevron-left"></i> LeetCode 317,296 Shortest Distance from All Buildings
+              <a href="/2019/07/28/contest147/" rel="next" title="LeetCode Contest 147">
+                <i class="fa fa-chevron-left"></i> LeetCode Contest 147
               </a>
             
           </div>
@@ -547,10 +531,6 @@ Brute Force的方法没什么区别了，所以这里需要使用记忆化（mem
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/05/python学习/" rel="prev" title="python学习">
-                python学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -741,7 +721,7 @@ Brute Force的方法没什么区别了，所以这里需要使用记忆化（mem
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-329-Longest-Increasing-Path-in-a-Matrix"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 329 Longest Increasing Path in a Matrix</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-741-Cherry-Pickup"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 741 Cherry Pickup</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-488-Zuma-Game"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 488 Zuma Game</span></a></li></ol></div>
             
 
           </div>
