@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="LeetCode 924 Minimize Malware Spread原题链接 这道题是LeetCode中属于hard难度的题目，也是一道高频题，个人认为这道题是一道非常典型的题目。题目很长，大概意思就是，有一些节点，其中 一些节点被病毒感染了，某一些节点之间是相互连接的（形成一个图），如果这个图中有一个节点是被病毒感染的，那么整个图都会被感染。要求我们 找到其中一个被感染的节点，并删除他，使所">
-<meta name="keywords" content="高频,DFS,Union Find">
+  <meta name="description" content="LeetCode 321 Create Maximum Number原题链接 12345678910111213141516171819202122232425262728293031Given two arrays of length m and n with digits 0-9 representing two numbers. Create the maximum number of le">
+<meta name="keywords" content="Hard">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播">
-<meta property="og:url" content="https://HHonoka.github.io/2019/06/26/Spread/index.html">
+<meta property="og:title" content="LeetCode 321 Create Maximum Number">
+<meta property="og:url" content="https://HHonoka.github.io/2019/08/05/321/index.html">
 <meta property="og:site_name" content="Honoka">
-<meta property="og:description" content="LeetCode 924 Minimize Malware Spread原题链接 这道题是LeetCode中属于hard难度的题目，也是一道高频题，个人认为这道题是一道非常典型的题目。题目很长，大概意思就是，有一些节点，其中 一些节点被病毒感染了，某一些节点之间是相互连接的（形成一个图），如果这个图中有一个节点是被病毒感染的，那么整个图都会被感染。要求我们 找到其中一个被感染的节点，并删除他，使所">
+<meta property="og:description" content="LeetCode 321 Create Maximum Number原题链接 12345678910111213141516171819202122232425262728293031Given two arrays of length m and n with digits 0-9 representing two numbers. Create the maximum number of le">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T09:12:42.473Z">
+<meta property="og:updated_time" content="2019-08-05T09:28:23.919Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播">
-<meta name="twitter:description" content="LeetCode 924 Minimize Malware Spread原题链接 这道题是LeetCode中属于hard难度的题目，也是一道高频题，个人认为这道题是一道非常典型的题目。题目很长，大概意思就是，有一些节点，其中 一些节点被病毒感染了，某一些节点之间是相互连接的（形成一个图），如果这个图中有一个节点是被病毒感染的，那么整个图都会被感染。要求我们 找到其中一个被感染的节点，并删除他，使所">
+<meta name="twitter:title" content="LeetCode 321 Create Maximum Number">
+<meta name="twitter:description" content="LeetCode 321 Create Maximum Number原题链接 12345678910111213141516171819202122232425262728293031Given two arrays of length m and n with digits 0-9 representing two numbers. Create the maximum number of le">
 
 
 
@@ -115,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="https://HHonoka.github.io/2019/06/26/Spread/">
+  <link rel="canonical" href="https://HHonoka.github.io/2019/08/05/321/">
 
 
 
@@ -125,7 +125,7 @@
   };
 </script>
 
-  <title>LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播 | Honoka</title>
+  <title>LeetCode 321 Create Maximum Number | Honoka</title>
   
 
 
@@ -370,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/06/26/Spread/">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/08/05/321/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Honoka">
@@ -387,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LeetCode 924 Minimize Malware Spread 最大限度减少恶意软件传播
+          <h1 class="post-title" itemprop="name headline">LeetCode 321 Create Maximum Number
 
               
             
@@ -413,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2019-06-26 04:05:36 / 修改时间：05:12:42" itemprop="dateCreated datePublished" datetime="2019-06-26T04:05:36-04:00">2019-06-26</time>
+              <time title="创建时间：2019-08-05 05:03:56 / 修改时间：05:28:23" itemprop="dateCreated datePublished" datetime="2019-08-05T05:03:56-04:00">2019-08-05</time>
             
 
             
@@ -477,20 +477,15 @@
       
 
       
-        <h1 id="LeetCode-924-Minimize-Malware-Spread"><a href="#LeetCode-924-Minimize-Malware-Spread" class="headerlink" title="LeetCode 924 Minimize Malware Spread"></a>LeetCode 924 Minimize Malware Spread</h1><p><a href="https://leetcode.com/problems/minimize-malware-spread/" target="_blank" rel="noopener">原题链接</a></p>
-<pre><code>这道题是LeetCode中属于hard难度的题目，也是一道高频题，个人认为这道题是一道非常典型的题目。题目很长，大概意思就是，有一些节点，其中
-一些节点被病毒感染了，某一些节点之间是相互连接的（形成一个图），如果这个图中有一个节点是被病毒感染的，那么整个图都会被感染。要求我们
-找到其中一个被感染的节点，并删除他，使所有节点受感染的数目最少。
-</code></pre><p><strong>例子</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: graph = [[1,1,0],[1,1,0],[0,0,1]], initial = [0,1]</span><br><span class="line">Output: 0</span><br><span class="line">0---1</span><br><span class="line">2</span><br><span class="line">0和1构成一个图， 2不和任何节点连接，由于0和1同时都被病毒感染，所以按照题目要求我们需要返回一个较小数字的节点。</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: graph = [[1,0,0],[0,1,0],[0,0,1]], initial = [0,2]</span><br><span class="line">Output: 0</span><br><span class="line">例子2和例子1其实是类似的。</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line"></span><br><span class="line">Input: graph = [[1,1,1],[1,1,1],[1,1,1]], initial = [1,2]</span><br><span class="line">Output: 1</span><br><span class="line"></span><br><span class="line">       0 -- 1</span><br><span class="line">        \  /</span><br><span class="line">         2</span><br><span class="line">这三个节点彼此相互连接， 所以仍然是返回哪个比较小的被感染节点。</span><br></pre></td></tr></table></figure>
-<pre><code>其实通过上述三个例子，不是很容易弄明白这个问题。如果在一个图中，有至少有两个以上的节点是被病毒感染的，那么其实无论删除哪个，都不能避
-免整个图被感染。所以在扫描整个图时，如果存在这么一个图，图中只有一个节点是被感染的，那么我们如果删除这个节点就可以使这一部分的图，全
-变成正常情况。依照这个原则去搜索，即可找出答案。
+        <h1 id="LeetCode-321-Create-Maximum-Number"><a href="#LeetCode-321-Create-Maximum-Number" class="headerlink" title="LeetCode 321 Create Maximum Number"></a>LeetCode 321 Create Maximum Number</h1><p><a href="https://leetcode.com/problems/create-maximum-number/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Given two arrays of length m and n with digits 0-9 representing two numbers. Create the maximum number of length k &lt;= m + n </span><br><span class="line">from digits of the two. The relative order of the digits from the same array must be preserved. Return an array of the k digits.</span><br><span class="line"></span><br><span class="line">Note: You should try to optimize your time and space complexity.</span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">nums1 = [3, 4, 6, 5]</span><br><span class="line">nums2 = [9, 1, 2, 5, 8, 3]</span><br><span class="line">k = 5</span><br><span class="line">Output:</span><br><span class="line">[9, 8, 6, 5, 3]</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">nums1 = [6, 7]</span><br><span class="line">nums2 = [6, 0, 4]</span><br><span class="line">k = 5</span><br><span class="line">Output:</span><br><span class="line">[6, 7, 6, 0, 4]</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line"></span><br><span class="line">Input:</span><br><span class="line">nums1 = [3, 9]</span><br><span class="line">nums2 = [8, 9]</span><br><span class="line">k = 3</span><br><span class="line">Output:</span><br><span class="line">[9, 8, 9]</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：从两个数组中，按照原来顺序分别挑出来一部分数字，组成一个最大的数字。
 
-首先我们需要构造这个图，构图这部分我喜欢写在Union Find的类里面，然后在主函数中进行搜索就可以了。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">class UnionFind:</span><br><span class="line">    def __init__(self, graph):</span><br><span class="line">        self.parent = [i for i in range(len(graph))]</span><br><span class="line">        self.rank = [1 for _ in range(len(graph))]</span><br><span class="line">        for i in range(len(graph)):</span><br><span class="line">            for j in range(i + 1, len(graph[0])):</span><br><span class="line">                if graph[i][j] == 1 and i != j:</span><br><span class="line">                    self.union(i, j)</span><br><span class="line">    def find(self, x):</span><br><span class="line">        if self.parent[x] != x:</span><br><span class="line">            self.parent[x] = self.find(self.parent[x])</span><br><span class="line">        return self.parent[x]</span><br><span class="line">    </span><br><span class="line">    def union(self, x, y):</span><br><span class="line">        px, py = self.find(x), self.find(y)</span><br><span class="line">        if px == py:</span><br><span class="line">            return</span><br><span class="line">        if self.rank[px] == self.rank[py]:</span><br><span class="line">            self.parent[py] = px</span><br><span class="line">            self.rank[px] += self.rank[py]</span><br><span class="line">        else:</span><br><span class="line">            if self.rank[px] &gt; self.rank[py]:</span><br><span class="line">                self.parent[py] = px</span><br><span class="line">                self.rank[px] += self.rank[py]</span><br><span class="line">            else:</span><br><span class="line">                self.parent[px] = py</span><br><span class="line">                self.rank[py] += self.rank[px]</span><br><span class="line">#上面这个class是UnionFind和图的构造过程，UnionFind在寻找每个节点的父亲节点的平均用时是O（1），所以这个结构对于构造一个图来说是非常高</span><br><span class="line">效的。</span><br><span class="line">class Solution:</span><br><span class="line">    def minMalwareSpread(self, graph: List[List[int]], initial: List[int]) -&gt; int:</span><br><span class="line">        uf = UnionFind(graph)</span><br><span class="line">        dic = collections.defaultdict(list)</span><br><span class="line">        for i, e in enumerate(uf.parent):</span><br><span class="line">            dic[e].append(i)    #用字典来保存每一个图    </span><br><span class="line">        res = min(initial)      #如果找不到更优的结果，我们需要返回最小值</span><br><span class="line">        initial = set(initial)  #将病毒节点数组转换成集合，方便搜索（集合中搜索元素的时间复杂度是O（1）</span><br><span class="line">        mincount = 0</span><br><span class="line">        for node in dic:</span><br><span class="line">            seen = set()</span><br><span class="line">            for n in dic[node]:</span><br><span class="line">                if n in initial:</span><br><span class="line">                    seen.add(n)     #找出图中所有被感染的节点</span><br><span class="line">            if len(seen) == 1:      #判断该删除哪个节点</span><br><span class="line">                if len(dic[node]) &gt; mincount or (len(dic[node]) == mincount and list(seen)[0] &lt; res):</span><br><span class="line">                    res = list(seen)[0]</span><br><span class="line">                    mincount = len(dic[node])</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
-<pre><code>如果想避免构图这个过程，这道题可以直接用深度优先搜索来求解，深度优先搜索(DFS)的代码更加简洁，但是Union Find的代码看上去更加直观。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#DFS</span><br><span class="line">class Solution:</span><br><span class="line">    def minMalwareSpread(self, graph: List[List[int]], initial: List[int]) -&gt; int:</span><br><span class="line">        def dfs(node,vis):</span><br><span class="line">            for v in  range(len(graph[node])):</span><br><span class="line">                if graph[node][v] == 1 and v not in vis:</span><br><span class="line">                    vis.add(v)</span><br><span class="line">                    dfs(v,vis)</span><br><span class="line">        seen = set()</span><br><span class="line">        res = min(initial)</span><br><span class="line">        initial = set(initial)</span><br><span class="line">        mincount = 0</span><br><span class="line">        for node in range(len(graph)):</span><br><span class="line">            if node not in seen:</span><br><span class="line">                vis = set([node])</span><br><span class="line">                dfs(node,vis)</span><br><span class="line">                infect = vis &amp; initial</span><br><span class="line">                if len(infect) == 1:</span><br><span class="line">                    if len(vis) &gt; mincount or (len(vis) == mincount and list(infect)[0] &lt; res):</span><br><span class="line">                        res = list(infect)[0]</span><br><span class="line">                        mincount = len(vis)</span><br><span class="line">                seen |= vis</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+这个题目比较有意思，看上去比较麻烦，实际上可以拆分成几个子问题来解决。首先我们要考虑如何分割，也就是在数组1中取多少数字和在数组2中取出
+多少数字，这一部分其实可以用一个循环来解决，例如我在数组1中取出i个数字，那么在数组2中必然要取出k - i个数字来。我们已经确定好在每个数组
+中取出多少个数字，那么接下来就需要在数组中来找出最大的组合，然后合并这两部分就是最终答案。合并的部分有点类似于归并排序，每一次从两个
+数组中挑最大的数字即可。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def maxNumber(self, nums1: List[int], nums2: List[int], k: int) -&gt; List[int]:</span><br><span class="line">        res = [0] * k</span><br><span class="line">        for i in range(k + 1):</span><br><span class="line">            j = k - i</span><br><span class="line">            if i &gt; len(nums1) or j &gt; len(nums2):</span><br><span class="line">                continue</span><br><span class="line">            temp1 = self.findMax(nums1, i)</span><br><span class="line">            temp2 = self.findMax(nums2, j)</span><br><span class="line">            temp = self.mergeNums(collections.deque(temp1), collections.deque(temp2), k)</span><br><span class="line">            res = max(res, temp)</span><br><span class="line">        return res</span><br><span class="line">    </span><br><span class="line">    def mergeNums(self, n1, n2, k):   # 合并两部分，使其组成最大值。</span><br><span class="line">        res = []</span><br><span class="line">        while (n1 or n2) and k:</span><br><span class="line">            if n1 &gt;= n2:</span><br><span class="line">                res.append(n1.popleft())</span><br><span class="line">            else:</span><br><span class="line">                res.append(n2.popleft())</span><br><span class="line">            k -= 1</span><br><span class="line">        return res</span><br><span class="line">    </span><br><span class="line">    def findMax(self, n, k):            #从数组中找出k个元素，按照原来的顺序的最大值。</span><br><span class="line">        temp = []</span><br><span class="line">        i = 0</span><br><span class="line">        while i &lt; len(n):</span><br><span class="line">            remain = len(n) - i</span><br><span class="line">            while temp and n[i] &gt; temp[-1] and k &lt; remain:</span><br><span class="line">                temp.pop()</span><br><span class="line">                k += 1</span><br><span class="line">            k -= 1</span><br><span class="line">            temp.append(n[i])</span><br><span class="line">            i += 1</span><br><span class="line">        return temp</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -514,11 +509,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/高频/" rel="tag"><i class="far fa-feather"></i> 高频</a>
-          
-            <a href="/tags/DFS/" rel="tag"><i class="far fa-feather"></i> DFS</a>
-          
-            <a href="/tags/Union-Find/" rel="tag"><i class="far fa-feather"></i> Union Find</a>
+            <a href="/tags/Hard/" rel="tag"><i class="far fa-feather"></i> Hard</a>
           
         </div>
       
@@ -531,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/25/215/" rel="next" title="LeetCode 215 Kth Largest Element in an Array 排序算法总结">
-                <i class="fa fa-chevron-left"></i> LeetCode 215 Kth Largest Element in an Array 排序算法总结
+              <a href="/2019/08/04/contest148/" rel="next" title="LeetCode Weekly Contest 148">
+                <i class="fa fa-chevron-left"></i> LeetCode Weekly Contest 148
               </a>
             
           </div>
@@ -540,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/27/distance/" rel="prev" title="LeetCode 72 Edit Distance 编辑距离">
-                LeetCode 72 Edit Distance 编辑距离 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -734,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-924-Minimize-Malware-Spread"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 924 Minimize Malware Spread</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-321-Create-Maximum-Number"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 321 Create Maximum Number</span></a></li></ol></div>
             
 
           </div>
