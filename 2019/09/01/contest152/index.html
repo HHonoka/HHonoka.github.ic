@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="好几周没打周赛了，这周去打了一下，感觉状态很一般，不过这次的题目有的出的还不错，有的真的无力吐槽。。。 LeetCode 1175 Prime Arrangements原题链接 12345678910111213141516171819202122Return the number of permutations of 1 to n so that prime numbers are at pri">
+<meta name="keywords" content="LeetCode Contest">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode Weekly Contest 152">
+<meta property="og:url" content="https://HHonoka.github.io/2019/09/01/contest152/index.html">
+<meta property="og:site_name" content="Honoka">
+<meta property="og:description" content="好几周没打周赛了，这周去打了一下，感觉状态很一般，不过这次的题目有的出的还不错，有的真的无力吐槽。。。 LeetCode 1175 Prime Arrangements原题链接 12345678910111213141516171819202122Return the number of permutations of 1 to n so that prime numbers are at pri">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-01T14:51:02.619Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode Weekly Contest 152">
+<meta name="twitter:description" content="好几周没打周赛了，这周去打了一下，感觉状态很一般，不过这次的题目有的出的还不错，有的真的无力吐槽。。。 LeetCode 1175 Prime Arrangements原题链接 12345678910111213141516171819202122Return the number of permutations of 1 to n so that prime numbers are at pri">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://HHonoka.github.io/2019/09/01/contest152/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>LeetCode Weekly Contest 152 | Honoka</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Honoka</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://HHonoka.github.io/2019/09/01/contest152/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Honoka">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/image.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Honoka">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">LeetCode Weekly Contest 152
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-09-01 10:05:43 / 修改时间：10:51:02" itemprop="dateCreated datePublished" datetime="2019-09-01T10:05:43-04:00">2019-09-01</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/刷题/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <pre><code>好几周没打周赛了，这周去打了一下，感觉状态很一般，不过这次的题目有的出的还不错，有的真的无力吐槽。。。
+</code></pre><h1 id="LeetCode-1175-Prime-Arrangements"><a href="#LeetCode-1175-Prime-Arrangements" class="headerlink" title="LeetCode 1175 Prime Arrangements"></a>LeetCode 1175 Prime Arrangements</h1><p><a href="https://leetcode.com/problems/prime-arrangements/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Return the number of permutations of 1 to n so that prime numbers are at prime indices (1-indexed.)</span><br><span class="line"></span><br><span class="line">(Recall that an integer is prime if and only if it is greater than 1, and cannot be written as a product of two positive integers both smaller than it.)</span><br><span class="line"></span><br><span class="line">Since the answer may be large, return the answer modulo 10^9 + 7.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: n = 5</span><br><span class="line">Output: 12</span><br><span class="line">Explanation: For example [1,2,5,4,3] is a valid permutation, but [5,2,3,4,1] is not because the prime number 5 is at index 1.</span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: n = 100</span><br><span class="line">Output: 682289015</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Constraints:</span><br><span class="line"></span><br><span class="line">1 &lt;= n &lt;= 100</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：素数安排，就是素数只能在素数的索引处出现，其实就是素数和其他数的数目排列组合的乘积。其实这个题的难点在于如何找到素数的个数，
+其实这个子问题在leetcode中出现过，也是一个非常经典的DP题目。
+</code></pre><p><a href="https://leetcode.com/problems/count-primes/" target="_blank" rel="noopener">Count Prime</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def numPrimeArrangements(self, n: int) -&gt; int:</span><br><span class="line">        if n == 2:</span><br><span class="line">            return 1</span><br><span class="line">        def countPrimes(n):</span><br><span class="line">            if n &lt; 3:</span><br><span class="line">                return 0</span><br><span class="line">            primes = [True] * n</span><br><span class="line">            primes[0] = primes[1] = False</span><br><span class="line">            for i in range(2, int(n ** 0.5) + 1):</span><br><span class="line">                if primes[i]:</span><br><span class="line">                    primes[i * i: n: i] = [False] * len(primes[i * i: n: i])</span><br><span class="line">            return sum(primes)</span><br><span class="line">        count = countPrimes(n + 1)</span><br><span class="line">        count2 = n - count</span><br><span class="line">        res = 1</span><br><span class="line">        while count &gt; 0:</span><br><span class="line">            res = (res * count) % (10 ** 9 + 7)</span><br><span class="line">            count -= 1</span><br><span class="line">        while count2 &gt; 0:</span><br><span class="line">            res = (res * count2) % (10 ** 9 + 7)</span><br><span class="line">            count2 -= 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1176-Diet-Plan-Performance"><a href="#LeetCode-1176-Diet-Plan-Performance" class="headerlink" title="LeetCode 1176 Diet Plan Performance"></a>LeetCode 1176 Diet Plan Performance</h1><p><a href="https://leetcode.com/problems/diet-plan-performance/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">A dieter consumes calories[i] calories on the i-th day.  For every consecutive sequence of k days, they look at T, the total calories consumed during that sequence of k days:</span><br><span class="line"></span><br><span class="line">If T &lt; lower, they performed poorly on their diet and lose 1 point; </span><br><span class="line">If T &gt; upper, they performed well on their diet and gain 1 point;</span><br><span class="line">Otherwise, they performed normally and there is no change in points.</span><br><span class="line">Return the total number of points the dieter has after all calories.length days.</span><br><span class="line"></span><br><span class="line">Note that: The total points could be negative.</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example 1:</span><br><span class="line"></span><br><span class="line">Input: calories = [1,2,3,4,5], k = 1, lower = 3, upper = 3</span><br><span class="line">Output: 0</span><br><span class="line">Explaination: calories[0], calories[1] &lt; lower and calories[3], calories[4] &gt; upper, total points = 0.</span><br><span class="line"></span><br><span class="line">Example 2:</span><br><span class="line"></span><br><span class="line">Input: calories = [3,2], k = 2, lower = 0, upper = 1</span><br><span class="line">Output: 1</span><br><span class="line">Explaination: calories[0] + calories[1] &gt; upper, total points = 1.</span><br><span class="line"></span><br><span class="line">Example 3:</span><br><span class="line"></span><br><span class="line">Input: calories = [6,5,0,0], k = 2, lower = 1, upper = 5</span><br><span class="line">Output: 0</span><br><span class="line">Explaination: calories[0] + calories[1] &gt; upper, calories[2] + calories[3] &lt; lower, total points = 0.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Constraints:</span><br><span class="line"></span><br><span class="line">1 &lt;= k &lt;= calories.length &lt;= 10^5</span><br><span class="line">0 &lt;= calories[i] &lt;= 20000</span><br><span class="line">0 &lt;= lower &lt;= upper</span><br></pre></td></tr></table></figure>
+<pre><code>题目链接：题目看上去很长，我就简单的翻译一下，在数组中，连续的k个元素，如果大于upper得1分，小于lower减一分，求最后的总得分。
+这么一翻译其实这个题目就非常直接了，一眼就可以看出考点(Sliding Window)。不多废话，直接上代码。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def dietPlanPerformance(self, calories: List[int], k: int, lower: int, upper: int) -&gt; int:</span><br><span class="line">        l, r = 0, k</span><br><span class="line">        T = sum(calories[l: r])</span><br><span class="line">        res = 0</span><br><span class="line">        while r &lt; len(calories):</span><br><span class="line">            if T &gt; upper:</span><br><span class="line">                res += 1</span><br><span class="line">            elif T &lt; lower:</span><br><span class="line">                res -= 1</span><br><span class="line">            T += calories[r]</span><br><span class="line">            T -= calories[l]</span><br><span class="line">            l += 1</span><br><span class="line">            r += 1</span><br><span class="line">        if T &gt; upper:</span><br><span class="line">            res += 1</span><br><span class="line">        if T &lt; lower:</span><br><span class="line">            res -= 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1177-Can-Make-Palindrome-from-Substring"><a href="#LeetCode-1177-Can-Make-Palindrome-from-Substring" class="headerlink" title="LeetCode 1177 Can Make Palindrome from Substring"></a>LeetCode 1177 Can Make Palindrome from Substring</h1><p><a href="https://leetcode.com/problems/can-make-palindrome-from-substring/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Given a string s, we make queries on substrings of s.</span><br><span class="line"></span><br><span class="line">For each query queries[i] = [left, right, k], we may rearrange the substring s[left], ..., s[right], and then choose up to k of them to replace with any lowercase English letter. </span><br><span class="line"></span><br><span class="line">If the substring is possible to be a palindrome string after the operations above, the result of the query is true. Otherwise, the result is false.</span><br><span class="line"></span><br><span class="line">Return an array answer[], where answer[i] is the result of the i-th query queries[i].</span><br><span class="line"></span><br><span class="line">Note that: Each letter is counted individually for replacement so if for example s[left..right] = &quot;aaa&quot;, and k = 2, we can only replace two of the letters.  (Also, note that the initial string s is never modified by any query.)</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example :</span><br><span class="line"></span><br><span class="line">Input: s = &quot;abcda&quot;, queries = [[3,3,0],[1,2,0],[0,3,1],[0,3,2],[0,4,1]]</span><br><span class="line">Output: [true,false,false,true,true]</span><br><span class="line">Explanation:</span><br><span class="line">queries[0] : substring = &quot;d&quot;, is palidrome.</span><br><span class="line">queries[1] : substring = &quot;bc&quot;, is not palidrome.</span><br><span class="line">queries[2] : substring = &quot;abcd&quot;, is not palidrome after replacing only 1 character.</span><br><span class="line">queries[3] : substring = &quot;abcd&quot;, could be changed to &quot;abba&quot; which is palidrome. Also this can be changed to &quot;baab&quot; first rearrange it &quot;bacd&quot; then replace &quot;cd&quot; with &quot;ab&quot;.</span><br><span class="line">queries[4] : substring = &quot;abcda&quot;, could be changed to &quot;abcba&quot; which is palidrome.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Constraints:</span><br><span class="line"></span><br><span class="line">1 &lt;= s.length, queries.length &lt;= 10^5</span><br><span class="line">0 &lt;= queries[i][0] &lt;= queries[i][1] &lt; s.length</span><br><span class="line">0 &lt;= queries[i][2] &lt;= s.length</span><br><span class="line">s only contains lowercase English letters.</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：给定一个字符串，然后一个查询数组，数组中每一个元素有3个元素，分别是左边索引，右边索引和操作次数，问给定字符串在左索引和右
+索引之间的子字符串可不可以在给定的操作次数内变成回文字符串。
+
+这个题真的是个大坑，在周赛的时候给自己搞的心态有点炸。因为我的做法师直接去计算每一部分组成回文需要多少次操作，这个其实用一个dp二维数组
+就可以解决，然后每次查询的时候直接在dp数组中找就可以找到结果。但是在提交的过程中遇到了这么一个子问题一直无法通过。
+&apos;hunu&apos; 一次操作可以变成回文，返回是True。如果纯粹做replace操作的话，肯定是需要两个步骤的。后来在LeetCode 讨论区中很多人有相同的疑问，
+实际上这个题目要求中的&apos;rearrange&apos;。。。实际上的意思是说可以先调整字符串中字符的位置，再进行replace的操作。。。
+所以，&apos;hunu可以先变成&apos;huun&apos; 然后把&apos;n&apos;或者&apos;h&apos;替换掉即可。。。这个题目描述真的有点不好，但是在难度上其实没什么难度。。。
+其实和前缀和差不多，直接看代码，非常简单。。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def canMakePaliQueries(self, s: str, queries: List[List[int]]) -&gt; List[bool]:</span><br><span class="line">        query = [&#123;&#125;]</span><br><span class="line">        for i, char in enumerate(s):        #预处理字符串某一位置前缀的组成。</span><br><span class="line">            query.append(dict(query[-1]))</span><br><span class="line">            query[-1][char] = query[-1].get(char, 0) + 1</span><br><span class="line">        </span><br><span class="line">        res = []</span><br><span class="line"></span><br><span class="line">        for l, r, k in queries:</span><br><span class="line">            total = 0</span><br><span class="line">            for key, v in query[r + 1].items():  #可以调整位置，实际上直接找有多少相同的字符即可。</span><br><span class="line">                total += (v - query[l].get(key, 0)) % 2</span><br><span class="line">            if total - k * 2 &lt;= 1:</span><br><span class="line">                res.append(True)</span><br><span class="line">            else:</span><br><span class="line">                res.append(False)</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+<h1 id="LeetCode-1178-Number-of-Valid-Words-for-Each-Puzzle"><a href="#LeetCode-1178-Number-of-Valid-Words-for-Each-Puzzle" class="headerlink" title="LeetCode 1178 Number of Valid Words for Each Puzzle"></a>LeetCode 1178 Number of Valid Words for Each Puzzle</h1><p><a href="https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/" target="_blank" rel="noopener">原题链接</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">With respect to a given puzzle string, a word is valid if both the following conditions are satisfied:</span><br><span class="line">word contains the first letter of puzzle.</span><br><span class="line">For each letter in word, that letter is in puzzle.</span><br><span class="line">For example, if the puzzle is &quot;abcdefg&quot;, then valid words are &quot;faced&quot;, &quot;cabbage&quot;, and &quot;baggage&quot;; while invalid words are &quot;beefed&quot; (doesn&apos;t include &quot;a&quot;) and &quot;based&quot; (includes &quot;s&quot; which isn&apos;t in the puzzle).</span><br><span class="line">Return an array answer, where answer[i] is the number of words in the given word list words that are valid with respect to the puzzle puzzles[i].</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Example :</span><br><span class="line"></span><br><span class="line">Input: </span><br><span class="line">words = [&quot;aaaa&quot;,&quot;asas&quot;,&quot;able&quot;,&quot;ability&quot;,&quot;actt&quot;,&quot;actor&quot;,&quot;access&quot;], </span><br><span class="line">puzzles = [&quot;aboveyz&quot;,&quot;abrodyz&quot;,&quot;abslute&quot;,&quot;absoryz&quot;,&quot;actresz&quot;,&quot;gaswxyz&quot;]</span><br><span class="line">Output: [1,1,3,2,4,0]</span><br><span class="line">Explanation:</span><br><span class="line">1 valid word for &quot;aboveyz&quot; : &quot;aaaa&quot; </span><br><span class="line">1 valid word for &quot;abrodyz&quot; : &quot;aaaa&quot;</span><br><span class="line">3 valid words for &quot;abslute&quot; : &quot;aaaa&quot;, &quot;asas&quot;, &quot;able&quot;</span><br><span class="line">2 valid words for &quot;absoryz&quot; : &quot;aaaa&quot;, &quot;asas&quot;</span><br><span class="line">4 valid words for &quot;actresz&quot; : &quot;aaaa&quot;, &quot;asas&quot;, &quot;actt&quot;, &quot;access&quot;</span><br><span class="line">There&apos;re no valid words for &quot;gaswxyz&quot; cause none of the words in the list contains letter &apos;g&apos;.</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">Constraints:</span><br><span class="line"></span><br><span class="line">1 &lt;= words.length &lt;= 10^5</span><br><span class="line">4 &lt;= words[i].length &lt;= 50</span><br><span class="line">1 &lt;= puzzles.length &lt;= 10^4</span><br><span class="line">puzzles[i].length == 7</span><br><span class="line">words[i][j], puzzles[i][j] are English lowercase letters.</span><br><span class="line">Each puzzles[i] doesn&apos;t contain repeated characters.</span><br></pre></td></tr></table></figure>
+<pre><code>题目大意：在每一个puzzle中查询，有多少个words中的字符串属于这个puzzle，要求必须包含第一个字母，而且word的所有字符都在puzzle中。
+摆明了这种题目不可能用暴力查找去解决。这个题目设计到一个思想，在解决字符串问题的时候可以用类似于状态压缩的方法来解决。因为英文小写字母
+只有26个，假设一个字符串包含着26个字母，那么他的状态就是&apos;11111111111111111111111111&apos;，有了这个思想，我们只需要扫描puzzles中的每一个
+字符串，找出由这个字符串可能组成的状态都有哪些，然后存入到字典中，然后在扫描一遍words，把每一个word的状态找出来，然后返回到字典中取找
+这个状态，就很容易解决这个问题了。如果每一次都要去对比字符串，这样的操作就会非常的复杂，所以状态压缩，也是解决字符问题的一个非常可行的
+思想。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Solution:</span><br><span class="line">    def findNumOfValidWords(self, words: List[str], puzzles: List[str]) -&gt; List[int]:</span><br><span class="line">        def helper(mask, index, i):</span><br><span class="line">            if i &gt;= len(puzzles[index]):</span><br><span class="line">                return</span><br><span class="line">            newmask = mask</span><br><span class="line">            newmask |= 1 &lt;&lt; (ord(puzzles[index][i]) - ord(&apos;a&apos;))</span><br><span class="line">            if newmask ^ mask:</span><br><span class="line">                dic[newmask].add(index)</span><br><span class="line">                helper(newmask, index, i + 1)</span><br><span class="line">            helper(mask, index, i + 1)</span><br><span class="line">        </span><br><span class="line">        dic = collections.defaultdict(set)</span><br><span class="line">        for i, p in enumerate(puzzles):</span><br><span class="line">            mask = 0</span><br><span class="line">            mask |= 1 &lt;&lt; (ord(p[0]) - ord(&apos;a&apos;))</span><br><span class="line">            dic[mask].add(i)</span><br><span class="line">            helper(mask, i, 1)</span><br><span class="line">        </span><br><span class="line">        res = [0] * len(puzzles)</span><br><span class="line">        for word in words:</span><br><span class="line">            mask = 0</span><br><span class="line">            for char in word:</span><br><span class="line">                mask |= 1 &lt;&lt; (ord(char) - ord(&apos;a&apos;))</span><br><span class="line">            for index in dic[mask]:</span><br><span class="line">                res[index] += 1</span><br><span class="line">        return res</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/LeetCode-Contest/" rel="tag"><i class="far fa-feather"></i> LeetCode Contest</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/27/biweekly7/" rel="next" title="LeetCode Biweekly Contest 7">
+                <i class="fa fa-chevron-left"></i> LeetCode Biweekly Contest 7
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/image.png" alt="Honoka">
+            
+              <p class="site-author-name" itemprop="name">Honoka</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1175-Prime-Arrangements"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 1175 Prime Arrangements</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1176-Diet-Plan-Performance"><span class="nav-number">2.</span> <span class="nav-text">LeetCode 1176 Diet Plan Performance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1177-Can-Make-Palindrome-from-Substring"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 1177 Can Make Palindrome from Substring</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-1178-Number-of-Valid-Words-for-Each-Puzzle"><span class="nav-number">4.</span> <span class="nav-text">LeetCode 1178 Number of Valid Words for Each Puzzle</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Honoka</span>
+
+  
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.0</div>
+ -->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,0" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
